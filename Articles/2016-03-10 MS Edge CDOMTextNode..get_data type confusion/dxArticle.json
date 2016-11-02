@@ -3,9 +3,10 @@
   "sSummary": "A type confusion bug in Microsoft Edge can result in information disclosure and potentially allow remote code execution.",
   "sSynopsisFileName": "Synopsis.md",
   "adxSections": [
-    {"sType": "Text", "sFileName": "#1 Article.md"},
+    {"sType": "Text", "sFileName": "#1 Intro.md"},
     {"sType": "Source code", "sFileName": "#2 Repro.html", "sAttachmentFileName": "Repro.html"},
-    {"sType": "Source code", "sFileName": "#3 Exploit.html", "sAttachmentFileName": "Exploit.html"}
+    {"sType": "Text", "sFileName": "#3 Details.md"},
+    {"sType": "Source code", "sFileName": "#4 Exploit.html", "sAttachmentFileName": "Exploit.html"}
   ],
   "asIcons": [
     "Vuln.svg",
