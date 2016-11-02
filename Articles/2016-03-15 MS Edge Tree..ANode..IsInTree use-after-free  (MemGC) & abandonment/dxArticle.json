@@ -1,5 +1,6 @@
 {
   "sTitle": "MS Edge Tree::ANode::IsInTree use-after-free (MemGC) & Abandonment",
+  "sSummary": "A use-after-free bug in Microsoft Edge can be triggered if MemGC is disabled, which could potentially allow remote code execution.",
   "sSynopsisFileName": "Synopsis.md",
   "adxSections": [
     {"sType": "Text", "sFileName": "#1 Article.md"},

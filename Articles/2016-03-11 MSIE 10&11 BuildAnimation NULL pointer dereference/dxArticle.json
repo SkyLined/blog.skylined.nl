@@ -1,5 +1,6 @@
 {
   "sTitle": "MSIE 10&11 BuildAnimation NULL pointer dereference",
+  "sSummary": "A NULL pointer reference in Microsoft Internet Explorer 10 & 11 can cause an access violation exception in Control Flow Guard code.",
   "sSynopsisFileName": "Synopsis.md",
   "adxSections": [
     {"sType": "Text", "sFileName": "#1 Article.md"},

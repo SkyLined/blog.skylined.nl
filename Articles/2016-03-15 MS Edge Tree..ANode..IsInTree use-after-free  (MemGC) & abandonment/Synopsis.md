@@ -6,7 +6,7 @@ is never freed. This effectively prevents exploitation of the issue. The
 *Abandonment* appears to be triggered by a stack exhaustion bug; the Javascript
 creates a loop where an event handler triggers a new event, which in turn
 triggers the event handler, etc.. This consumes a stack space until there is no
-more stack available. MSIE does appear to be able to handle such a situation
+more stack available. Edge does appear to be able to handle such a situation
 gracefully under certain conditions, but not all. It is easy to avoid those
 conditions to force triggering the Abandonment.
 

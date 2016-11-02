@@ -1,5 +1,6 @@
 {
   "sTitle": "MSIE 11 MSHTML CView::CalculateImageImmunity use-after-free",
+  "sSummary": "A use-after-free bug in Microsoft Internet Explorer 11 could potentially allow remote code execution.",
   "sSynopsisFileName": "Synopsis.md",
   "adxSections": [
     {"sType": "Text", "sFileName": "#1 Intro.md"},

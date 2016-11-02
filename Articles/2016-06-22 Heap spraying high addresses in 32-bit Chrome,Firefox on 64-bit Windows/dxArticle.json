@@ -1,5 +1,6 @@
 {
   "sTitle": "Heap spraying high addresses in 32-bit Chrome/Firefox on 64-bit Windows",
+  "sSummary": "A heap spray (of sorts) can be used to allocate memory at specific locations in memory on 64-bit Windows.",
   "sSynopsisFileName": "Synopsis.md",
   "adxSections": [
     {"sType": "Text", "sFileName": "#1 Intro.md"},

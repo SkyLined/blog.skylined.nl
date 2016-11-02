@@ -1,5 +1,6 @@
 {
   "sTitle": "Magic values in 32-bit processes and 64-bit OS-es",
+  "sSummary": "Magic values commonly used in various software can potentially be exploited in 32-bit application running on 64-bit Windows.",
   "sSynopsisFileName": "Synopsis.md",
   "adxSections": [
     {"sType": "Text", "sFileName": "#1 Intro.md"},

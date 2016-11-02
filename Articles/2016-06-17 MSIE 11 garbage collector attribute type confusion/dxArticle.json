@@ -1,5 +1,6 @@
 {
   "sTitle": "MSIE 11 garbage collector attribute type confusion",
+  "sSummary": "A type confusion bug in Microsoft Internet Explorer could potentially allow remote code execution.",
   "sSynopsisFileName": "Synopsis.md",
   "adxSections": [
     {"sType": "Text", "sFileName": "#1 Intro.md"},

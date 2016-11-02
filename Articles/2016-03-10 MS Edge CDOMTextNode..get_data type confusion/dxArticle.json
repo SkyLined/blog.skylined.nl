@@ -1,5 +1,6 @@
 {
   "sTitle": "MS Edge CDOMTextNode::get_data type confusion",
+  "sSummary": "A type confusion bug in Microsoft Edge can result in information disclosure and potentially allow remote code execution.",
   "sSynopsisFileName": "Synopsis.md",
   "adxSections": [
     {"sType": "Text", "sFileName": "#1 Article.md"},
