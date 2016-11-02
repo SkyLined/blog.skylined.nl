@@ -1,5 +1,5 @@
 {
-  "sTitle": "Microsoft Edge CTreePosGap::PartitionPointers use-after-free (MemGC)",
+  "sTitle": "MS Edge CTreePosGap::PartitionPointers use-after-free (MemGC)",
   "sSynopsisFileName": "Synopsis.md",
   "adxSections": [
     {"sType": "Text", "sFileName": "#1 Intro, repro with BugId and MemGC ON.md"},

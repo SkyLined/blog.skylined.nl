@@ -1,5 +1,5 @@
 MSIE 10&11 BuildAnimation NULL pointer dereference
-====================================================
+==================================================
 
 A specially crafted style sheet inside an HTML page can trigger a NULL pointer
 dereference in Microsoft Internet Explorer 10 and 11. The pointer in question

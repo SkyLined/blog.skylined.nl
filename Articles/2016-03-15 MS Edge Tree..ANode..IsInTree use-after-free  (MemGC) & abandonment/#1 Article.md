@@ -1,5 +1,5 @@
-Microsoft Edge Tree::ANode::IsInTree use-after-free (MemGC) & Abandonment
-=========================================================================
+MS Edge Tree::ANode::IsInTree use-after-free (MemGC) & Abandonment
+==================================================================
 
 A specially crafted Javascript inside an HTML page can trigger a use-after-free
 bug in `Tree::ANode::IsInTree` or a breakpoint in

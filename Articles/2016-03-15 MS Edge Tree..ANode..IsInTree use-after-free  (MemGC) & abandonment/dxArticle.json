@@ -1,5 +1,5 @@
 {
-  "sTitle": "Microsoft Edge Tree::ANode::IsInTree use-after-free (MemGC) & Abandonment",
+  "sTitle": "MS Edge Tree::ANode::IsInTree use-after-free (MemGC) & Abandonment",
   "sSynopsisFileName": "Synopsis.md",
   "adxSections": [
     {"sType": "Text", "sFileName": "#1 Article.md"},

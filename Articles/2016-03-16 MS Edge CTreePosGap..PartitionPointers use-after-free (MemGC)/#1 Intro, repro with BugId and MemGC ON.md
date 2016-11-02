@@ -1,5 +1,5 @@
-Microsoft Edge CTreePosGap::PartitionPointers use-after-free (MemGC)
-====================================================================
+MS Edge CTreePosGap::PartitionPointers use-after-free (MemGC)
+=============================================================
 
 A specially crafted Javascript inside an HTML page can trigger a use-after-free
 bug in the `CTreePosGap::PartitionPointers` function of edgehtml.dll in
