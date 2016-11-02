@@ -1,5 +1,5 @@
 {
-  "sTitle": "MSIE 11 MSHTML CView::CalculateImageImmunity UAF",
+  "sTitle": "MSIE 11 MSHTML CView::CalculateImageImmunity use-after-free",
   "sSynopsisFileName": "Synopsis.md",
   "adxSections": [
     {"sType": "Text", "sFileName": "#1 Intro.md"},
