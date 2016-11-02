@@ -1,3 +1,4 @@
+var EOL = {};
 function fAddContentsToElement(oElement, xContents) {
   if (typeof xContents == "string") {
     // String? => add a text node
@@ -7,6 +8,8 @@ function fAddContentsToElement(oElement, xContents) {
     for (var uIndex = 0; uIndex < xContents.length; uIndex++) {
       fAddContentsToElement(oElement, xContents[uIndex]);
     };
+  } else if (xContents === EOL) {
+    oElement.appendChild(document.createElement("br"));
   } else if (xContents instanceof Node) {
     // Assume this is a DOM Node:
     oElement.appendChild(xContents);
@@ -15,7 +18,6 @@ function fAddContentsToElement(oElement, xContents) {
     throw new Error("Unknown content type: " + xContents);
   };
 };
-  
 function foCreateLinkElementWithContent(sURL, xContents) {
   // Create a link element with specified contents:
   var oLinkElement = foCreateElementWithContents("a", xContents);
@@ -48,28 +50,28 @@ addEventListener("load", function () {
 if (document.referrer && !/^https?:\/\/\w+\.skylined.nl(\/.*)$/.exec(document.referrer)) {
   console.log("Detected referrer: showing warning");
   fShowOrQueueWarning([
-    foCreateElementWithContents("h2", "Privacy warning: document.referrer leak detected!"), document.createElement("br"),
+    foCreateElementWithContents("h3", "Privacy warning: document.referrer leak detected!"), EOL,
     "This is a friendly warning that your webbrowser appears to be leaking the address of the page from which ",
     "you arrived on this website. You may want to reconfigure your webbrowser to prevent this, install and ",
     "use an add-on that hides referers, or switch to a different webbrowser if none of these options are possible.",
-    document.createElement("br"),
-    document.createElement("br"),
+    EOL,
+    EOL,
     
     "You came here from this website: ",
-    foCreateElementWithContents("strong", document.referrer), ".", document.createElement("br"),
-    document.createElement("br"),
+    foCreateElementWithContents("strong", document.referrer), ".", EOL,
+    EOL,
     
     "For more information see the Mozilla Developer Network page for ",
     foCreateLinkElementWithContent("https://developer.mozilla.org/en-US/docs/Web/API/Document/referrer", "Document.referrer"), " ",
     "and/or the Wikipedia page for ",
     foCreateLinkElementWithContent("https://en.wikipedia.org/wiki/HTTP_referer#Referer_hiding", "Referer hiding"),
-    ".", document.createElement("br"),
-    document.createElement("br"),
+    ".", EOL,
+    EOL,
   ]);
 };
 // Test cookies by saving the time in a cookie continuously when the page is open and checking if one is present at
 // page load that has a time very far in the past:
-var SECONDS = 1000, MINUTES = 60 *SECONDS, HOURS = 60 *MINUTES, DAYS = 24 *HOURS, YEARS = 365 *DAYS;
+var SECONDS = 1000, MINUTES = 60 *SECONDS, HOURS = 60 *MINUTES, DAYS = 24 *HOURS, WEEKS = 7 *DAYS, MONTHS = 30 *DAYS, YEARS = 365 *DAYS;
 setInterval(function () {
   document.cookie = "LastCookieSetTime=" + new Date().valueOf() + "; expires=" + new Date(new Date().getTime() + 10 *YEARS).toGMTString();
 }, 1000);
@@ -85,26 +87,47 @@ for (var uIndex = 0; uIndex < asCookies.length; uIndex++){
     console.log("uTimeSinceLastCookieWasSet", uTimeSinceLastCookieWasSet);
     // Allow for cookie managers that keep cookies around for some time after closing the last page of this
     // website, in case you want to reopen it without needing to log back in. This should not last more than
-    // 30 minutes:
-    if (uTimeSinceLastCookieWasSet > 30 *MINUTES) {
+    // 10 minutes:
+    if (uTimeSinceLastCookieWasSet > 10 *MINUTES) {
+      var sTimeSinceLastCookieWasSet;
+      if (uTimeSinceLastCookieWasSet > YEARS) {
+        var uYears = Math.round(uTimeSinceLastCookieWasSet / YEARS);
+        sTimeSinceLastCookieWasSet = uYears + " year" + (uYears > 1 ? "s" : "");
+      } else if (uTimeSinceLastCookieWasSet > MONTHS) {
+        var uMonths = Math.round(uTimeSinceLastCookieWasSet / MONTHS);
+        sTimeSinceLastCookieWasSet = uMonths + " month" + (uMonths > 1 ? "s" : "");
+      } else if (uTimeSinceLastCookieWasSet > WEEKS) {
+        var uWeeks = Math.round(uTimeSinceLastCookieWasSet / WEEKS);
+        sTimeSinceLastCookieWasSet = uWeeks + " week" + (uWeeks > 1 ? "s" : "");
+      } else if (uTimeSinceLastCookieWasSet > DAYS) {
+        var uDays = Math.round(uTimeSinceLastCookieWasSet / DAYS);
+        sTimeSinceLastCookieWasSet = uDays + " day" + (uDays > 1 ? "s" : "");
+      } else if (uTimeSinceLastCookieWasSet > HOURS) {
+        var uHours = Math.round(uTimeSinceLastCookieWasSet / HOURS);
+        sTimeSinceLastCookieWasSet = uHours + " hour" + (uHours > 1 ? "s" : "");
+      } else {
+        var uMinutes = Math.round(uTimeSinceLastCookieWasSet / MINUTES);
+        sTimeSinceLastCookieWasSet = uMinutes + " minutes";
+      };
       console.log("Detected cookies: showing warning");
       fShowOrQueueWarning([
-        foCreateElementWithContents("h2", "Privacy warning: persistent cookies detected!"), document.createElement("br"),
+        foCreateElementWithContents("h3", "Privacy warning: persistent cookies detected!"), EOL,
         "This is a friendly warning that your webbrowser does not appear to have deleted cookies for this website ",
         "since the last time you visited it. There is no need for your browser to save cookies for this website, but ",
         "cookies can be abused by malicious websites to track you. You may want to reconfigure your webbrowser to ",
         "only store cookies for sites that you need them on (e.g. site that you want to remain logged-in to even ",
         "after you've restarted your webbrowser), install and use a cookie-management add-on, or switch to a ",
-        "different webbrowser if none of these options are possible.", document.createElement("br"),
-        document.createElement("br"),
+        "different webbrowser if none of these options are possible.", EOL,
+        EOL,
         
-        "The last time you visited this website was: ",
-        foCreateElementWithContents("strong", new Date(uLastCookieSetTime).toString()), ".", document.createElement("br"),
-        document.createElement("br"),
+        "The last time you visited this website was ", foCreateElementWithContents("strong", [
+          "about " + sTimeSinceLastCookieWasSet + " ago at ", new Date(uLastCookieSetTime).toLocaleString()
+        ]), ".", EOL,
+        EOL,
         
         "For more information see the Wikipedia page for ",
-        foCreateLinkElementWithContent("https://en.wikipedia.org/wiki/HTTP_cookie", "HTTP cookies"), ".", document.createElement("br"),
-        document.createElement("br"),
+        foCreateLinkElementWithContent("https://en.wikipedia.org/wiki/HTTP_cookie", "HTTP cookies"), ".", EOL,
+        EOL,
       ]);
     };
   };
@@ -117,18 +140,18 @@ oXHR.addEventListener("readystatechange", function() {
   if (oXHR.readyState == 4 && oXHR.status == 200) { // Loaded successfully: assume no ad-blocker installed.
     console.log("Detected no ad-blocker: showing warning");
     fShowOrQueueWarning([
-      foCreateElementWithContents("h2", "Security warning: No ad-blocker detected!"), document.createElement("br"),
+      foCreateElementWithContents("h3", "Security warning: No ad-blocker detected!"), EOL,
       "This is a friendly warning that you do not appear to have an ad-blocker installed. Malicious advertisements ",
       "are regularly abused as an attack vector to compromise machines when a user visits a website that shows these ",
       "advertisements. You may want to install and use an ad-blocker add-on, or switch to a different webbrowser if ",
       "none of these options are possible.",
-      document.createElement("br"),
-      document.createElement("br"),
+      EOL,
+      EOL,
       
       "For more information see the Wikipedia page for ",
       foCreateLinkElementWithContent("https://en.wikipedia.org/wiki/Malvertising", "Malvertising"),
-      ".", document.createElement("br"),
-      document.createElement("br"),
+      ".", EOL,
+      EOL,
     ]);
   };
 });
@@ -156,17 +179,17 @@ if (RTCPeerConnection) {
       if (asLocalIPAddresses.length > 0) {
         console.log("Detected local IP address: showing warning");
         fShowOrQueueWarning([
-          foCreateElementWithContents("h2", "Security warning: WebRTC local IP address leak detected!"), document.createElement("br"),
+          foCreateElementWithContents("h3", "Security warning: WebRTC local IP address leak detected!"), EOL,
           "This is a friendly warning that your webbrowser appears to be leaking the local IP address of your ", 
           "device through the WebRTC feature. This information is useful if a malicious websites wants to scan your ",
           "local network and/or attack this and other devices on your local network. You may want to reconfigure your ",
           "webbrowser, install and use an add-on that hides local IP addresses in WebRTC , or switch to a different ",
-          "webbrowser if none of these options are possible.", document.createElement("br"),
-          document.createElement("br"),
+          "webbrowser if none of these options are possible.", EOL,
+          EOL,
           
           "The leaked local IP address", asLocalIPAddresses.length == 1 ? " is" : "es are", ": ",
-          asLocalIPAddresses.join(", "), ".", document.createElement("br"),
-          document.createElement("br"),
+          asLocalIPAddresses.join(", "), ".", EOL,
+          EOL,
         ]);
       };
     };
@@ -191,13 +214,13 @@ oFlashElement.addEventListener("readystatechange", function() {
   if (oFlashElement.readyState == 4) {
     console.log("Detected Adobe Flash: showing warning");
     fShowOrQueueWarning([
-      foCreateElementWithContents("h2", "Security warning: Adobe Flash detected!"), document.createElement("br"),
+      foCreateElementWithContents("h3", "Security warning: Adobe Flash detected!"), EOL,
       "This is a friendly warning that your webbrowser appears to have Adobe Flash installed and enabled for use on ",
       "this website. There is no need for your browser to allow Adobe Flash on this website, but it is regularly ",
       "abused as an attack vector to compromise machines. You may want to un-install Flash, reconfigure your ",
       "webbrowser to block Flash on all websites unless you specifically enable it, use a plugin-management add-on, ",
-      "or switch to a different webbrowser if none of these options are possible.", document.createElement("br"),
-      document.createElement("br"),
+      "or switch to a different webbrowser if none of these options are possible.", EOL,
+      EOL,
     ]);
   };
 });

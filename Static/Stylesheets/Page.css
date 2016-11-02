@@ -238,6 +238,11 @@ h2 {
   font-size: 120%;
 }
 
+h3 {
+  font-size: 120%;
+  border-bottom: 1px solid rgba(128, 19, 16, 1);
+}
+
 h1, h2 {
   /* This makes sure there is always room for at least one line in the column below the header, thus preventing
      breaking into the next column immediately after the header, before the start of the paragraph.
