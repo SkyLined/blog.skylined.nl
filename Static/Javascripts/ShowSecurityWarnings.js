@@ -47,34 +47,37 @@ addEventListener("load", function () {
   if (axQueuedWarnings.length > 0) fShowQueuedWarnings();
 });
 // Test referrer information leak:
-if (document.referrer && !/^https?:\/\/\w+\.skylined.nl(\/.*)$/.exec(document.referrer)) {
-  console.log("Detected referrer: showing warning");
-  fShowOrQueueWarning([
-    foCreateElementWithContents("h3", "Privacy warning: document.referrer leak detected!"), EOL,
-    "This is a friendly warning that your webbrowser appears to be leaking the address of the page from which ",
-    "you arrived on this website. You may want to reconfigure your webbrowser to prevent this, install and ",
-    "use an add-on that hides referers, or switch to a different webbrowser if none of these options are possible.",
-    EOL,
-    EOL,
-    
-    "You came here from this website: ",
-    foCreateElementWithContents("strong", document.referrer), ".", EOL,
-    EOL,
-    
-    "For more information see the Mozilla Developer Network page for ",
-    foCreateLinkElementWithContent("https://developer.mozilla.org/en-US/docs/Web/API/Document/referrer", "Document.referrer"), " ",
-    "and/or the Wikipedia page for ",
-    foCreateLinkElementWithContent("https://en.wikipedia.org/wiki/HTTP_referer#Referer_hiding", "Referer hiding"),
-    ".", EOL,
-    EOL,
-  ]);
+if (document.referrer) {
+  console.log("document.referrer: ", document.referrer);
+  if (!/^https?:\/\/\w+\.skylined.nl(\/.*)$/.exec(document.referrer)) {
+    console.log("Detected referrer information leak: showing warning");
+    fShowOrQueueWarning([
+      foCreateElementWithContents("h3", "Privacy warning: document.referrer leak detected!"), EOL,
+      "This is a friendly warning that your webbrowser appears to be leaking the address of the page from which ",
+      "you arrived on this website. You may want to reconfigure your webbrowser to prevent this, install and ",
+      "use an add-on that hides referers, or switch to a different webbrowser if none of these options are possible.",
+      EOL,
+      EOL,
+      
+      "You came here from this website: ",
+      foCreateElementWithContents("strong", document.referrer), ".", EOL,
+      EOL,
+      
+      "For more information see the Mozilla Developer Network page for ",
+      foCreateLinkElementWithContent("https://developer.mozilla.org/en-US/docs/Web/API/Document/referrer", "Document.referrer"), " ",
+      "and/or the Wikipedia page for ",
+      foCreateLinkElementWithContent("https://en.wikipedia.org/wiki/HTTP_referer#Referer_hiding", "Referer hiding"),
+      ".", EOL,
+      EOL,
+    ]);
+  };
 };
-// Test cookies by saving the time in a cookie continuously when the page is open and checking if one is present at
-// page load that has a time very far in the past:
+// Test cookies by saving the time in a cookie continuously when the page is open. When all pages are closed, the
+// cookie should be deleted. Before we start setting the cookie, there should be none: if there is, that means the
+// browser has saved the last cookie set the previous time the page was open. We can determine how long ago this was
+// from the cookie value.
 var SECONDS = 1000, MINUTES = 60 *SECONDS, HOURS = 60 *MINUTES, DAYS = 24 *HOURS, WEEKS = 7 *DAYS, MONTHS = 30 *DAYS, YEARS = 365 *DAYS;
-setInterval(function () {
-  document.cookie = "LastCookieSetTime=" + new Date().valueOf() + "; expires=" + new Date(new Date().getTime() + 10 *YEARS).toGMTString();
-}, 1000);
+console.log("document.cookie: ", document.cookie);
 var asCookies = document.cookie.split('; ');
     dsCookies = {};
 for (var uIndex = 0; uIndex < asCookies.length; uIndex++){
@@ -84,32 +87,32 @@ for (var uIndex = 0; uIndex < asCookies.length; uIndex++){
   if (sName == "LastCookieSetTime") {
     uLastCookieSetTime = parseInt(sValue);
     var uTimeSinceLastCookieWasSet  = new Date().getTime() - uLastCookieSetTime;
-    console.log("uTimeSinceLastCookieWasSet", uTimeSinceLastCookieWasSet);
+    var sTimeSinceLastCookieWasSet;
+    if (uTimeSinceLastCookieWasSet > YEARS) {
+      var uYears = Math.round(uTimeSinceLastCookieWasSet / YEARS);
+      sTimeSinceLastCookieWasSet = uYears + " year" + (uYears > 1 ? "s" : "");
+    } else if (uTimeSinceLastCookieWasSet > MONTHS) {
+      var uMonths = Math.round(uTimeSinceLastCookieWasSet / MONTHS);
+      sTimeSinceLastCookieWasSet = uMonths + " month" + (uMonths > 1 ? "s" : "");
+    } else if (uTimeSinceLastCookieWasSet > WEEKS) {
+      var uWeeks = Math.round(uTimeSinceLastCookieWasSet / WEEKS);
+      sTimeSinceLastCookieWasSet = uWeeks + " week" + (uWeeks > 1 ? "s" : "");
+    } else if (uTimeSinceLastCookieWasSet > DAYS) {
+      var uDays = Math.round(uTimeSinceLastCookieWasSet / DAYS);
+      sTimeSinceLastCookieWasSet = uDays + " day" + (uDays > 1 ? "s" : "");
+    } else if (uTimeSinceLastCookieWasSet > HOURS) {
+      var uHours = Math.round(uTimeSinceLastCookieWasSet / HOURS);
+      sTimeSinceLastCookieWasSet = uHours + " hour" + (uHours > 1 ? "s" : "");
+    } else {
+      var uMinutes = Math.round(uTimeSinceLastCookieWasSet / MINUTES);
+      sTimeSinceLastCookieWasSet = uMinutes + " minutes";
+    };
+    console.log("uTimeSinceLastCookieWasSet: ", uTimeSinceLastCookieWasSet, " (about " + sTimeSinceLastCookieWasSet + " ago)");
     // Allow for cookie managers that keep cookies around for some time after closing the last page of this
     // website, in case you want to reopen it without needing to log back in. This should not last more than
     // 10 minutes:
     if (uTimeSinceLastCookieWasSet > 10 *MINUTES) {
-      var sTimeSinceLastCookieWasSet;
-      if (uTimeSinceLastCookieWasSet > YEARS) {
-        var uYears = Math.round(uTimeSinceLastCookieWasSet / YEARS);
-        sTimeSinceLastCookieWasSet = uYears + " year" + (uYears > 1 ? "s" : "");
-      } else if (uTimeSinceLastCookieWasSet > MONTHS) {
-        var uMonths = Math.round(uTimeSinceLastCookieWasSet / MONTHS);
-        sTimeSinceLastCookieWasSet = uMonths + " month" + (uMonths > 1 ? "s" : "");
-      } else if (uTimeSinceLastCookieWasSet > WEEKS) {
-        var uWeeks = Math.round(uTimeSinceLastCookieWasSet / WEEKS);
-        sTimeSinceLastCookieWasSet = uWeeks + " week" + (uWeeks > 1 ? "s" : "");
-      } else if (uTimeSinceLastCookieWasSet > DAYS) {
-        var uDays = Math.round(uTimeSinceLastCookieWasSet / DAYS);
-        sTimeSinceLastCookieWasSet = uDays + " day" + (uDays > 1 ? "s" : "");
-      } else if (uTimeSinceLastCookieWasSet > HOURS) {
-        var uHours = Math.round(uTimeSinceLastCookieWasSet / HOURS);
-        sTimeSinceLastCookieWasSet = uHours + " hour" + (uHours > 1 ? "s" : "");
-      } else {
-        var uMinutes = Math.round(uTimeSinceLastCookieWasSet / MINUTES);
-        sTimeSinceLastCookieWasSet = uMinutes + " minutes";
-      };
-      console.log("Detected cookies: showing warning");
+      console.log("Detected cookie that was set a long time ago: showing warning");
       fShowOrQueueWarning([
         foCreateElementWithContents("h3", "Privacy warning: persistent cookies detected!"), EOL,
         "This is a friendly warning that your webbrowser does not appear to have deleted cookies for this website ",
@@ -132,12 +135,17 @@ for (var uIndex = 0; uIndex < asCookies.length; uIndex++){
     };
   };
 };
+setInterval(function () {
+  document.cookie = "LastCookieSetTime=" + new Date().valueOf() + "; expires=" + new Date(new Date().getTime() + 10 *YEARS).toGMTString();
+  console.log("document.cookie: ", document.cookie);
+}, 10 *SECONDS);
 // Test ad-blocker by trying to load a file from a URL that matches ".com/ads.js", as this is commonly blocked:
 var bAdBlockerDetected = undefined,
     oXHR = new XMLHttpRequest(),
     bAdBlockerCheckCompleted = false;
 oXHR.addEventListener("readystatechange", function() {
   if (oXHR.readyState == 4 && oXHR.status == 200) { // Loaded successfully: assume no ad-blocker installed.
+    console.log("Status code when loading ads.js: ", oXHR.status);
     console.log("Detected no ad-blocker: showing warning");
     fShowOrQueueWarning([
       foCreateElementWithContents("h3", "Security warning: No ad-blocker detected!"), EOL,
@@ -207,6 +215,8 @@ if (RTCPeerConnection) {
   });
 };
 // Test if Adobe Flash is installed
+console.log('navigator.mimeTypes["application/x-shockwave-flash"]: ', navigator.mimeTypes["application/x-shockwave-flash"]);
+console.log("Attempting to loading a Flash object");
 var oFlashElement = document.createElement("object");
 oFlashElement.setAttribute("type", "application/x-shockwave-flash");
 oFlashElement.setAttribute("data", "/Flash/HelloWorld.swf");
