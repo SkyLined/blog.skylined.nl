@@ -1,0 +1,19 @@
+
+strong {
+  background-color: rgba(255, 255, 0, 0.2);
+}
+
+p {
+  text-align: justify;
+}
+
+ul, ol {
+  padding-left: 1em;
+}
+ul {
+  list-style: square outside;
+}
+li > :first-child {
+  font-weight: 500;
+}
+

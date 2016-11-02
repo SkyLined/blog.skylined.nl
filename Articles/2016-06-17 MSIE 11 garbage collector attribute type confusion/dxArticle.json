@@ -1,0 +1,17 @@
+{
+  "sTitle": "MSIE 11 garbage collector attribute type confusion",
+  "sSynopsisFileName": "Synopsis.md",
+  "adxSections": [
+    {"sType": "Text", "sFileName": "#1 Intro.md"},
+    {"sType": "Text", "sFileName": "#2 Proof-of-Concept for 32-bit.md"},
+    {"sType": "Source code", "sFileName": "#3 Repro_32.html", "sAttachmentFileName": "Repro_32.html"},
+    {"sType": "Text", "sFileName": "#4 Proof-of-Concept for 64-bit.md"},
+    {"sType": "Source code", "sFileName": "#5 Repro_64.html", "sAttachmentFileName": "Repro_64.html"},
+    {"sType": "Text", "sFileName": "#6 Scanner.md"},
+    {"sType": "Source code", "sFileName": "#7 Scanner.html", "sAttachmentFileName": "Scanner.html"}
+  ],
+  "asIcons": [
+    "Bug.svg",
+    "Microsoft Internet Explorer.svg"
+  ]
+}

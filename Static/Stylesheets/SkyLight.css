@@ -1,0 +1,53 @@
+/*
+
+SkyLight - Highlight only stuff that matters by SkyLined <berendj@nwever.nl>
+
+*/
+.hljs {
+}
+
+.hljs-tag {
+  background-color: rgba(0, 255, 255, 0.075);
+}
+.hljs-attr,
+.hljs-quote,
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-built_in,
+.hljs-name,
+.hljs-title,
+.hljs-section,
+.hljs-attribute,
+.hljs-literal,
+.hljs-template-tag,
+.hljs-type,
+.hljs-addition,
+.hljs-deletion,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-meta,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-doctag {
+  color: #000000;
+}
+.hljs-variable,
+.hljs-template-variable {
+  color: #0000FF;
+}
+
+.hljs-comment {
+  background-color: rgba(255, 255, 0, 0.2);
+}
+.hljs-string {
+  background-color: rgba(0, 255, 0, 0.1);
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}

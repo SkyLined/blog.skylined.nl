@@ -1,0 +1,18 @@
+{
+  "sTitle": "Magic values in 32-bit processes and 64-bit OS-es",
+  "sSynopsisFileName": "Synopsis.md",
+  "adxSections": [
+    {"sType": "Text", "sFileName": "#1 Intro.md"},
+    {"sType": "Text", "sFileName": "#2 Mozilla 1088635.md"},
+    {"sType": "Text", "sFileName": "#3 Chromium 525288.md"},
+    {"sType": "Source code", "sFileName": "#4 Chromium 525288 PoC.html", "sAttachmentFileName": "Chromium 525288 PoC.html"},
+    {"sType": "Text", "sFileName": "#5 Chromium 525288 continued.md"},
+    {"sType": "Text", "sFileName": "#6 Mitigations.md"}
+  ],
+  "asIcons": [
+    "Bug.svg",
+    "Windows.svg",
+    "Google Chrome.svg",
+    "Mozilla Firefox.svg"
+  ]
+}

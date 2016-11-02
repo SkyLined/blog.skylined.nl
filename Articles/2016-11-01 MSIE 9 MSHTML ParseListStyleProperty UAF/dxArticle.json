@@ -1,0 +1,14 @@
+{
+  "sTitle": "MSIE 9 MSHTML CAttrArray use-after-free",
+  "sSynopsisFileName": "Synopsis.md",
+  "adxSections": [
+    {"sType": "Text", "sFileName": "#1 Intro.md"},
+    {"sType": "Source code", "sFileName": "#2 Repro.html", "sAttachmentFileName": "Repro.html"},
+    {"sType": "Text", "sFileName": "#3 Details.md"},
+    {"sType": "BugId report", "sFileName": "#4 MSHTML.dll!ParseListStyleProperty Arbitrary~FE0 AVR(3986463A).html", "sAttachmentFileName": "MSHTML.dll!ParseListStyleProperty Arbitrary~FE0 AVR(3986463A).html"}
+  ],
+  "asIcons": [
+    "Bug.svg",
+    "Microsoft Internet Explorer.svg"
+  ]
+}

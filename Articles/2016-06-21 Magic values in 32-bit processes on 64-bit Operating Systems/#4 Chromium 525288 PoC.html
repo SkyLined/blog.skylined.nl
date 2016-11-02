@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+  <head>
+    <script type="text/javascript">
+      function elementLoadCallback() {
+        var oElement = window.event.target;
+        setTimeout(function() {
+          document.body.removeChild(oElement);
+          document.body.offsetTop;
+          document.body.appendChild(oElement);
+        }, Math.random() * 500);
+      }
+      window.onload = function() {
+        for (var u = 0; u < 20; u++) {
+          var oIFrame = document.body.appendChild(document.createElement("iframe"));
+          oIFrame.onload = elementLoadCallback;
+          oIFrame.src = "repro.mp3"; // This can be an empty file.
+          oIFrame.width = oIFrame.height = 10;
+        }
+      }
+      setTimeout(function() {
+        location.reload();
+      }, 5000);
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

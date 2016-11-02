@@ -1,0 +1,259 @@
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  border-spacing: 0;
+  border-collapse: collapse;
+  color: inherit;
+  background: transparent;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  font-size: inherit;
+}
+html {
+  overflow-y: scroll; /* prevent center jumping */
+  color: #161310; /* rgba(22, 19, 16, 1); */
+  background: #E5E2DE;
+  font-weight: 400;
+  padding: 1em;
+  font-family: Sans-serif;
+}
+body {
+  margin: auto;
+  max-width: 80em;
+}
+h1, h2, h3, h4, h5 {
+  font-weight: 700;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  margin-bottom: -1px;
+}
+:link {
+  border-bottom: 1px dotted rgba(0,0, 238, 0.25);
+}
+:link:hover, :link:active {
+  border-bottom: 1px solid rgba(0,0, 238, 1);
+}
+:visited {
+  border-bottom: 1px dotted rgba(85, 26, 139, 0.25);
+}
+:visited:hover, :visited:active {
+  border-bottom: 1px solid rgba(85, 26, 139, 1);
+}
+a.icon, a.icon:hover, a.icon:active, a.icon:visited, a.icon:visited:hover, a.icon:visited:active {
+  border-bottom: 0;
+}
+
+pre code {
+  font-family: monospace;
+  display: block;
+  overflow: auto;
+  padding: 0.5em;
+}
+
+code {
+  background: rgba(22, 19, 16,0.04);
+}
+
+.icon {
+  width: 2em;
+  height: 2em;
+}
+
+.article-tags .icon {
+  float: left;
+  clear: left;
+  padding-right: 0.2em;
+}
+
+.card, a.card, a.card:hover {
+  border: 1px solid rgba(22, 19, 16, 0.2);
+  border-radius: 0.5em;
+  background-color: rgba(255, 251, 247, 1);
+  box-shadow: 0 1em 2em rgba(22, 19, 16, 0.2), 0 1em 1em rgba(22, 19, 16, 0.05), 0 1em 0.5em rgba(22, 19, 16, 0.05);
+  margin-bottom: 1em;
+  display: block;
+}
+
+.header-logo {
+  display: block;
+  height: 250px;
+  background-image: url("/Images/Header.png")!important;
+  background-position: 50% 50%;
+  border: 1px solid rgba(22, 19, 16, 0.3)!important;
+  border-radius: 0.5em;
+  margin-bottom: 1em;
+  position: relative;
+
+}
+.internal-links {
+  left: 0;
+  bottom: 0;
+  margin-left: 1em;
+  margin-bottom: 1em;
+}
+
+.external-links {
+  right: 0;
+  bottom: 0;
+  margin-right: 1em;
+  margin-bottom: 1em;
+}
+.header-links {
+  display: inline-block;
+  height: 2em;
+  position: absolute;
+  padding: .5em;
+  border: 1px solid rgba(22, 19, 16, 0.2);
+  border-radius: 0.5em;
+  background-color: rgba(255, 251, 247, 1);
+  box-shadow: 0 1em 2em rgba(22, 19, 16, 0.2), 0 1em 1em rgba(22, 19, 16, 0.05), 0 1em 0.5em rgba(22, 19, 16, 0.05);
+}
+
+.footer {
+  padding: 1em;
+  text-align: center;
+}
+
+/* main page index */
+.main-page-index {
+  display: block;
+  column-width: 22em;
+  -moz-column-width: 22em;
+  -ms-column-width: 22em;
+  column-count: auto;
+  -moz-column-count: auto;
+  -ms-column-count: auto;
+  column-gap: 1em;
+  -moz-column-gap: 1em;
+  -ms-column-gap: 1em;
+}
+.main-page-article {
+  display: inline-block;
+  padding: 1em;
+}
+.card {
+  background-image: url("/Images/Canvas.jpg");
+}
+
+.main-page-article-title {
+  font-weight: 700;
+  display: block;
+  padding: 1em;
+  color: rgba(255, 251, 247, 1);
+  background-color: rgba(22, 19, 16, 1);
+  font-size: 120%;
+  margin-bottom: 1em;
+}
+.main-page-article-synopsis {
+  display: block;
+  padding-bottom: 1em;
+}
+.main-page-article-date {
+  float: left;
+  display: inline-block;
+  font-size: 90%;
+  font-style: italic;
+  font-family: Serif;
+}
+
+.main-page-article-link {
+  float: right;
+  display: inline-block;
+  text-align: right;
+  font-size: 90%;
+  font-style: italic;
+  font-family: Serif;
+}
+
+/* article pages */
+.article-text-section {
+  display: block;
+  padding: 1em;
+  column-width: 22em;
+  -moz-column-width: 22em;
+  -ms-column-width: 22em;
+  column-count: auto;
+  -moz-column-count: auto;
+  -ms-column-count: auto;
+  column-gap: 2em;
+  -moz-column-gap: 2em;
+  -ms-column-gap: 2em;
+}
+.article-text-section + .article-text-section {
+  margin-top: 1em;
+  border-top: 1px solid #C0C0C0;
+  padding-top: 2em;
+}
+
+.article-source-code-section, .article-bugid-report-section {
+  margin: 1em 1em;
+  display: block;
+  border: 1px solid #C0C0C0;
+}
+.article-source-code-section-header, .article-bugid-report-section-header {
+  display: block;
+  font-size: 120%;
+  color: rgba(255, 251, 247, 1);
+  background-color: rgba(22, 19, 16, 1);
+  padding: 0.5em 1em 0.5em 1em;
+}
+
+.article-source-code-link-icon, .article-bugid-report-link-icon {
+  display: inline-block;
+  padding-left: 1em;
+  width: 1em;
+  height: 1em;
+  background-image: url("/Images/Link.png");
+  background-size: contain;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.article-source-code, .article-bugid-report-synopsis{
+	display: block;
+	white-space: pre;
+  padding: 1em;
+  background-color: rgba(22, 19, 16,0.05);
+}
+
+/*.index-article-synopsis*/
+
+.article-text-section > p, .article-text-section > ul > li, .article-text-section > ol > li, .article-text-section > pre  {
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  display: inline-block;
+  padding: 1em;
+  color: rgba(255, 251, 247, 1);
+  background-color: rgba(22, 19, 16, 1);
+  font-size: 120%;
+}
+
+h2 {
+  display: inline-block;
+  font-size: 120%;
+}
+
+h1, h2 {
+  /* This makes sure there is always room for at least one line in the column below the header, thus preventing
+     breaking into the next column immediately after the header, before the start of the paragraph.
+     Ideally, the "break-after" property would be used here, but that is not supported yet in most browsers */
+  margin-bottom: 3em;
+}
+h1 + *, h2 + * {
+  margin-top: -3em;
+}
+
+.security-warnings {
+  display: none;
+  padding: 1em;
+  margin-bottom: 1em;
+  border: 3px solid rgba(128, 19, 16, 1);
+  border-radius: 0.5em;
+  background-color: rgba(255, 251, 247, 1);
+  box-shadow: 0 1em 2em rgba(22, 19, 16, 0.2), 0 1em 1em rgba(22, 19, 16, 0.05), 0 1em 0.5em rgba(22, 19, 16, 0.05);
+}

@@ -1,0 +1,19 @@
+{
+  "sTitle": "Microsoft Edge CTreePosGap::PartitionPointers use-after-free (MemGC)",
+  "sSynopsisFileName": "Synopsis.md",
+  "adxSections": [
+    {"sType": "Text", "sFileName": "#1 Intro, repro with BugId and MemGC ON.md"},
+    {"sType": "BugId report", "sFileName": "#2 AVR.NULL 484.a53 microsoftedgecp.exe!edgehtml.dll!CTreePosGap..PartitionPointers.html", "sAttachmentFileName": "AVR.NULL 484.a53 microsoftedgecp.exe!edgehtml.dll!CTreePosGap..PartitionPointers.html"},
+    {"sType": "Text", "sFileName": "#3 Explain BugId report, repro with MemGC OFF.md"},
+    {"sType": "BugId report", "sFileName": "#4 AVR.Free 484.a53 microsoftedgecp.exe!edgehtml.dll!CTreePosGap..PartitionPointers.html", "sAttachmentFileName": "AVR.Free 484.a53 microsoftedgecp.exe!edgehtml.dll!CTreePosGap..PartitionPointers.html"},
+    {"sType": "Text", "sFileName": "#5 Explain BugId report, speculate on code path.md"},
+    {"sType": "Text", "sFileName": "#6 Check speculation in debugger.md"},
+    {"sType": "Text", "sFileName": "#7 Find exactly where the memory is freed.md"},
+    {"sType": "Text", "sFileName": "#8 Conclusion.md"},
+    {"sType": "Source code", "sFileName": "#9 Repro.html", "sAttachmentFileName": "Repro.html"}
+  ],
+  "asIcons": [
+    "Bug.svg",
+    "Microsoft Edge.svg"
+  ]
+}

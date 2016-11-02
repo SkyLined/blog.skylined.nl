@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <script>
+      var uTargetAddress = 0xDEADBEEF, // The address to allocated
+          uValue = 0xBADC0DED, // The value to store at this address.
+          uArrayBase = window.chrome ? 0x80004000 : 0x80000000,
+          uArraySeparation = window.chrome ? 0x200000 : 0x0,
+          uMaxArraySize = window.chrome ? 0x30000000 : 0x80000000;
+      var aauHeap = [];
+      while (uArrayBase + uMaxArraySize <= uTargetAddress) {
+        console.log("Allocating 0x" + uMaxArraySize.toString(16) + " bytes at 0x" + uArrayBase.toString(16));
+        aauHeap.push(auHeap = new Uint8Array(uMaxArraySize));
+        uArrayBase += uMaxArraySize + uArraySeparation;
+      };
+      var uArraySize = uTargetAddress - uArrayBase + 4,
+          auHeap = new Uint8Array(uArraySize);
+      console.log("Allocating 0x" + uArraySize.toString(16) + " bytes at 0x" + uArrayBase.toString(16));
+      for (var uOffset = 0; uOffset < 4; uOffset++) {
+        var uByteIndex = uTargetAddress - uArrayBase + uOffset,
+            uByteValue = (uValue >> (uOffset * 8)) & 0xFF;
+        auHeap[uByteIndex] = uByteValue;
+        console.log("[0x" + uArrayBase.toString(16) + " + 0x" + uByteIndex.toString(16) + "] = " + uByteValue.toString(16));
+      };
+      // All done: break into the application using your favorite debugger
+      // and see whether [0xDEADBEEF] realy is 0xBADC0DED. In WinDbg, this may help:
+      alert("!address 0xDEADBEEF;dd 0xDEADBEEF");
+    </script>
+  </head>
+</html>

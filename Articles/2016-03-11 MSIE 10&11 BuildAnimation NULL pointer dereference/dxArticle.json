@@ -1,0 +1,15 @@
+{
+  "sTitle": "MSIE 10&11 BuildAnimation NULL pointer dereference",
+  "sSynopsisFileName": "Synopsis.md",
+  "adxSections": [
+    {"sType": "Text", "sFileName": "#1 Article.md"},
+    {"sType": "Source code", "sFileName": "#2 Repro.xhtml", "sAttachmentFileName": "Repro.xhtml"},
+    {"sType": "Text", "sFileName": "#3 BugId report description.md"},
+    {"sType": "BugId report", "sFileName": "#4 AVR.Arbitrary b89.c4b @ iexplore.exe!mshtml.dll!CAnimatablePropertyListElement..GetCurrentValues.html", "sAttachmentFileName": "AVR.Arbitrary b89.c4b @ iexplore.exe!mshtml.dll!CAnimatablePropertyListElement..GetCurrentValues.html"},
+    {"sType": "BugId report", "sFileName": "#5 AVE.NULL b89.72d @ iexplore.exe!mshtml.dll!CAnimatablePropertyListElement..GetCurrentValues.html", "sAttachmentFileName": "AVE.NULL b89.72d @ iexplore.exe!mshtml.dll!CAnimatablePropertyListElement..GetCurrentValues.html"}
+  ],
+  "asIcons": [
+    "Bug.svg",
+    "Microsoft Internet Explorer.svg"
+  ]
+}

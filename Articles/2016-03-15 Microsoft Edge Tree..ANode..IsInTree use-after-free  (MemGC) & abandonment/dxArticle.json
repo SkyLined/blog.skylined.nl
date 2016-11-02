@@ -1,0 +1,14 @@
+{
+  "sTitle": "Microsoft Edge Tree::ANode::IsInTree use-after-free (MemGC) & Abandonment",
+  "sSynopsisFileName": "Synopsis.md",
+  "adxSections": [
+    {"sType": "Text", "sFileName": "#1 Article.md"},
+    {"sType": "Source code", "sFileName": "#2 Repro.xhtml", "sAttachmentFileName": "Repro.xhtml"},
+    {"sType": "BugId report", "sFileName": "#3 AVR.Free 41b.646 microsoftedgecp.exe!edgehtml.dll!Tree..ANode..IsInTree.html", "sAttachmentFileName": "AVR.Free 41b.646 microsoftedgecp.exe!edgehtml.dll!Tree..ANode..IsInTree.html"},
+    {"sType": "BugId report", "sFileName": "#4 Breakpoint 2e5.efc microsoftedgecp.exe!edgehtml.dll!Abandonment..CheckHRESULTStrict.html", "sAttachmentFileName": "Breakpoint 2e5.efc microsoftedgecp.exe!edgehtml.dll!Abandonment..CheckHRESULTStrict.html"}
+  ],
+  "asIcons": [
+    "Bug.svg",
+    "Microsoft Edge.svg"
+  ]
+}

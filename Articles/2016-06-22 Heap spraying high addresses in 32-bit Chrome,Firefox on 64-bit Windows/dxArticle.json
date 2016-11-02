@@ -1,0 +1,19 @@
+{
+  "sTitle": "Heap spraying high addresses in 32-bit Chrome/Firefox on 64-bit Windows",
+  "sSynopsisFileName": "Synopsis.md",
+  "adxSections": [
+    {"sType": "Text", "sFileName": "#1 Intro.md"},
+    {"sType": "Source code", "sFileName": "#2 0xDEADBEEF.html", "sAttachmentFileName": "0xDEADBEEF.html"},
+    {"sType": "Text", "sFileName": "#3 CVE-2014-1736 Google Chrome ImageData signedness error.md"},
+    {"sType": "Source code", "sFileName": "#4 Repro.html", "sAttachmentFileName": "Repro.html"},
+    {"sType": "Text", "sFileName": "#5 Exploit.md"},
+    {"sType": "Source code", "sFileName": "#6 Exploit.html", "sAttachmentFileName": "Exploit.html"},
+    {"sType": "Source code", "sFileName": "#7 readPlusWriteEqualsExecute.js", "sAttachmentFileName": "readPlusWriteEqualsExecute.js"},
+    {"sType": "Source code", "sFileName": "#8 Memory.js", "sAttachmentFileName": "Memory.js"}
+  ],
+  "asIcons": [
+    "Windows.svg",
+    "Google Chrome.svg",
+    "Mozilla Firefox.svg"
+  ]
+}

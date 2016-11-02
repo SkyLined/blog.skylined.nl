@@ -1,0 +1,13 @@
+{
+  "sTitle": "Microsoft Edge CDOMTextNode::get_data type confusion",
+  "sSynopsisFileName": "Synopsis.md",
+  "adxSections": [
+    {"sType": "Text", "sFileName": "#1 Article.md"},
+    {"sType": "Source code", "sFileName": "#2 Repro.html", "sAttachmentFileName": "Repro.html"},
+    {"sType": "Source code", "sFileName": "#3 Exploit.html", "sAttachmentFileName": "Exploit.html"}
+  ],
+  "asIcons": [
+    "Bug.svg",
+    "Microsoft Edge.svg"
+  ]
+}

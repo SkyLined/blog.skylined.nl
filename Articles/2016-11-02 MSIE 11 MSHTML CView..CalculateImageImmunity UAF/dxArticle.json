@@ -1,0 +1,14 @@
+{
+  "sTitle": "MSIE 11 MSHTML CView::CalculateImageImmunity UAF",
+  "sSynopsisFileName": "Synopsis.md",
+  "adxSections": [
+    {"sType": "Text", "sFileName": "#1 Intro.md"},
+    {"sType": "Source code", "sFileName": "#2 Repro.html", "sAttachmentFileName": "Repro.html"},
+    {"sType": "Text", "sFileName": "#3 Exploit.md"},
+    {"sType": "BugId report", "sFileName": "#4 MSHTML.dll!CView..CalculateImageImmunity Arbitrary~FB0 AVR(2B4083E3).html", "sAttachmentFileName": "MSHTML.dll!CView..CalculateImageImmunity Arbitrary~FB0 AVR(2B4083E3).html"}
+  ],
+  "asIcons": [
+    "Bug.svg",
+    "Microsoft Internet Explorer.svg"
+  ]
+}
