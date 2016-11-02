@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
   <channel>
-    <title><<Site title>></title>
-    <description><<Site summary>></description>
-    <link><<Site absolute URL>></link>
-    <<Articles>>
+    <title><<sSiteTitle>></title>
+    <description><<sSiteSummary>></description>
+    <link><<sSiteAbsoluteURL>></link>
+    <<sArticlesXML>>
   </channel>
 </rss>
