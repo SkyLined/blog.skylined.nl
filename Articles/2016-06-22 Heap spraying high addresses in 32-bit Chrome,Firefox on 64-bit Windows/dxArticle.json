@@ -12,6 +12,7 @@
     {"sType": "Source code", "sFileName": "#8 Memory.js", "sAttachmentFileName": "Memory.js"}
   ],
   "asIcons": [
+    "Vuln.svg",
     "Windows.svg",
     "Google Chrome.svg",
     "Mozilla Firefox.svg"

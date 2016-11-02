@@ -11,7 +11,7 @@
     {"sType": "Source code", "sFileName": "#7 Scanner.html", "sAttachmentFileName": "Scanner.html"}
   ],
   "asIcons": [
-    "Bug.svg",
+    "Vuln.svg",
     "Microsoft Internet Explorer.svg"
   ]
 }

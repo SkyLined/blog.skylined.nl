@@ -7,7 +7,7 @@
     {"sType": "Source code", "sFileName": "#3 Exploit.html", "sAttachmentFileName": "Exploit.html"}
   ],
   "asIcons": [
-    "Bug.svg",
+    "Vuln.svg",
     "Microsoft Edge.svg"
   ]
 }

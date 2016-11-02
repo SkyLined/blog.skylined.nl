@@ -10,7 +10,7 @@
     {"sType": "Text", "sFileName": "#6 Mitigations.md"}
   ],
   "asIcons": [
-    "Bug.svg",
+    "Vuln.svg",
     "Windows.svg",
     "Google Chrome.svg",
     "Mozilla Firefox.svg"
