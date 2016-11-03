@@ -203,6 +203,7 @@ code {
 
 .article-source-code-link-icon, .article-bugid-report-link-icon {
   display: inline-block;
+  float: right;
   padding-left: 1em;
   width: 1em;
   height: 1em;
