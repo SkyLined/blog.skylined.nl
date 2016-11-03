@@ -17,7 +17,7 @@ address.
 Using typed arrays for heap sprays
 ----------------------------------
 Most browser heap sprays are based on the code I developed for an exploit in
-2004. For reasons I won't get into here, this heap spray repeatedly
+2004\. For reasons I won't get into here, this heap spray repeatedly
 concatenated a string to itself to exponentially grow the size of this string.
 A number of copies were than made of this string in order to fill the desired
 amount of memory. 
