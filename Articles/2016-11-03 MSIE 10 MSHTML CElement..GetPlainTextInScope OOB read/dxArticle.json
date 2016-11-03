@@ -1,0 +1,17 @@
+{
+  "sTitle": "MSIE 10 MSHTML CElement::GetPlainTextInScope out-of-bounds read",
+  "sSummary": "An out-of-bounds read bug in Microsoft Internet Explorer 11 could potentially allow information disclosure.",
+  "sSynopsisFileName": "Synopsis.md",
+  "adxSections": [
+    {"sType": "Text", "sFileName": "#1 Intro.md"},
+    {"sType": "Source code", "sFileName": "#2 Repro.html", "sAttachmentFileName": "Repro.html"},
+    {"sType": "Text", "sFileName": "#3 Details.md"},
+    {"sType": "BugId report", "sFileName": "#4 IE 10.00 x86 MSHTML.dll!CElement..GetPlainTextInScope Arbitrary~000 AVR(02058506).html", "sAttachmentFileName": "#4 IE 10.00 x86 MSHTML.dll!CElement..GetPlainTextInScope Arbitrary~000 AVR(02058506).html"},
+    {"sType": "BugId report", "sFileName": "#4 IE 10.00 x86 MSHTML.dll!CElement..GetPlainTextInScope Arbitrary~000 AVR(4B67A6C4).html", "sAttachmentFileName": "#4 IE 10.00 x86 MSHTML.dll!CElement..GetPlainTextInScope Arbitrary~000 AVR(4B67A6C4).html"},
+    {"sType": "BugId report", "sFileName": "#4 IE 10.00 x86 MSHTML.dll!CElement..GetPlainTextInScope Arbitrary~000 AVR(56BB30E2).html", "sAttachmentFileName": "#4 IE 10.00 x86 MSHTML.dll!CElement..GetPlainTextInScope Arbitrary~000 AVR(56BB30E2).html"}
+  ],
+  "asIcons": [
+    "Vuln.svg",
+    "Microsoft Internet Explorer.svg"
+  ]
+}
