@@ -18,7 +18,7 @@ Known affected software and attack vectors
 + **Microsoft Internet Explorer 11** (all versions before the June 2016 patch)
 
   An attacker would need to get a target user to open a specially crafted
-  webpage. Disabling JavaScript should prevent an attacker from triggering the
+  web-page. Disabling JavaScript should prevent an attacker from triggering the
   vulnerable code path.
 
 Repro

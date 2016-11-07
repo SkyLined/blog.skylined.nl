@@ -15,7 +15,7 @@ Known affected software, attack vectors and mitigation
 + **Microsoft Internet Explorer 10 and 11**
 
   An attacker would need to get a target user to open a specially crafted
-  webpage.
+  web-page.
 
 Description
 -----------

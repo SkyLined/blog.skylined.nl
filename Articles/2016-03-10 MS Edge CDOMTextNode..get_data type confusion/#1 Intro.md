@@ -17,4 +17,4 @@ Known affected software, attack vectors and mitigation
 + **Microsoft Edge 20.10240.16384.0**
 
   An attacker would need to get a target user to open a specially crafted
-  webpage. JavaScript appears to be required to trigger the issue.
+  web-page. JavaScript appears to be required to trigger the issue.

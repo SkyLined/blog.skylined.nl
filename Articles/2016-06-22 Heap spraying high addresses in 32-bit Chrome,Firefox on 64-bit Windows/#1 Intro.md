@@ -74,7 +74,7 @@ to `0xBADC0DED` is as simple as setting a few values in the array at the right
 index. Because the base address of the memory block depends on the allocator
 used by the browser, it is deterministic and the right index can be guessed
 with very high reliability. The code below shows how this is done. After
-loading this webpage you can inspect the memory at `0xDEADBEEF` (in Chrome
+loading this web-page you can inspect the memory at `0xDEADBEEF` (in Chrome
 make sure you have the render process) to make sure it contains the value
 `0xBADC0DED`.
 

@@ -14,8 +14,8 @@ some control over the contents of this memory before MSIE reuses the freed
 memory, there is a chance that this issue could be used to execute arbitrary
 code. I did not attempt to write an exploit for this vulnerability myself.
 
-Timeline
---------
+Time-line
+---------
 * *April 2014*: This vulnerability was found through fuzzing.
 * *July 2014*: This vulnerability was submitted to [ZDI][].
 * *July 2014*: ZDI reports a collision with a report by another researcher.

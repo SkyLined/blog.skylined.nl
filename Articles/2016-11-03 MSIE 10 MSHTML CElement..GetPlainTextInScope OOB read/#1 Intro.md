@@ -5,12 +5,12 @@ MSIE 10 MSHTML CElement::GetPlainTextInScope out-of-bounds read
 
 Synopsis
 --------
-An unknown issue in Microsoft Internet Explorer 10 could cause it to read data
-out-of-bounds. This issue was fixed before I was able to analyze it in detail,
-hence I did not determine exactly what the root cause was.
+A specially crafted web-page can cause Microsoft Internet Explorer 10 to read
+data out-of-bounds. This issue was fixed before I was able to analyze it in
+detail, hence I did not determine exactly what the root cause was.
 
-Known affected software
------------------------
+Known affected versions, attack vectors and mitigations
+-------------------------------------------------------
   + Internet Explorer 10
     
     An attacker would need to get a target user to open a specially crafted

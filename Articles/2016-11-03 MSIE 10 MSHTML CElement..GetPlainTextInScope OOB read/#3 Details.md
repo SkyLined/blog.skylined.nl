@@ -29,20 +29,20 @@ interesting information on all three:
    disassembly had a bug and started at the wrong address, so this isn't very
    useful. However, clicking on `Registers` will show that:
    * The crash happened in `MSHTML!memcpy`
-   * the code looked for a unicode linefeed (0x000A) immediately after data
+   * the code looked for a Unicode linefeed (0x000A) immediately after data
      pointed to by `edx`.
    
    The `Registers` section also suggest the following:
    * `ecx` was 0, so maybe all the data was already copied at this point?
    * `edx` was apparently used as a pointer to the data being copied.
    
-Online documentation for `memcpy` does not mention this behavior of looking for
-a linefeed, so it could be that `MSHTML` has an odd implementation, or that the
-symbol is simply wrong. I'm assuming that the code did copy the text content of
-a `textarea` element and was looking for a `CR`, `LF` line terminator.
-Unfortunately, the data at `edx` only contained one or the other, causing the
-code to look for the `LF` outside of the memory area allocated to store the
-data.
+On-line documentation for `memcpy` does not mention this behavior of looking
+for a linefeed, so it could be that `MSHTML` has an odd implementation, or that
+the symbol is simply wrong. I'm assuming that the code did copy the text
+content of a `textarea` element and was looking for a `CR`, `LF` line
+terminator. Unfortunately, the data at `edx` only contained one or the other,
+causing the code to look for the `LF` outside of the memory area allocated to
+store the data.
 
 Exploit
 -------
