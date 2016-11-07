@@ -1,0 +1,15 @@
+{
+  "sTitle": "MSIE 9 MSHTML CPtsTextParaclient::CountApes out-of-bounds read",
+  "sSummary": "An out-of-bounds read bug in Microsoft Internet Explorer 9 could potentially allow information disclosure.",
+  "sSynopsisFileName": "Synopsis.md",
+  "adxSections": [
+    {"sType": "Text", "sFileName": "#1 Intro.md"},
+    {"sType": "Source code", "sFileName": "#2 Repro.html", "sAttachmentFileName": "Repro.html"},
+    {"sType": "Text", "sFileName": "#3 Details.md"},
+    {"sType": "BugId report", "sFileName": "#4 IE 9.00 x86 MSHTML.dll!CPtsTextParaclient..CountApes Arbitrary~BBB AVR(3CE28B51).html", "sAttachmentFileName": "MSHTML.dll!CPtsTextParaclient..CountApes Arbitrary~BBB AVR(3CE28B51).html"}
+  ],
+  "asIcons": [
+    "Vuln.svg",
+    "Microsoft Internet Explorer.svg"
+  ]
+}
