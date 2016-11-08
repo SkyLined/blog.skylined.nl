@@ -43,9 +43,9 @@ Known affected versions, attack vectors and mitigations
   this is by design.
 * **Internet Information Server (IIS)**
   
-  If *Active Server Pages* (ASP) are enabled, VBScript can be executed in Active
-  Server Pages. An attacker would need to find an asp page that accepts an
-  attacker supplied regular expression and a string, or be able to inject
+  If *Active Server Pages* (ASP) are enabled, VBScript can be executed in
+  Active Server Pages. An attacker would need to find an asp page that accepts
+  an attacker supplied regular expression and a string, or be able to inject
   VBScript into an ASP page in order to trigger the vulnerability.
 
 Repro
