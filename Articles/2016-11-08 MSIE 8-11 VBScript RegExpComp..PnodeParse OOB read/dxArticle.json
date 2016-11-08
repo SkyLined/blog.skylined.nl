@@ -1,0 +1,19 @@
+{
+  "sTitle": "VBScript RegExpComp::PnodeParse out-of-bounds read",
+  "sSummary": "An out-of-bounds read bug in VBScript could potentially allow information disclosure.",
+  "sSynopsisFileName": "Synopsis.md",
+  "adxSections": [
+    {"sType": "Text", "sFileName": "#1 Intro.md"},
+    {"sType": "Source code", "sFileName": "#2 Repro.html", "sAttachmentFileName": "Repro.html"},
+    {"sType": "Text", "sFileName": "#3 Details.md"},
+    {"sType": "BugId report", "sFileName": "#4.1 IE 8.00 x86 vbscript.dll!RegExpComp..PnodeParse Arbitrary AVR(EEDBC711).html", "sAttachmentFileName": "IE 8.00 x86 vbscript.dll!RegExpComp..PnodeParse Arbitrary AVR(EEDBC711).html"},
+    {"sType": "BugId report", "sFileName": "#4.2 IE 9.00 x86 vbscript.dll!RegExpComp..PnodeParse Arbitrary~000 AVR(8CA4C6B8).html", "sAttachmentFileName": "IE 9.00 x86 vbscript.dll!RegExpComp..PnodeParse Arbitrary~000 AVR(8CA4C6B8).html"},
+    {"sType": "BugId report", "sFileName": "#4.3 IE 10.00 x86 vbscript.dll!RegExpComp..PnodeParse Arbitrary~000 AVR(0D0F5A8B).html", "sAttachmentFileName": "IE 10.00 x86 vbscript.dll!RegExpComp..PnodeParse Arbitrary~000 AVR(0D0F5A8B).html"},
+    {"sType": "BugId report", "sFileName": "#4.4 IE 11.00 x86 vbscript.dll!RegExpComp..PnodeParse Arbitrary AVR(B6811A1F).html", "sAttachmentFileName": "IE 11.00 x86 vbscript.dll!RegExpComp..PnodeParse Arbitrary AVR(B6811A1F).html"}
+  ],
+  "asIcons": [
+    "Vuln.svg",
+    "Script.svg",
+    "Microsoft Internet Explorer.svg"
+  ]
+}

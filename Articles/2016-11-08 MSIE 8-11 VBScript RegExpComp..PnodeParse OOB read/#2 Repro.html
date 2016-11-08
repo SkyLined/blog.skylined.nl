@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="x-ua-compatible" content="IE=10">
+    <script language="VBScript">
+      Dim oRegExp
+      Set oRegExp = New RegExp
+      Sub RegExpSetPattern(sPattern)
+        oRegExp.Pattern = sPattern
+      End Sub
+      Function RegExpExecute(sData)
+        RegExpExecute = oRegExp.Execute(sData)
+      End Function
+    </script>
+    <script language="Javascript">
+      RegExpSetPattern("\u0504\u0706\u0908\u0B0A\u0D0C\u0F0E\u1110\u1312\u1514\u1716\u1918\u1B1A\\");
+      var oObject = RegExpExecute("23456789ABCD\0");
+    </script>
+  </head>
+</html>
