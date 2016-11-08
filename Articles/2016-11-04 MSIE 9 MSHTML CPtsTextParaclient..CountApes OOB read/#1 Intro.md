@@ -1,6 +1,5 @@
 MSIE 9 MSHTML CPtsTextParaclient::CountApes out-of-bounds read
 ==============================================================
-
 (The fix and CVE number for this bug are not known)
 
 Synopsis
