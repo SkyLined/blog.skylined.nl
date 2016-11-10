@@ -23,7 +23,6 @@ html {
 }
 body {
   margin: auto;
-  max-width: 80em;
 }
 h1, h2, h3, h4, h5 {
   max-width: 100%;
@@ -83,9 +82,11 @@ code {
 
 .banner-logo {
   display: block;
-  height: 250px;
+  height: 350px;
   background-image: url("/Images/Banner.png")!important;
   background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-color: rgba(22, 19, 16, 1);
   border: 1px solid rgba(22, 19, 16, 0.3)!important;
   border-radius: 0.5em;
   margin-bottom: 1em;
