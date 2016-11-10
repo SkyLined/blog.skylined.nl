@@ -58,11 +58,9 @@ if (document.referrer) {
       "use an add-on that hides referers, or switch to a different web-browser if none of these options are possible.",
       EOL,
       EOL,
-      
       "You came here from this website: ",
       foCreateElementWithContents("strong", document.referrer), ".", EOL,
       EOL,
-      
       "For more information see the Mozilla Developer Network page for ",
       foCreateLinkElementWithContent("https://developer.mozilla.org/en-US/docs/Web/API/Document/referrer", "Document.referrer"), " ",
       "and/or the Wikipedia page for ",
@@ -122,12 +120,10 @@ for (var uIndex = 0; uIndex < asCookies.length; uIndex++){
         "after you've restarted your web-browser), install and use a cookie-management add-on, or switch to a ",
         "different web-browser if none of these options are possible.", EOL,
         EOL,
-        
         "The last time you visited this website was ", foCreateElementWithContents("strong", [
           "about " + sTimeSinceLastCookieWasSet + " ago at ", new Date(uLastCookieSetTime).toLocaleString()
         ]), ".", EOL,
         EOL,
-        
         "For more information see the Wikipedia page for ",
         foCreateLinkElementWithContent("https://en.wikipedia.org/wiki/HTTP_cookie", "HTTP cookies"), ".", EOL,
         EOL,
@@ -152,10 +148,8 @@ oXHR.addEventListener("readystatechange", function() {
       "This is a friendly warning that you do not appear to have an ad-blocker installed. Malicious advertisements ",
       "are regularly abused as an attack vector to compromise machines when a user visits a website that shows these ",
       "advertisements. You may want to install and use an ad-blocker add-on, or switch to a different web-browser if ",
-      "none of these options are possible.",
+      "none of these options are possible.", EOL,
       EOL,
-      EOL,
-      
       "For more information see the Wikipedia page for ",
       foCreateLinkElementWithContent("https://en.wikipedia.org/wiki/Malvertising", "Malvertising"),
       ".", EOL,
@@ -194,7 +188,6 @@ if (RTCPeerConnection) {
           "web-browser, install and use an add-on that hides local IP addresses in WebRTC , or switch to a different ",
           "web-browser if none of these options are possible.", EOL,
           EOL,
-          
           "The leaked local IP address", asLocalIPAddresses.length == 1 ? " is" : "es are", ": ",
           asLocalIPAddresses.join(", "), ".", EOL,
           EOL,
@@ -246,6 +239,10 @@ function fReportInlineScriptContentSecurityPolicyViolation() {
     "asked it to. Content Security Policy is a standard that can mitigate and prevent various attacks. You may want ",
     "to switch to a different web-browser that does implement it correctly.", EOL,
     EOL,
+    "For more information see the Wikipedia page for ",
+    foCreateLinkElementWithContent("https://en.wikipedia.org/wiki/Content_Security_Policy", "Content Security Policy"),
+    ".", EOL,
+    EOL,
   ]);
 };
 // Create an iframe to open a new windows in, to check if the "opener" property is null or not.
@@ -277,6 +274,10 @@ function fReportContentSecurityPolicyViolations(asViolatedDirectives) {
       "features correctly. Specifically, it does not apply the " + sQuotedViolatedDirectives + " directives that this ",
       "website explicitly asked for. Content Security Policy is a standard that can mitigate and prevent various ",
       "attacks. You may want to switch to a different web-browser that does implement it correctly.", EOL,
+      EOL,
+      "For more information see the Wikipedia page for ",
+      foCreateLinkElementWithContent("https://en.wikipedia.org/wiki/Content_Security_Policy", "Content Security Policy"),
+      ".", EOL,
       EOL,
     ]);
   };
