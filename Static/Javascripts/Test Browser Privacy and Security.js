@@ -282,3 +282,18 @@ function fReportContentSecurityPolicyViolations(asViolatedDirectives) {
     ]);
   };
 };
+if (navigator.doNotTrack != "1" && navigator.msDoNotTrack != "1") {
+  console.log("Detected do-not-track is not enabled: showing warning");
+  fShowOrQueueWarning([
+    foCreateElementWithContents("h3", "Security warning: Do-Not-Track is not enabled!"), EOL,
+    "This is a friendly warning that your web-browser does not appear to have Do-Not-Track enabled. When you enable ",
+    "Do-Not-Track, your browser informs web servers that you do not wish to be tracked, which helps protect your ",
+    "privacy online. You may want to enable Do-Not-Track in your browser, or switch to a different web-browser if ",
+    "that is not possible.", EOL,
+    EOL,
+    "For more information see the Wikipedia page for ",
+    foCreateLinkElementWithContent("https://en.wikipedia.org/wiki/Do_Not_Track", "Do Not Track"),
+    ".", EOL,
+    EOL,
+  ]);
+};
