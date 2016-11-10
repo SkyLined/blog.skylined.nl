@@ -53,9 +53,9 @@ if (document.referrer) {
     console.log("Detected referrer information leak: showing warning");
     fShowOrQueueWarning([
       foCreateElementWithContents("h3", "Privacy warning: document.referrer leak detected!"), EOL,
-      "This is a friendly warning that your webbrowser appears to be leaking the address of the page from which ",
-      "you arrived on this website. You may want to reconfigure your webbrowser to prevent this, install and ",
-      "use an add-on that hides referers, or switch to a different webbrowser if none of these options are possible.",
+      "This is a friendly warning that your web-browser appears to be leaking the address of the page from which ",
+      "you arrived on this website. You may want to reconfigure your web-browser to prevent this, install and ",
+      "use an add-on that hides referers, or switch to a different web-browser if none of these options are possible.",
       EOL,
       EOL,
       
@@ -115,12 +115,12 @@ for (var uIndex = 0; uIndex < asCookies.length; uIndex++){
       console.log("Detected cookie that was set a long time ago: showing warning");
       fShowOrQueueWarning([
         foCreateElementWithContents("h3", "Privacy warning: persistent cookies detected!"), EOL,
-        "This is a friendly warning that your webbrowser does not appear to have deleted cookies for this website ",
+        "This is a friendly warning that your web-browser does not appear to have deleted cookies for this website ",
         "since the last time you visited it. There is no need for your browser to save cookies for this website, but ",
-        "cookies can be abused by malicious websites to track you. You may want to reconfigure your webbrowser to ",
+        "cookies can be abused by malicious websites to track you. You may want to reconfigure your web-browser to ",
         "only store cookies for sites that you need them on (e.g. site that you want to remain logged-in to even ",
-        "after you've restarted your webbrowser), install and use a cookie-management add-on, or switch to a ",
-        "different webbrowser if none of these options are possible.", EOL,
+        "after you've restarted your web-browser), install and use a cookie-management add-on, or switch to a ",
+        "different web-browser if none of these options are possible.", EOL,
         EOL,
         
         "The last time you visited this website was ", foCreateElementWithContents("strong", [
@@ -151,7 +151,7 @@ oXHR.addEventListener("readystatechange", function() {
       foCreateElementWithContents("h3", "Security warning: No ad-blocker detected!"), EOL,
       "This is a friendly warning that you do not appear to have an ad-blocker installed. Malicious advertisements ",
       "are regularly abused as an attack vector to compromise machines when a user visits a website that shows these ",
-      "advertisements. You may want to install and use an ad-blocker add-on, or switch to a different webbrowser if ",
+      "advertisements. You may want to install and use an ad-blocker add-on, or switch to a different web-browser if ",
       "none of these options are possible.",
       EOL,
       EOL,
@@ -177,7 +177,7 @@ if (RTCPeerConnection) {
       var asCandidate = oRTCIceCandidate.candidate.split(" ");
       if (asCandidate[7] == "host") {
         var sLocalIPAddress = asCandidate[4];
-        if (/[0-9]{1,3}(?:\.[0-9]{1,3}){3}|[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){7}/.exec(sIPAddress)) {
+        if (/[0-9]{1,3}(?:\.[0-9]{1,3}){3}|[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){7}/.exec(sLocalIPAddress)) {
           dsLocalIPAddresses[sLocalIPAddress] = 1;
         };
       };
@@ -188,11 +188,11 @@ if (RTCPeerConnection) {
         console.log("Detected local IP address: showing warning");
         fShowOrQueueWarning([
           foCreateElementWithContents("h3", "Security warning: WebRTC local IP address leak detected!"), EOL,
-          "This is a friendly warning that your webbrowser appears to be leaking the local IP address of your ", 
+          "This is a friendly warning that your web-browser appears to be leaking the local IP address of your ", 
           "device through the WebRTC feature. This information is useful if a malicious websites wants to scan your ",
           "local network and/or attack this and other devices on your local network. You may want to reconfigure your ",
-          "webbrowser, install and use an add-on that hides local IP addresses in WebRTC , or switch to a different ",
-          "webbrowser if none of these options are possible.", EOL,
+          "web-browser, install and use an add-on that hides local IP addresses in WebRTC , or switch to a different ",
+          "web-browser if none of these options are possible.", EOL,
           EOL,
           
           "The leaked local IP address", asLocalIPAddresses.length == 1 ? " is" : "es are", ": ",
@@ -225,12 +225,59 @@ oFlashElement.addEventListener("readystatechange", function() {
     console.log("Detected Adobe Flash: showing warning");
     fShowOrQueueWarning([
       foCreateElementWithContents("h3", "Security warning: Adobe Flash detected!"), EOL,
-      "This is a friendly warning that your webbrowser appears to have Adobe Flash installed and enabled for use on ",
+      "This is a friendly warning that your web-browser appears to have Adobe Flash installed and enabled for use on ",
       "this website. There is no need for your browser to allow Adobe Flash on this website, but it is regularly ",
       "abused as an attack vector to compromise machines. You may want to un-install Flash, reconfigure your ",
-      "webbrowser to block Flash on all websites unless you specifically enable it, use a plugin-management add-on, ",
-      "or switch to a different webbrowser if none of these options are possible.", EOL,
+      "web-browser to block Flash on all websites unless you specifically enable it, use a plugin-management add-on, ",
+      "or switch to a different web-browser if none of these options are possible.", EOL,
       EOL,
     ]);
   };
 });
+// Test Content Security Policy
+function fReportInlineScriptContentSecurityPolicyViolation() {
+  // The page will attempt to execute an inline script which calls this function. This is forbidden by CSP, so if this
+  // function does get called, it should be reported.
+  console.log("Detected CSP violation for inline scripts: showing warning");
+  fShowOrQueueWarning([
+    foCreateElementWithContents("h3", "Security warning: inline script Content Security Policy is not enforced!"), EOL,
+    "This is a friendly warning that your web-browser does not appear to implement Content Security Policy ",
+    "correctly. Specifically, it does not prevent execution of inline script even though this website explicitly ",
+    "asked it to. Content Security Policy is a standard that can mitigate and prevent various attacks. You may want ",
+    "to switch to a different web-browser that does implement it correctly.", EOL,
+    EOL,
+  ]);
+};
+// Create an iframe to open a new windows in, to check if the "opener" property is null or not.
+console.log("Attempting to load a blank page in an iframe to check for opener CSP violation");
+var oCSPOpenerTestIFrame = document.createElement("iframe");
+oCSPOpenerTestIFrame.style.setProperty("visibility", "hidden");
+oCSPOpenerTestIFrame.style.setProperty("position", "absolute");
+oCSPOpenerTestIFrame.style.setProperty("left", "0");
+oCSPOpenerTestIFrame.style.setProperty("top", "0");
+oCSPOpenerTestIFrame.style.setProperty("height", "0");
+oCSPOpenerTestIFrame.style.setProperty("width", "0");
+oCSPOpenerTestIFrame.style.setProperty("border", "none");
+oCSPOpenerTestIFrame.style.setProperty("z-index", "-1");
+oCSPOpenerTestIFrame.setAttribute("name", "CSPOpenerTestIFrame");
+document.documentElement.appendChild(oCSPOpenerTestIFrame);
+open("Test Content Security Policy violations.html", "CSPOpenerTestIFrame");
+function fReportContentSecurityPolicyViolations(asViolatedDirectives) {
+  document.documentElement.removeChild(oCSPOpenerTestIFrame);
+  if (asViolatedDirectives.length > 0) {
+    var asQuotedViolatedDirectives = asViolatedDirectives.map(function (s) { return "'" + s + "'"; }),
+        sLastQuotedViolatedDirective = asQuotedViolatedDirectives.pop();
+        sFirstQuotedViolatedDirectives = asQuotedViolatedDirectives.join(", ");
+        sQuotedViolatedDirectives = (sFirstQuotedViolatedDirectives ? sFirstQuotedViolatedDirectives + " and " : "") + 
+              sLastQuotedViolatedDirective;
+    console.log("Detected CSP violation for " + sQuotedViolatedDirectives + ": showing warning");
+    fShowOrQueueWarning([
+      foCreateElementWithContents("h3", "Security warning: Not all Content Security Policy directives are enforced!"), EOL,
+      "This is a friendly warning that your web-browser does not appear to implement all Content Security Policy ",
+      "features correctly. Specifically, it does not apply the " + sQuotedViolatedDirectives + " directives that this ",
+      "website explicitly asked for. Content Security Policy is a standard that can mitigate and prevent various ",
+      "attacks. You may want to switch to a different web-browser that does implement it correctly.", EOL,
+      EOL,
+    ]);
+  };
+};

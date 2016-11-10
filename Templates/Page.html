@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/> 
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; disown-opener; referrer no-referrer;"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:site" content="@berendjanwever"/>
@@ -14,12 +15,15 @@
     <link rel="stylesheet" type="text/css" href="Stylesheets/Markdown.css" media="screen"/>
     <link rel="stylesheet" type="text/css" href="Stylesheets/SkyLight.css" media="screen"/>
     <title><<sTitle>></title>
-    <script src="/Javascripts/ShowSecurityWarnings.js">
+    <script src="Javascripts/Test Browser Privacy and Security.js">
       This script will check to see if the user's browser has known privacy and security issues and warn about them.
+    </script>
+    <script>
+      fReportInlineScriptContentSecurityPolicyViolation();
     </script>
   </head>
   <body>
-    <span class="banner-logo" onclick="location.href='/';">
+    <span class="banner-logo">
       <span class="internal-links banner-links card">
         <a class="icon" title="Home" href="/"/>
           <img class="icon" src="/Images/Home.svg"/>
