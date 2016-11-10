@@ -12,11 +12,11 @@
     {"sType": "Source code", "sFileName": "#7 readPlusWriteEqualsExecute.js", "sAttachmentFileName": "readPlusWriteEqualsExecute.js"},
     {"sType": "Source code", "sFileName": "#8 Memory.js", "sAttachmentFileName": "Memory.js"}
   ],
-  "asIcons": [
-    "Vuln.svg",
-    "Sploit.svg",
-    "Windows.svg",
-    "Google Chrome.svg",
-    "Mozilla Firefox.svg"
+  "asTags": [
+    "Vuln",
+    "Sploit",
+    "Microsoft Windows",
+    "Google Chrome",
+    "Mozilla Firefox"
   ]
 }

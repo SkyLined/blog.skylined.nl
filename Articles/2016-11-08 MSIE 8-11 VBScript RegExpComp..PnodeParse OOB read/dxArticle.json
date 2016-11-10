@@ -11,9 +11,9 @@
     {"sType": "BugId report", "sFileName": "#4.3 IE 10.00 x86 vbscript.dll!RegExpComp..PnodeParse Arbitrary~000 AVR(0D0F5A8B).html", "sAttachmentFileName": "IE 10.00 x86 vbscript.dll!RegExpComp..PnodeParse Arbitrary~000 AVR(0D0F5A8B).html"},
     {"sType": "BugId report", "sFileName": "#4.4 IE 11.00 x86 vbscript.dll!RegExpComp..PnodeParse Arbitrary AVR(B6811A1F).html", "sAttachmentFileName": "IE 11.00 x86 vbscript.dll!RegExpComp..PnodeParse Arbitrary AVR(B6811A1F).html"}
   ],
-  "asIcons": [
-    "Vuln.svg",
-    "Script.svg",
-    "Microsoft Internet Explorer.svg"
+  "asTags": [
+    "Vuln",
+    "Script",
+    "Microsoft Internet Explorer"
   ]
 }

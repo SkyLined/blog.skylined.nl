@@ -10,8 +10,8 @@
     {"sType": "BugId report", "sFileName": "#4 IE 10.00 x86 MSHTML.dll!CElement..GetPlainTextInScope Arbitrary~000 AVR(4B67A6C4).html", "sAttachmentFileName": "IE 10.00 x86 MSHTML.dll!CElement..GetPlainTextInScope Arbitrary~000 AVR(4B67A6C4).html"},
     {"sType": "BugId report", "sFileName": "#4 IE 10.00 x86 MSHTML.dll!CElement..GetPlainTextInScope Arbitrary~000 AVR(56BB30E2).html", "sAttachmentFileName": "IE 10.00 x86 MSHTML.dll!CElement..GetPlainTextInScope Arbitrary~000 AVR(56BB30E2).html"}
   ],
-  "asIcons": [
-    "Vuln.svg",
-    "Microsoft Internet Explorer.svg"
+  "asTags": [
+    "Vuln",
+    "Microsoft Internet Explorer"
   ]
 }

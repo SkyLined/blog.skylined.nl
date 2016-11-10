@@ -13,8 +13,8 @@
     {"sType": "Text", "sFileName": "#8 Conclusion.md"},
     {"sType": "Source code", "sFileName": "#9 Repro.html", "sAttachmentFileName": "Repro.html"}
   ],
-  "asIcons": [
-    "Bug.svg",
-    "Microsoft Edge.svg"
+  "asTags": [
+    "Bug",
+    "Microsoft Edge"
   ]
 }

@@ -5,7 +5,7 @@
   "adxSections": [
     {"sType": "Text", "sFileName": "#1 Article.md"}
   ],
-  "asIcons": [
-    "Information.svg"
+  "asTags": [
+    "Information"
   ]
 }

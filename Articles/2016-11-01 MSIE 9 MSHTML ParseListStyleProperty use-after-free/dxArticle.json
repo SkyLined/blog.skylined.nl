@@ -8,8 +8,8 @@
     {"sType": "Text", "sFileName": "#3 Details.md"},
     {"sType": "BugId report", "sFileName": "#4 MSHTML.dll!ParseListStyleProperty Arbitrary~FE0 AVR(3986463A).html", "sAttachmentFileName": "MSHTML.dll!ParseListStyleProperty Arbitrary~FE0 AVR(3986463A).html"}
   ],
-  "asIcons": [
-    "Vuln.svg",
-    "Microsoft Internet Explorer.svg"
+  "asTags": [
+    "Vuln",
+    "Microsoft Internet Explorer"
   ]
 }

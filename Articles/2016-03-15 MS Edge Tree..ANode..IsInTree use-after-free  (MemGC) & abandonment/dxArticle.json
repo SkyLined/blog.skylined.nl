@@ -8,8 +8,8 @@
     {"sType": "BugId report", "sFileName": "#3 AVR.Free 41b.646 microsoftedgecp.exe!edgehtml.dll!Tree..ANode..IsInTree.html", "sAttachmentFileName": "AVR.Free 41b.646 microsoftedgecp.exe!edgehtml.dll!Tree..ANode..IsInTree.html"},
     {"sType": "BugId report", "sFileName": "#4 Breakpoint 2e5.efc microsoftedgecp.exe!edgehtml.dll!Abandonment..CheckHRESULTStrict.html", "sAttachmentFileName": "Breakpoint 2e5.efc microsoftedgecp.exe!edgehtml.dll!Abandonment..CheckHRESULTStrict.html"}
   ],
-  "asIcons": [
-    "Bug.svg",
-    "Microsoft Edge.svg"
+  "asTags": [
+    "Bug",
+    "Microsoft Edge"
   ]
 }

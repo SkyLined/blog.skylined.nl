@@ -11,8 +11,8 @@
     {"sType": "Text", "sFileName": "#6 Scanner.md"},
     {"sType": "Source code", "sFileName": "#7 Scanner.html", "sAttachmentFileName": "Scanner.html"}
   ],
-  "asIcons": [
-    "Vuln.svg",
-    "Microsoft Internet Explorer.svg"
+  "asTags": [
+    "Vuln",
+    "Microsoft Internet Explorer"
   ]
 }

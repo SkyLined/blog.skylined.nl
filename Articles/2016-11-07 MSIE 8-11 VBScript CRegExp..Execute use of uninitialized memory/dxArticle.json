@@ -10,10 +10,10 @@
     {"sType": "Text", "sFileName": "#3 Details.md"},
     {"sType": "Source code", "sFileName": "#4 sploit.html", "sAttachmentFileName": "sploit.html"}
   ],
-  "asIcons": [
-    "Vuln.svg",
-    "Sploit.svg",
-    "Script.svg",
-    "Microsoft Internet Explorer.svg"
+  "asTags": [
+    "Vuln",
+    "Sploit",
+    "Script",
+    "Microsoft Internet Explorer"
   ]
 }
