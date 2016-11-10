@@ -7,7 +7,10 @@
   color: inherit;
   background: transparent;
   word-wrap: break-word;
+  line-break: loose;
   overflow-wrap: break-word;
+  overflow: ellipsis;
+  hyphens: auto;
   font-size: inherit;
 }
 html {
@@ -24,7 +27,7 @@ body {
 }
 h1, h2, h3, h4, h5 {
   font-weight: 700;
-    overflow: ellipsis;
+  max-width: 100%;
 }
 a {
   color: inherit;
