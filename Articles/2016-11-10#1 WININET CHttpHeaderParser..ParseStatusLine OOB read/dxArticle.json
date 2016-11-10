@@ -1,0 +1,20 @@
+{
+  "sTitle": "WININET CHttpHeaderParser::ParseStatusLine out-of-bounds read",
+  "sSummary": "An out-of-bounds read vulnerability in WININET in Windows 10 could potentially allow information disclosure.",
+  "sSynopsisFileName": "Synopsis.md",
+  "adxSections": [
+    {"sType": "Text", "sFileName": "#1 Intro.md"},
+    {"sType": "Source code", "sFileName": "#2.1 Repro.html", "sAttachmentFileName": "Repro.html"},
+    {"sType": "Source code", "sFileName": "#2.2 Response.http", "sAttachmentFileName": "Response.http"},
+    {"sType": "Text", "sFileName": "#3 Details.md"},
+    {"sType": "BugId report", "sFileName": "#4.1 AVR;OOB[0xAB]+0x5 microsoftedgecp.exe!WININET.dll!CHttpHeaderParser;;ParseStatusLine CBA208.html", "sAttachmentFileName": "#4.1 AVR.OOB[0xAB]+0x5 microsoftedgecp.exe!WININET.dll!CHttpHeaderParser..ParseStatusLine CBA208.html"},
+    {"sType": "BugId report", "sFileName": "#4.2 AVR.OOB+4xN 917.577 microsoftedgecp.exe!wininet.dll!CHttpHeaderParser..ParseStatusLine.html", "sAttachmentFileName": "AVR.OOB+4xN 917.577 microsoftedgecp.exe!wininet.dll!CHttpHeaderParser..ParseStatusLine.html"}
+  ],
+  "asTags": [
+    "Vuln",
+    "Microsoft Windows",
+    "Microsoft Internet Explorer",
+    "Microsoft Edge",
+    "Microsoft Windows Media Player"
+  ]
+}

