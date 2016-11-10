@@ -26,8 +26,8 @@ body {
   max-width: 80em;
 }
 h1, h2, h3, h4, h5 {
-  font-weight: 700;
   max-width: 100%;
+  font-weight: 700;
 }
 a {
   color: inherit;
@@ -209,9 +209,9 @@ code {
   display: inline-block;
   float: right;
   padding-left: 1em;
-  width: 1em;
-  height: 1em;
-  background-image: url("/Images/Link.png");
+  width: 1.2em;
+  height: 1.2em;
+  background-image: url("/Images/Link.svg");
   background-size: contain;
   background-position: 50% 50%;
   background-repeat: no-repeat;
