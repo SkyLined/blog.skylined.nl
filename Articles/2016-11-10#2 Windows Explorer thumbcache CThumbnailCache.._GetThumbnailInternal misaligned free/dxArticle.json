@@ -1,6 +1,6 @@
 {
   "sTitle": "Windows Explorer thumbcache CThumbnailCache::_GetThumbnailInternal misaligned free",
-  "sSummary": "A misaligned free bug in the thumbcache component of explorer.exe can cause unxepected application termination.",
+  "sSummary": "A misaligned free bug in the thumbcache component of explorer.exe can cause unexpected application termination.",
   "sSynopsisFileName": "Synopsis.md",
   "adxSections": [
     {"sType": "Text", "sFileName": "Article.md"},
