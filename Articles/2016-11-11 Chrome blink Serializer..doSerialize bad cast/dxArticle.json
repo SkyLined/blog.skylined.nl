@@ -1,0 +1,14 @@
+{
+  "sTitle": "Google Chrome blink Serializer::doSerialize bad cast",
+  "sSummary": "A bad cast bug in the blink rendering engine used by Google Chrome could potentially allow remote code execution.",
+  "sSynopsisFileName": "Synopsis.md",
+  "adxSections": [
+    {"sType": "Text", "sFileName": "#1 Synopsis, Versions, Repro, Description.md"},
+    {"sType": "Source code snippet", "sFileName": "#2 Source.cpp"},
+    {"sType": "Text", "sFileName": "#3 Exploit, Time-line.md"}
+  ],
+  "asTags": [
+    "Vuln",
+    "Google Chrome"
+  ]
+}
