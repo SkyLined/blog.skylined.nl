@@ -1,0 +1,16 @@
+{
+  "sTitle": "Microsoft Edge edgehtml CAttrArray::Destroy use-after-free",
+  "sSummary": "A use-after-free issue in Microsoft Edge could potentially allow remote code execution, though this is unlikely.",
+  "sSynopsisFileName": "Synopsis.md",
+  "adxSections": [
+    {"sType": "Text", "sFileName": "#1 Synopsis, versions, repro, description, exploit.md"},
+    {"sType": "Source code", "sFileName": "#2 Repro.html", "sAttachmentFileName": "Repro.html"},
+    {"sType": "Text", "sFileName": "#3 Source code.md"},
+    {"sType": "Source code snippet", "sFileName": "#4 CAttrArray..Destroy source.asm"},
+    {"sType": "Text", "sFileName": "#5 time-line.md"}
+  ],
+  "asTags": [
+    "Vuln",
+    "Microsoft Edge"
+  ]
+}
