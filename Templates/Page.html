@@ -2,19 +2,20 @@
 <html>
   <head>
     <meta charset="utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/> 
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; disown-opener; referrer no-referrer;"/>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; disown-opener; referrer no-referrer;"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:site" content="@berendjanwever"/>
-    <meta name="twitter:title" content="<<sTitle>>"/>
+    <meta name="twitter:site" content="@<<sAuthorTwitterHandle>>"/>
+    <meta name="twitter:title" content="<<sPageTitle>>"/>
     <meta name="twitter:description" content="<<sSummary>>"/>
-    <meta name="twitter:image" content="<<sAbsoluteSiteURL>>Images/Avatar.png"/>
-    <link rel="alternate" type="application/rss+xml" title="SkyLined RSS Feed" href="/rss.xml"/>
+    <meta name="twitter:image" content="<<sSiteAbsoluteURL>><<sPageAvatarRelativeURL>>"/>
+    <link rel="alternate" type="application/rss+xml" title="<<sSiteName>> RSS Feed" href="rss.xml"/>
     <link rel="stylesheet" type="text/css" href="Stylesheets/Page.css" media="screen"/>
     <link rel="stylesheet" type="text/css" href="Stylesheets/Markdown.css" media="screen"/>
     <link rel="stylesheet" type="text/css" href="Stylesheets/SkyLight.css" media="screen"/>
-    <title><<sTitle>></title>
+    <title><<sPageTitle>></title>
     <script src="Javascripts/Test Browser Privacy and Security.js">
       This script will check to see if the user's browser has known privacy and security issues and warn about them.
     </script>
@@ -26,24 +27,24 @@
     <span class="banner-logo">
       <span class="internal-links banner-links card">
         <a class="icon" title="Home" href="/"/>
-          <img class="icon" src="/Images/Home.svg"/>
+          <img class="icon" src="Images/Home.svg"/>
         </a>
       </span>
       <span class="external-links banner-links card">
-        <a class="icon" title="Twitter" href="https://twitter.com/berendjanwever">
-          <img class="icon" src="/Images/Twitter.svg"/>
+        <a class="icon" title="Twitter" href="https://twitter.com/<<sAuthorTwitterHandle>>">
+          <img class="icon" src="Images/Twitter.svg"/>
         </a>
-        <a class="icon" title="GitHub" href="https://github.com/SkyLined">
-          <img class="icon" src="/Images/GitHub.svg"/>
+        <a class="icon" title="GitHub" href="https://github.com/<<sAuthorGitHubHandle>>">
+          <img class="icon" src="Images/GitHub.svg"/>
         </a>
-        <a class="icon" title="Email" href="mailto://blog@skylined.nl">
-          <img class="icon" src="/Images/Email.svg"/>
+        <a class="icon" title="Email" href="mailto://<<sAuthorEmailAddress>>">
+          <img class="icon" src="Images/Email.svg"/>
         </a>
-        <a class="icon" title="GnuPG key" href="/GnuPG.txt">
-          <img class="icon" src="/Images/GnuPG.svg"/>
+        <a class="icon" title="GnuPG key" href="GnuPG.txt">
+          <img class="icon" src="Images/GnuPG.svg"/>
         </a>
-        <a class="icon" title="RSS Feed" href="/rss.xml">
-          <img class="icon" src="/Images/RSS Feed.svg"/>
+        <a class="icon" title="RSS Feed" href="rss.xml">
+          <img class="icon" src="Images/RSS Feed.svg"/>
         </a>
       </span>
     </span>
