@@ -75,7 +75,7 @@
         var sBuffer = (
           sChunk.substr(uHeapHeaderSize / 2) +    // Align chunk content with page boundary
           createRepeatedString(uChunkCount - 2, sChunk) +
-          sChunk.substr(0, uHeapHeaderSize / 2) + // Allign matches with target address
+          sChunk.substr(0, uHeapHeaderSize / 2) + // Align matches with target address
           sMatchesBuffer
         );
         // The regular expression is executed on the buffer to create "uBlockCount" blocks of "uBlockSize" bytes filled
