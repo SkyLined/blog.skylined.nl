@@ -37,13 +37,29 @@ function fShowOrQueueWarning(xWarning) {
   axQueuedWarnings.push(xWarning);
   if (bPageLoaded) fShowQueuedWarnings();
 };
+var bSecurityWarningsPlaceholderVisible = false, bSecurityWarningsContentVisible = false;
 function fShowQueuedWarnings() {
-  oSecurityWarningsElement.style.setProperty("display", "block");
-  fAddContentsToElement(oSecurityWarningsElement, axQueuedWarnings);
+  fAddContentsToElement(oSecurityWarningsContentElement, axQueuedWarnings);
+  if (!bSecurityWarningsPlaceholderVisible && !bSecurityWarningsContentVisible) {
+    bSecurityWarningsPlaceholderVisible = true;
+    oSecurityWarningsElement.style.setProperty("display", "block");
+    oSecurityWarningsPlaceholderElement.style.setProperty("display", "block");
+  };
   axQueuedWarnings = [];
 };
 addEventListener("load", function () {
   bPageLoaded = true;
+  oSecurityWarningsPlaceholderElement.onclick = function () {
+    bSecurityWarningsPlaceholderVisible = false;
+    oSecurityWarningsPlaceholderElement.style.setProperty("display", "none");
+    bSecurityWarningsContentVisible = true;
+    oSecurityWarningsContentElement.style.setProperty("display", "block");
+  };
+  oSecurityWarningsContentCloseButtonElement.onclick = function() {
+    bSecurityWarningsContentVisible = false;
+    oSecurityWarningsContentElement.style.setProperty("display", "none");
+    oSecurityWarningsElement.style.setProperty("display", "none");
+  };
   if (axQueuedWarnings.length > 0) fShowQueuedWarnings();
 });
 // Test referrer information leak:
