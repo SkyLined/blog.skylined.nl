@@ -1,0 +1,28 @@
+{
+  "sName": "SkyLined",
+  "dxAuthor": {
+    "sName": "SkyLined",
+    "sTwitterHandle": "berendjanwever",
+    "sGitHubHandle": "SkyLined",
+    "sEmailAddress": "blog@skylined.nl"
+  },
+  "sAbsoluteBaseURL": "http://blog.skylined.nl/",
+  "sRelativeBaseURL": "/",
+  "dxLicense": {
+    "sDescription": "Creative Commons Attribution-Non\u2011Commercial 4.0 International License",
+    "sImageRelativeURL": "Images/Creative Commons License by-nc.png",
+    "sDetailsAbsoluteURL": "http://creativecommons.org/licenses/by-nc/4.0/"
+  },
+  "sSummary": "The blog of Berend-Jan 'SkyLined' Wever, containing security-related articles.",
+  "sArticlesFolderPath": "Articles\\",
+  "sTemplatesFolderPath": "Templates\\",
+  "sStaticFolderPath": "Static\\",
+  "asBannerImageRelativeURLs": [
+    "Images/Banner 80s Computer.png",
+    "Images/Banner Appleseed.png",
+    "Images/Banner Hangul.png",
+    "Images/Banner Hirigana.png",
+    "Images/Banner Katakana.png"
+  ],
+  "sSiteAvatarRelativeURL": "Images/Avatar.png"
+}

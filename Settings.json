@@ -1,9 +1,0 @@
-{
-  "sTitle": "SkyLined",
-  "sSummary": "The blog of Berend-Jan 'SkyLined' Wever, containing security-related articles.",
-  "sArticlesFolderPath": "Articles\\",
-  "sTemplatesFolderPath": "Templates\\",
-  "sStaticFolderPath": "Static\\",
-  "sAbsoluteBaseURL": "http://blog.skylined.nl/",
-  "sRelativeBaseURL": "/"
-}
