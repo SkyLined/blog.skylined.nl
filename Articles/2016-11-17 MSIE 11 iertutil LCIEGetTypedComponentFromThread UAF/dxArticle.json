@@ -1,0 +1,15 @@
+{
+  "sTitle": "Microsoft Internet Explorer 11 iertutil LCIEGetTypedComponentFromThread use-after-free",
+  "sSummary": "A use-after-free issue in Microsoft Internet Explorer 11 could potentially allow remote code execution.",
+  "sSynopsisFileName": "Synopsis.md",
+  "adxSections": [
+    {"sType": "Text", "sFileName": "#1 Intro.md"},
+    {"sType": "Source code", "sFileName": "#2 Repro.html", "sAttachmentFileName": "Repro.html"},
+    {"sType": "Text", "sFileName": "#3 Details.md"},
+    {"sType": "BugId report", "sFileName": "#4 AVR.Free 275.483 iexplore.exe!iertutil.dll!LCIEGetTypedComponentFromThread.html", "sAttachmentFileName": "AVR.Free 275.483 iexplore.exe!iertutil.dll!LCIEGetTypedComponentFromThread.html"}
+  ],
+  "asTags": [
+    "Vuln",
+    "Microsoft Internet Explorer"
+  ]
+}
