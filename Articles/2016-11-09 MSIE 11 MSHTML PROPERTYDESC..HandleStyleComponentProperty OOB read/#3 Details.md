@@ -20,10 +20,10 @@ an arbitrary value for this `BSTR`, which can be shorter than 4 `WCHARs`. This
 would causing the code to read a `WCHAR` outside of the memory used to store
 that `BSTR`.
 
-In the repro, we used Heap Feng-Shui to put a `BSTR` containing 3 `WCHARs` in
-the `OLEAUT32` cache. This causes MSIE to allocate 12 byte of memory to store
-the string: 4 bytes to store the `DWORD` length of the `BSTR`, 6 to store the
-characters, and 2 to store a "\0" terminator. This memory is then reused to
+In the repro, we used [Heap Feng-Shui][] to put a `BSTR` containing 3 `WCHARs`
+in the `OLEAUT32` cache. This causes MSIE to allocate 12 byte of memory to
+store the string: 4 bytes to store the `DWORD` length of the `BSTR`, 6 to store
+the characters, and 2 to store a "\0" terminator. This memory is then reused to
 store a 1 `WCHAR` string `"x"`. When the code attempts to check if the fifth
 character in this his `BSTR` is `'\0'`, it will attempt to read the two bytes
 at offset 14 (The characters are stored at offset 4, after the `DWORD` length,
@@ -31,6 +31,8 @@ and the fifth character is at offset `10` from the first). This causes the code
 to read outside of the bounds of that `BSTR` and trigger an access violation.
 (On x86 systems, page heap will provide some padding at the end of the string,
 causing the code to read these padding bytes, so no AV happens).
+
+[Heap Feng-Shui]:https://www.blackhat.com/presentations/bh-europe-07/Sotirov/Presentation/bh-eu-07-sotirov-apr19.pdf
 
 Known properties of the type that leads to the vulnerable code path include
 `textDecorationBlink`, `textDecorationLineThrough`, `textDecorationLineNone`,

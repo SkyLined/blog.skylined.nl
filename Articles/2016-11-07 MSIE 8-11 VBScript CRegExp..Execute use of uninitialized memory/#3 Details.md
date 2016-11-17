@@ -101,12 +101,14 @@ pointers to a list of virtual function tables, from which the code retreives an
 address to call to execute that method. Control over these pointers therefore
 gives an attacker control over execution flow.
 
-[Heap Feng-Shui], a common technique used to manipulate the heap in MSIE, can
+[Heap Feng-Shui][], a common technique used to manipulate the heap in MSIE, can
 not be used in this case, as it uses strings to manipulate the heap. Strings in
 both JavaScript and VBScript are allocated through OLEAUT32, whereas the
 `CMatchBlock` structures are allocated through msvcrt, which uses a different
 heap. The Trident rendering engine also uses a different heap to allocate
 various potentially useful memory blocks.
+
+[Heap Feng-Shui]:https://www.blackhat.com/presentations/bh-europe-07/Sotirov/Presentation/bh-eu-07-sotirov-apr19.pdf
 
 To find out if there was a way to allocate and free memory in order to
 manipulate the heap an control what the uninitialized memory contains, I logged

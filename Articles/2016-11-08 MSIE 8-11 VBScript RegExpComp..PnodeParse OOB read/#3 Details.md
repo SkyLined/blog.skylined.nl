@@ -15,9 +15,11 @@ The regular expressions string is stored in a BSTR, which means that the heap
 block in which it is stored may be larger than the regular expression. This
 means that if the heap block was used to store something else, then freed and
 reused for the regular expression, it may contain interesting information
-immediately following the regular expression. It also means that "heap
-feng-shui" can be used to control this as well as control the contents of the
-next heap block, which may also contain useful information.
+immediately following the regular expression. It also means that
+[Heap Feng-Shui][] can be used to control this as well as control the contents
+of the next heap block, which may also contain useful information.
+
+[Heap Feng-Shui]:https://www.blackhat.com/presentations/bh-europe-07/Sotirov/Presentation/bh-eu-07-sotirov-apr19.pdf
 
 This amount of control suggests that it may be possible to store this useful
 information compiled as if it was part of the regular expression. A number of

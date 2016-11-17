@@ -30,9 +30,11 @@ attacker to undo heap ASLR.
 
 The amount of data read can be controlled by the attacker and data beyond the
 memory allocated for the C++ object can be read. An attacker may be able to use
-heap feng-shui to position another object with interesting information in the
-memory following the C++ DOM tree object and read data from this second object
-as well.
+[Heap Feng-Shui][] to position another object with interesting information in
+the memory following the C++ DOM tree object and read data from this second
+object as well.
+
+[Heap Feng-Shui]:https://www.blackhat.com/presentations/bh-europe-07/Sotirov/Presentation/bh-eu-07-sotirov-apr19.pdf
 
 Finally, setting the `nodeValue` property is possible and caused an access
 violation when I attempted it. I did not analyze the code path or the reason
