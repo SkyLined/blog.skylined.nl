@@ -1,0 +1,16 @@
+{
+  "sTitle": "MSIE 8 MSHTML SRunPointer::SpanQualifier/RunType OOB read",
+  "sSummary": "An unknown issue in Microsoft Internet Explorer 8 causes it to read out-of-bounds data, but the issue does not appear exploitable.",
+  "sSynopsisFileName": "Synopsis.md",
+  "adxSections": [
+    {"sType": "Text", "sFileName": "#1 Intro.md"},
+    {"sType": "Source code", "sFileName": "#2 Repro.html", "sAttachmentFileName": "Repro.html"},
+    {"sType": "Text", "sFileName": "#3 Description and time-line.md"},
+    {"sType": "BugId report", "sFileName": "#4.1 IE 8.00 x86 mshtml.dll!SRunPointer..RunType Arbitrary~F10 AVR(6045E7D8).html", "sAttachmentFileName": "IE 8.00 x86 mshtml.dll!SRunPointer..RunType Arbitrary~F10 AVR(6045E7D8).html"},
+    {"sType": "BugId report", "sFileName": "#4.2 IE 8.00 x86 mshtml.dll!SRunPointer..SpanQualifier Arbitrary~F10 AVR(F5C086DB).html", "sAttachmentFileName": "IE 8.00 x86 mshtml.dll!SRunPointer..SpanQualifier Arbitrary~F10 AVR(F5C086DB).html"}
+  ],
+  "asTags": [
+    "Vuln",
+    "Microsoft Internet Explorer"
+  ]
+}
