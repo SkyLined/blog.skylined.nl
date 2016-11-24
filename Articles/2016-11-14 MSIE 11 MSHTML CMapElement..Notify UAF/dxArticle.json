@@ -1,5 +1,5 @@
 {
-  "sTitle": "Microsoft Internet Explorer 11 MSHTML CMapElement::Notify use-after-free",
+  "sTitle": "MSIE 11 MSHTML CMapElement::Notify use-after-free",
   "sSummary": "A reentrancy issue in Microsoft Internet Explorer can lead to a use-after-free that could potentially allow remote code execution.",
   "sSynopsisFileName": "Synopsis.md",
   "adxSections": [

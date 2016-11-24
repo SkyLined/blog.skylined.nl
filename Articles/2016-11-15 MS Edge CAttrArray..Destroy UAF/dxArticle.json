@@ -1,5 +1,5 @@
 {
-  "sTitle": "Microsoft Edge edgehtml CAttrArray::Destroy use-after-free",
+  "sTitle": "MS Edge edgehtml CAttrArray::Destroy use-after-free",
   "sSummary": "A use-after-free issue in Microsoft Edge could potentially allow remote code execution, though this is unlikely.",
   "sSynopsisFileName": "Synopsis.md",
   "adxSections": [

@@ -1,5 +1,5 @@
 {
-  "sTitle": "Microsoft Internet Explorer 11 iertutil LCIEGetTypedComponentFromThread use-after-free",
+  "sTitle": "MSIE 11 iertutil LCIEGetTypedComponentFromThread use-after-free",
   "sSummary": "A use-after-free issue in Microsoft Internet Explorer 11 could potentially allow remote code execution.",
   "sSynopsisFileName": "Synopsis.md",
   "adxSections": [

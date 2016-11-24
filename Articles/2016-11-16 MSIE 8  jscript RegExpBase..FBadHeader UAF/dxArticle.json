@@ -1,5 +1,5 @@
 {
-  "sTitle": "Microsoft Internet Explorer 8 jscript RegExpBase::FBadHeader use-after-free",
+  "sTitle": "MSIE 8 jscript RegExpBase::FBadHeader use-after-free",
   "sSummary": "A use-after-free issue in the Javascript engine of Microsoft Internet Explorer 8 could potentially allow remote code execution.",
   "sSynopsisFileName": "Synopsis.md",
   "adxSections": [
