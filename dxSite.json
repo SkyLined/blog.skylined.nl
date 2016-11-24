@@ -4,7 +4,8 @@
     "sName": "SkyLined",
     "sTwitterHandle": "berendjanwever",
     "sGitHubHandle": "SkyLined",
-    "sEmailAddress": "blog@skylined.nl"
+    "sEmailAddress": "blog@skylined.nl",
+    "sBitcoin": "183yyxa9s1s1f7JBpPHPmzQ346y91Rx5DX"
   },
   "sAbsoluteBaseURL": "http://blog.skylined.nl/",
   "sRelativeBaseURL": "/",
@@ -20,9 +21,11 @@
   "asBannerImageRelativeURLs": [
     "Images/Banner 80s Computer.png",
     "Images/Banner Appleseed.png",
+    "Images/Banner Cyrillic.png",
     "Images/Banner Hangul.png",
     "Images/Banner Hirigana.png",
-    "Images/Banner Katakana.png"
+    "Images/Banner Katakana.png",
+    "Images/Banner Shark.png"
   ],
   "sSiteAvatarRelativeURL": "Images/Avatar.png"
 }

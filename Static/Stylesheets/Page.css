@@ -133,9 +133,9 @@ code {
 /* main page index */
 .main-page-index {
   display: block;
-  column-width: 22em;
-  -moz-column-width: 22em;
-  -ms-column-width: 22em;
+  column-width: 28em;
+  -moz-column-width: 28em;
+  -ms-column-width: 28em;
   column-count: auto;
   -moz-column-count: auto;
   -ms-column-count: auto;
@@ -185,9 +185,10 @@ code {
 .article-text-section {
   display: block;
   padding: 1em;
-  column-width: 22em;
-  -moz-column-width: 22em;
-  -ms-column-width: 22em;
+  min-height: 8em;
+  column-width: 28em;
+  -moz-column-width: 28em;
+  -ms-column-width: 28em;
   column-count: auto;
   -moz-column-count: auto;
   -ms-column-count: auto;
@@ -234,6 +235,10 @@ code {
   background-color: rgba(22, 19, 16,0.05);
 }
 
+ul, ol {
+  break-inside: avoid-column;
+}
+
 /*.index-article-synopsis*/
 
 .article-text-section > p, .article-text-section > ul > li, .article-text-section > ol > li, .article-text-section > pre  {
@@ -262,10 +267,10 @@ h1, h2 {
   /* This makes sure there is always room for at least one line in the column below the header, thus preventing
      breaking into the next column immediately after the header, before the start of the paragraph.
      Ideally, the "break-after" property would be used here, but that is not supported yet in most browsers */
-  margin-bottom: 3em;
+  margin-bottom: 7em;
 }
 h1 + *, h2 + * {
-  margin-top: -3em;
+  margin-top: -8em;
 }
 
 .security-warnings {
