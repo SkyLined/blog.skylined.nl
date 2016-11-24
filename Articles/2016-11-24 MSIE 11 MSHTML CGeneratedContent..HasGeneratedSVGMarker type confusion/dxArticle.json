@@ -1,0 +1,18 @@
+{
+  "sTitle": "MSIE 11 MSHTML CGeneratedContent::HasGeneratedSVGMarker type confusion",
+  "sSummary": "A type confusion issue in Microsoft Internet Explorer might allow arbitrary code execution.",
+  "sSynopsisFileName": "Synopsis.md",
+  "adxSections": [
+    {"sType": "Text", "sFileName": "#1 Intro.md"},
+    {"sType": "Source code", "sFileName": "#2.1 Repro.html", "sAttachmentFileName": "Repro.html"},
+    {"sType": "Source code", "sFileName": "#2.2 Repro-iframe.html", "sAttachmentFileName": "Repro-iframe.html"},
+    {"sType": "Text", "sFileName": "#3 Details.md"},
+    {"sType": "Source code snippet", "sFileName": "#4 Reversed code.cpp"},
+    {"sType": "Text", "sFileName": "#5 More details, exploit, time-line.md"},
+    {"sType": "BugId report", "sFileName": "#6 IE 11.00 x86 MSHTML.dll!CGeneratedContent..HasGeneratedSVGMarker Arbitrary~010 AVR(64BAE13E).html", "sAttachmentFileName": "IE 11.00 x86 MSHTML.dll!CGeneratedContent..HasGeneratedSVGMarker Arbitrary~010 AVR(64BAE13E).html"}
+  ],
+  "asTags": [
+    "Vuln",
+    "Microsoft Internet Explorer"
+  ]
+}
