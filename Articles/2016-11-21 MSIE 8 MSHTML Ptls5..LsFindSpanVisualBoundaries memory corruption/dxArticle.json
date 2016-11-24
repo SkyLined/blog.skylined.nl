@@ -1,0 +1,17 @@
+{
+  "sTitle": "MSIE 8 MSHTML Ptls5::LsFindSpanVisualBoundaries memory corruption",
+  "sSummary": "An unknown type of memory corruption in Microsoft Internet Explorer 8 could potentially allow remote code execution.",
+  "sSynopsisFileName": "Synopsis.md",
+  "adxSections": [
+    {"sType": "Text", "sFileName": "#1 Analysis.md"},
+    {"sType": "Source code", "sFileName": "#2 Repro.html", "sAttachmentFileName": "Repro.html"},
+    {"sType": "Text", "sFileName": "#3 Time-line.md"},
+    {"sType": "BugId report", "sFileName": "#4.1 IE 8.00 x86 mshtml.dll!Ptls5..LsFindListDu Arbitrary~021 AVR(67C1FF4C).html", "sAttachmentFileName": "IE 8.00 x86 mshtml.dll!Ptls5..LsFindListDu Arbitrary~021 AVR(67C1FF4C).html"},
+    {"sType": "BugId report", "sFileName": "#4.2 IE 8.00 x86 mshtml.dll!Ptls5..LsFindSpanVisualBoundaries Arbitrary~0EE AVR(A2DF6722).html", "sAttachmentFileName": "IE 8.00 x86 mshtml.dll!Ptls5..LsFindSpanVisualBoundaries Arbitrary~0EE AVR(A2DF6722).html"},
+    {"sType": "BugId report", "sFileName": "#4.3 IE 8.00 x86 mshtml.dll!Ptls5..LsFindSpanVisualBoundaries GuardPage(A2DF6722).html", "sAttachmentFileName": "IE 8.00 x86 mshtml.dll!Ptls5..LsFindSpanVisualBoundaries GuardPage(A2DF6722).html"}
+  ],
+  "asTags": [
+    "Vuln",
+    "Microsoft Internet Explorer"
+  ]
+}
