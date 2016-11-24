@@ -1,0 +1,18 @@
+{
+  "sTitle": "MS Edge CTextExtractor::GetBlockText OOB read",
+  "sSummary": "An integer underflow in Microsoft Edge causes an out-of-bounds read that could potentially allow information disclosure.",
+  "sSynopsisFileName": "Synopsis.md",
+  "adxSections": [
+    {"sType": "Text", "sFileName": "#1 Intro.md"},
+    {"sType": "Source code", "sFileName": "#2 Repro.html", "sAttachmentFileName": "Repro.html"},
+    {"sType": "Text", "sFileName": "#3 Details.md"},
+    {"sType": "Source code", "sFileName": "#4 Exploit.html", "sAttachmentFileName": "Exploit.html"},
+    {"sType": "Text", "sFileName": "#5 Time-line.md"},
+    {"sType": "BugId report", "sFileName": "#6.1 AVR.Arbitrary 553.6dc microsoftedgecp.exe!edgehtml.dll!CTextExtractor..GetBlockText.html", "sAttachmentFileName": "AVR.Arbitrary 553.6dc microsoftedgecp.exe!edgehtml.dll!CTextExtractor..GetBlockText.html"},
+    {"sType": "BugId report", "sFileName": "#6.2 AVR.Arbitrary 553.553 microsoftedgecp.exe!edgehtml.dll!CTextExtractor..GetBlockText.html", "sAttachmentFileName": "AVR.Arbitrary 553.553 microsoftedgecp.exe!edgehtml.dll!CTextExtractor..GetBlockText.html"}
+  ],
+  "asTags": [
+    "Vuln",
+    "Microsoft Edge"
+  ]
+}
