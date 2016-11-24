@@ -1,0 +1,40 @@
+After allocating blocks:
+
+    Address Contents
+          0 [1st 9999 byte block]
+       9999 [1st 1 byte block]
+      10000 [2nd 9999 byte block]
+      19999 [2nd 1 byte block]
+         .....
+(N-1)*10000 [Nth 9999 byte block]
+  N*10000-1 [Nth 1 byte block]
+
+  Total memory usage: N*10000 bytes.
+
+After freeing blocks:
+
+    Address Contents
+          0 free
+       9999 [1st 1 byte block]
+      10000 free
+      19999 [2nd 1 byte block]
+         .....
+(N-1)*10000 free
+  N*10000-1 [Nth 1 byte block]
+
+  Total memory usage: N bytes.
+
+After allocating 10000 byte blocks:
+
+    Address Contents
+          0 free
+       9999 [1st 1 byte block]
+      10000 free
+      19999 [2nd 1 byte block]
+         .....
+(N-1)*10000 free
+  N*10000-1 [Nth 1 byte block]
+    N*10000 [10000 byte block]
+
+  Total memory usage: N+10000 bytes, approximating 1/10000th of the original!!
+  Address range reached: [N*10000 - (N+1)*10000]

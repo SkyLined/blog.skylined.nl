@@ -1,0 +1,33 @@
+Step 1: allocate 999 and 1 byte blocks.
+    Address Contents
+=>        0 [999 byte block]
+=>      999 [1 byte block]        Total memory usage: 1,000 bytes
+
+Step 2: free 999 byte block
+    Address Contents
+=>        0 free
+        999 [1 byte block]        Total memory usage: 1 bytes
+
+Step 3: allocate 99999 and 1000 byte blocks.
+    Address Contents
+          0 free
+        999 [1 byte block]        
+=>    1,000 [99999 byte block]
+=>  100,999 [1000 byte block]     Total memory usage: 101,000 bytes
+
+Step 4: free 99,999 byte block
+    Address Contents
+          0 free
+        999 [1 byte block]        
+=>    1,000 free
+    100,999 [1,000 byte block]     Total memory usage: 1,001 bytes
+
+Step 5: allocate 100,000 byte block
+    Address Contents
+          0 free
+        999 [1 byte block]        
+      1,000 free
+    100,999 [1,000 byte block]
+    101,999 [100,000 byte block]   Total memory usage: 101,001 bytes
+
+  Address range reached: [101,999 - 201,999]

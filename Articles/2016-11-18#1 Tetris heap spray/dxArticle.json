@@ -1,0 +1,17 @@
+{
+  "sTitle": "Tetris heap spraying: spraying the heap on a budget",
+  "sSummary": "An optimization in heap spraying can significantly reduce the amount of memory needed.",
+  "sSynopsisFileName": "Synopsis.md",
+  "adxSections": [
+    {"sType": "Text", "sFileName": "#1 Article.md"},
+    {"sType": "Source code snippet", "sFileName": "#2 Example.txt"},
+    {"sType": "Text", "sFileName": "#3 Article.md"},
+    {"sType": "Source code snippet", "sFileName": "#4 Example.txt"},
+    {"sType": "Text", "sFileName": "#5 Article.md"},
+    {"sType": "Source code snippet", "sFileName": "#6 Example.txt"},
+    {"sType": "Text", "sFileName": "#7 Article.md"}
+  ],
+  "asTags": [
+    "Information"
+  ]
+}

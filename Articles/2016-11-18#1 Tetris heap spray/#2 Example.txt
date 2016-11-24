@@ -1,0 +1,34 @@
+After allocating 1 byte blocks:
+
+  Address Contents
+        0 [1st 1 byte block]
+        1 [2nd 1 byte block]
+        2 [3rd 1 byte block]
+        .....
+      N-1 [Nth 1 byte block]
+
+  Total memory usage: N bytes.
+
+After freeing even 1 byte blocks:
+
+  Address Contents
+        0 free
+        1 [2nd 1 byte block]
+        2 free
+        .....
+      N-1 [Nth 1 byte block]
+
+  Total memory usage: N/2 bytes.
+
+After allocating a 2 byte block:
+
+  Address Contents
+        0 free
+        1 [2nd 1 byte block]
+        2 free
+        .....
+      N-1 [Nth 1 byte block]
+        N [2 byte block]
+
+  Address range for the 2 byte block: [N - N+2]
+  Total memory usage: (N/2+2) bytes, or roughly half of a normal heap spray.
