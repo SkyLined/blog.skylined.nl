@@ -1,0 +1,14 @@
+<html>
+  <head>
+    <script>
+      oWindow = window.open();
+      oWebkitSpeechRecognition = new oWindow.webkitSpeechRecognition();
+      oWindow.close();
+      setInterval(function(){
+        if (oWindow.closed) {
+          oWebkitSpeechRecognition.start();
+        }
+      }, 10);
+    </script>
+  </head>
+</html>
