@@ -1,8 +1,8 @@
 And there you have it: in the above example, we never allocated more than
 101,001 bytes, but the final memory block was allocated at an offset of 101,999
 from the start and ends at address 201,999. If you were targeting the address
-200,000, you used only 200,000/101,001 the amount of RAM a normal heap spray
-would require.
+200,000, you used only about half the amount of RAM a normal heap spray would
+have required.
 
 Conclusion
 ----------
