@@ -1,6 +1,6 @@
 {
   "sTitle": "MSIE 11 MSHTML CGeneratedContent::HasGeneratedSVGMarker type confusion",
-  "sSummary": "A type confusion issue in Microsoft Internet Explorer might allow arbitrary code execution.",
+  "sSummary": "A type confusion issue in Microsoft Internet Explorer 11 might allow arbitrary code execution.",
   "sSynopsisFileName": "Synopsis.md",
   "adxSections": [
     {"sType": "Text", "sFileName": "#1 Intro.md"},
