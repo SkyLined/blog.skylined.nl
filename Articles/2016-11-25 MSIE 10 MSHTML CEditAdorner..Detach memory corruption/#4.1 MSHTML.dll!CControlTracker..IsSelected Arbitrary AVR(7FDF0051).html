@@ -1,0 +1,2004 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><HTML><HEAD><STYLE>LEGEND, TABLE {width:100%;}FIELDSET {margin-bottom: 5px;}FIELDSET.level0 {background: #F0F0F0;}LEGEND.level0 {background: #C0C0C0; border: 1px inset; font-size: 200%}FIELDSET.level1 {background: #E0E0E0;}LEGEND.level1 {background: #B0B0B0; border: 1px inset; font-size: 150%}FIELDSET.level2 {background: #D0D0D0;}LEGEND.level2 {background: #A0A0A0; border: 1px inset; font-size: 120%}FIELDSET.level3 {background: #C0C0C0;}LEGEND.level3 {background: #909090; border: 1px inset; font-size: 110%}FIELDSET.level4 {background: #B0B0B0;}LEGEND.level4 {background: #808080; border: 1px inset; font-size: 100%}SPAN.local_type {color: #000060;}SPAN.local_name {color: #0000FF;}SPAN.function_name { color: #004000;}TABLE,TR,TD {border: 1px solid silver; border-collapse: collapse;}* {white-space: nowrap;}PRE {white-space: pre;}.wrapable {white-space: normal; width:100%;}FIELDSET.hidden {border-bottom: 5px dashed #A0A0A0;}SPAN.hidden {display: none;}</STYLE><SCRIPT>function openAnchorEvent(event) {if (!event) event = window.event;openAnchor(event.srcElement.href.replace(/.*#/, ""));}function openAnchor(anchor) {targets = document.getElementsByName(anchor);if (targets.length == 1) {target = targets[0];while (target != null) {c = target.className;if (c.indexOf("hidden") > -1)target.className = c.replace(/\s*hidden\s*/, " ");target = target.parentElement}}}function flipLegend() {if (!event) event = window.event;legend = event.srcElement;while (legend.tagName != "LEGEND") legend = legend.parentElement;fieldset = legend.parentElement;flipHideables(fieldset);}function flipHideables(fieldset) {flipHiddenClass(fieldset);for (i in fieldset.children) {o = fieldset.children[i];c = o.className;if (c && c.indexOf("hideable") > -1) {flipHiddenClass(o);}}}function flipHiddenClass(element) {c = element.className;if (c.indexOf("hidden") > -1) {element.className = c.replace(/\s*hidden\s*/, " ");} else {element.className += " hidden";}}</SCRIPT></HEAD><BODY onload="if (location.hash) openAnchor(location.hash.substr(1));"><FIELDSET class="level0 hidden"><LEGEND onclick="flipLegend()" class="level0">Cdb event information</LEGEND><SPAN><PRE>id:             MSHTML.dll!CControlTracker::IsSelected Arbitrary AVR(7FDF0051)
+description:    Security: Attempt to read from unallocated arbitrary memory (@0x1375502C) in MSHTML.dll!CControlTracker::IsSelected
+note:           Based on this information, this is expected to be a security issue!
+application:    MSIE 10.00.9200.16384 en-GB
+</PRE></SPAN><SPAN class="hideable hidden"><PRE>stack:          MSHTML.dll!CControlTracker::IsSelected
+                MSHTML.dll!CControlTracker::RemoveControlElement
+                MSHTML.dll!CEditAdorner::Detach
+                MSHTML.dll!CPeerHolder::DetachPeer
+                MSHTML.dll!CElement::Notify
+                MSHTML.dll!CSite::Notify
+                MSHTML.dll!CImgElement::Notify
+                MSHTML.dll!CMarkup::UnloadContents
+                MSHTML.dll!CMarkup::Passivate
+                MSHTML.dll!CBase::PrivateRelease
+                MSHTML.dll!CMarkup::Release
+                MSHTML.dll!COmWindowProxy::ExecRefresh
+                MSHTML.dll!CDoc::UpdateDesignMode
+                MSHTML.dll!CDoc::SetDesignMode
+                MSHTML.dll!+0x5DA17
+                MSHTML.dll!NUMPROPPARAMS::SetEnumStringProperty
+                MSHTML.dll!CBase::put_StringHelper
+                MSHTML.dll!CFastDOM::CDocument::Trampoline_Set_designMode
+                jscript9.dll!Js::JavascriptExternalFunction::ExternalFunctionThunk
+                jscript9.dll!Js::JavascriptArray::GetSetter
+                jscript9.dll!Js::JavascriptOperators::SetProperty
+                jscript9.dll!Js::JavascriptOperators::PatchPutValueNoLocalFastPath
+                (unknown)
+                jscript9.dll!Js::JavascriptString::NewWithBufferT&lt;...&gt;
+                jscript9.dll!Js::GlobalObject::EntryEval
+                jscript9.dll!Js::JavascriptFunction::CallRootFunction
+                jscript9.dll!Js::JavascriptFunction::CallRootFunction
+                jscript9.dll!ScriptSite::CallRootFunction
+                jscript9.dll!ScriptSite::Execute
+                jscript9.dll!JavascriptDispatch::InvokeOnMember
+                jscript9.dll!JavascriptDispatch::InvokeEx
+                MSHTML.dll!CBase::varInvokeEx
+                dispex.dll!IDispatchEx_InvokeEx_Stub
+                dispex.dll!IDispatchEx_RemoteInvokeEx_Thunk
+                RPCRT4.dll!NdrStubCall2
+                combase.dll!CStdStubBuffer_Invoke
+                combase.dll!SyncStubInvoke
+                combase.dll!CCtxComChnl::ContextInvoke
+                combase.dll!AppInvoke
+                combase.dll!ComInvokeWithLockAndIPID
+                combase.dll!ThreadWndProc
+                user32.dll!InternalCallWinProc
+                user32.dll!UserCallWinProcCheckWow
+                user32.dll!DispatchMessageWorker
+                user32.dll!DispatchMessageW
+                IEFRAME.dll!CTabWindow::_TabWindowThreadProc
+                IEFRAME.dll!LCIETab_ThreadProc
+                iertutil.dll!CIsoWinMsg::PostQueuedMessagesToComponent
+                IEShims.dll!NS_CreateThread::DesktopIE_ThreadProc
+                KERNEL32.DLL!BaseThreadInitThunk
+                ntdll.dll!__RtlUserThreadStart
+                ntdll.dll!_RtlUserThreadStart
+</PRE></SPAN></FIELDSET><FIELDSET class="level0 hidden"><LEGEND onclick="flipLegend()" class="level0">Pre event output</LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Microsoft (R) Windows Debugger Version 6.2.8229.0 AMD64
+Copyright (c) Microsoft Corporation. All rights reserved.
+CommandLine: &quot;C:\Program Files (x86)\Internet Explorer\iexplore.exe&quot; http://localhost:8080
+Symbol search path is: srv*\\FileServer\Shares\Symbols*http://msdl.microsoft.com/download/symbols;srv*\\FileServer\Shares\symbols*http://symbols.mozilla.org/firefox;srv*\\FileServer\Shares\symbols*http://chromium-browser-symsrv.commondatastorage.googleapis.com
+Executable search path is: 
+ModLoad: 00000000`00e90000 00000000`00f4c000   iexplore.exe
+ModLoad: 000007f9`a9e40000 000007f9`a9ffe000   ntdll.dll
+ModLoad: 00000000`77260000 00000000`773b7000   ntdll.dll
+ModLoad: 00000000`010c0000 00000000`01137000   C:\Windows\system32\verifier.dll
+Page heap: pid 0xF44: page heap enabled with flags 0x3.
+ModLoad: 00000000`771b0000 00000000`771f5000   C:\Windows\SYSTEM32\wow64.dll
+ModLoad: 00000000`77200000 00000000`7725a000   C:\Windows\system32\wow64win.dll
+ModLoad: 00000000`771a0000 00000000`771a8000   C:\Windows\system32\wow64cpu.dll
+(f44.ef0): Break instruction exception - code 80000003 (first chance)
+ntdll!LdrpDoDebuggerBreak+0x30:
+000007f9`a9efada0 cc              int     3
+ModLoad: 00000000`03940000 00000000`03a76000   WOW64_IMAGE_SECTION
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`761e0000 00000000`76310000   WOW64_IMAGE_SECTION
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`03940000 00000000`03a76000   NOT_AN_IMAGE
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`03940000 00000000`03a8c000   NOT_AN_IMAGE
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`72ab0000 00000000`72b19000   C:\Windows\syswow64\verifier.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+Page heap: pid 0xF44: page heap enabled with flags 0x3.
+ModLoad: 00000000`761e0000 00000000`76310000   C:\Windows\SysWOW64\KERNEL32.DLL
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`76e40000 00000000`76ee6000   C:\Windows\SysWOW64\KERNELBASE.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`73980000 00000000`73a27000   C:\Windows\SysWOW64\apphelp.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+SHIMVIEW: ShimInfo(Complete)
+ModLoad: 00000000`75c60000 00000000`75d11000   C:\Windows\SysWOW64\msvcrt.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`76980000 00000000`76b20000   C:\Windows\SysWOW64\iertutil.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+(f44.ef0): WOW64 breakpoint - code 4000001f (first chance)
+ModLoad: 76430000 76546000   C:\Windows\SysWOW64\user32.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`75f10000 00000000`7600d000   C:\Windows\SysWOW64\GDI32.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`75c20000 00000000`75c40000   C:\Windows\SysWOW64\IMM32.DLL
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`76310000 00000000`763ed000   C:\Windows\SysWOW64\MSCTF.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`74570000 00000000`745e5000   C:\Windows\SysWOW64\shcore.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`75ae0000 00000000`75c16000   C:\Windows\SysWOW64\combase.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`76090000 00000000`7613c000   C:\Windows\SysWOW64\RPCRT4.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`748f0000 00000000`7490c000   C:\Windows\SysWOW64\SspiCli.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`748e0000 00000000`748e9000   C:\Windows\SysWOW64\CRYPTBASE.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`76f80000 00000000`76fb4000   C:\Windows\SysWOW64\sechost.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`74880000 00000000`748d1000   C:\Windows\SysWOW64\bcryptPrimitives.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`07de0000 00000000`07e9d000   iexplore.exe
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+Symbol search path is: srv*\\FileServer\Shares\Symbols*http://msdl.microsoft.com/download/symbols;srv*\\FileServer\Shares\symbols*http://symbols.mozilla.org/firefox;srv*\\FileServer\Shares\symbols*http://chromium-browser-symsrv.commondatastorage.googleapis.com
+Executable search path is: 
+ModLoad: 000007f7`62140000 000007f7`621fd000   iexplore.exe
+&lt;---- EVENT: break cpr ----&gt;
+000007f9`a9e634e0 4883ec48        sub     rsp,48h
+ModLoad: 000007f9`a9e40000 000007f9`a9ffe000   ntdll.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!RtlUserThreadStart:
+000007f9`a9e634e0 4883ec48        sub     rsp,48h
+ModLoad: 000007f9`9da90000 000007f9`9db07000   C:\Windows\system32\verifier.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+Page heap: pid 0xF08: page heap enabled with flags 0x3.
+ModLoad: 000007f9`a8c90000 000007f9`a8dc6000   C:\Windows\system32\KERNEL32.DLL
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a70a0000 000007f9`a7193000   C:\Windows\system32\KERNELBASE.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a34b0000 000007f9`a354f000   C:\Windows\system32\apphelp.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+SHIMVIEW: ShimInfo(Complete)
+ModLoad: 000007f9`a9820000 000007f9`a98c5000   C:\Windows\system32\msvcrt.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a8dd0000 000007f9`a8fe6000   C:\Windows\system32\iertutil.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a8ff0000 000007f9`a913c000   C:\Windows\system32\user32.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a76e0000 000007f9`a7820000   C:\Windows\system32\GDI32.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a98d0000 000007f9`a9909000   C:\Windows\system32\IMM32.DLL
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a9140000 000007f9`a9255000   C:\Windows\system32\MSCTF.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a4f20000 000007f9`a4fb6000   C:\Windows\SYSTEM32\shcore.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a9670000 000007f9`a9820000   C:\Windows\SYSTEM32\combase.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a74e0000 000007f9`a7620000   C:\Windows\system32\RPCRT4.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`93710000 000007f9`945cb000   C:\Windows\SYSTEM32\IEFRAME.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a8c40000 000007f9`a8c90000   C:\Windows\system32\SHLWAPI.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a7690000 000007f9`a76d8000   C:\Windows\SYSTEM32\sechost.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a7350000 000007f9`a74ce000   C:\Windows\system32\ole32.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a7820000 000007f9`a78e3000   C:\Windows\system32\OLEAUT32.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a78f0000 000007f9`a8bd8000   C:\Windows\system32\SHELL32.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a43a0000 000007f9`a4609000   C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.9200.16384_none_418c2a697189c07f\comctl32.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`9c260000 000007f9`9c2ba000   C:\Program Files\Internet Explorer\IEShims.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a9910000 000007f9`a99b1000   C:\Windows\system32\comdlg32.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a6c90000 000007f9`a6c9a000   C:\Windows\SYSTEM32\CRYPTBASE.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a6c30000 000007f9`a6c8c000   C:\Windows\SYSTEM32\bcryptPrimitives.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a5c00000 000007f9`a5ce3000   C:\Windows\system32\uxtheme.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a9510000 000007f9`a9666000   C:\Windows\system32\urlmon.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a92e0000 000007f9`a950e000   C:\Windows\system32\WININET.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a9d60000 000007f9`a9e3e000   C:\Windows\system32\ADVAPI32.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a4fc0000 000007f9`a4fe1000   C:\Windows\SYSTEM32\dwmapi.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a0290000 000007f9`a02d8000   C:\Program Files\Internet Explorer\sqmapi.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`9f520000 000007f9`9f52b000   C:\Windows\SYSTEM32\Secur32.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a6c00000 000007f9`a6c2c000   C:\Windows\SYSTEM32\SSPICLI.DLL
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a6d70000 000007f9`a6d85000   C:\Windows\SYSTEM32\profapi.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a9280000 000007f9`a92d8000   C:\Windows\system32\WS2_32.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a74d0000 000007f9`a74d9000   C:\Windows\system32\NSI.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a33f0000 000007f9`a34a1000   C:\Windows\SYSTEM32\winhttp.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a66a0000 000007f9`a66fc000   C:\Windows\system32\mswsock.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a4180000 000007f9`a41aa000   C:\Windows\SYSTEM32\IPHLPAPI.DLL
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a4160000 000007f9`a416a000   C:\Windows\SYSTEM32\WINNSI.DLL
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a6700000 000007f9`a671a000   C:\Windows\SYSTEM32\CRYPTSP.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a6330000 000007f9`a6379000   C:\Windows\system32\rsaenh.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a72b0000 000007f9`a7346000   C:\Windows\SYSTEM32\clbcatq.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`996a0000 000007f9`9974f000   C:\Program Files\Internet Explorer\ieproxy.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a5810000 000007f9`a5825000   C:\Windows\SYSTEM32\netapi32.DLL
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a6110000 000007f9`a611e000   C:\Windows\SYSTEM32\netutils.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a6a10000 000007f9`a6a34000   C:\Windows\SYSTEM32\srvcli.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a5750000 000007f9`a5765000   C:\Windows\SYSTEM32\wkscli.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a57f0000 000007f9`a5806000   C:\Windows\system32\NLAapi.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a2a30000 000007f9`a2a38000   C:\Windows\System32\rasadhlp.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`00e90000 00000000`00f4c000   iexplore.exe
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+Symbol search path is: srv*\\FileServer\Shares\Symbols*http://msdl.microsoft.com/download/symbols;srv*\\FileServer\Shares\symbols*http://symbols.mozilla.org/firefox;srv*\\FileServer\Shares\symbols*http://chromium-browser-symsrv.commondatastorage.googleapis.com
+Executable search path is: 
+ModLoad: 00000000`00e90000 00000000`00f4c000   iexplore.exe
+&lt;---- EVENT: break cpr ----&gt;
+000007f9`a9e634e0 4883ec48        sub     rsp,48h
+ModLoad: 000007f9`a9e40000 000007f9`a9ffe000   ntdll.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!RtlUserThreadStart:
+000007f9`a9e634e0 4883ec48        sub     rsp,48h
+ModLoad: 00000000`77260000 00000000`773b7000   ntdll.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!RtlUserThreadStart:
+000007f9`a9e634e0 4883ec48        sub     rsp,48h
+ModLoad: 00000000`00580000 00000000`005f7000   C:\Windows\system32\verifier.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+Page heap: pid 0x508: page heap enabled with flags 0x3.
+ModLoad: 00000000`771b0000 00000000`771f5000   C:\Windows\SYSTEM32\wow64.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`77200000 00000000`7725a000   C:\Windows\system32\wow64win.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`771a0000 00000000`771a8000   C:\Windows\system32\wow64cpu.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`00890000 00000000`009c6000   WOW64_IMAGE_SECTION
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`761e0000 00000000`76310000   WOW64_IMAGE_SECTION
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`00890000 00000000`009c6000   NOT_AN_IMAGE
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`00890000 00000000`009dc000   NOT_AN_IMAGE
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`72ab0000 00000000`72b19000   C:\Windows\syswow64\verifier.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+Page heap: pid 0x508: page heap enabled with flags 0x3.
+ModLoad: 00000000`761e0000 00000000`76310000   C:\Windows\SysWOW64\KERNEL32.DLL
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`76e40000 00000000`76ee6000   C:\Windows\SysWOW64\KERNELBASE.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`73980000 00000000`73a27000   C:\Windows\SysWOW64\apphelp.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+SHIMVIEW: ShimInfo(Complete)
+ModLoad: 00000000`75c60000 00000000`75d11000   C:\Windows\SysWOW64\msvcrt.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`76980000 00000000`76b20000   C:\Windows\SysWOW64\iertutil.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 76430000 76546000   C:\Windows\SysWOW64\user32.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`75f10000 00000000`7600d000   C:\Windows\SysWOW64\GDI32.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`75c20000 00000000`75c40000   C:\Windows\SysWOW64\IMM32.DLL
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`76310000 00000000`763ed000   C:\Windows\SysWOW64\MSCTF.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`9ba60000 000007f9`9bae5000   C:\Windows\SYSTEM32\IEUI.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`74570000 00000000`745e5000   C:\Windows\SysWOW64\shcore.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`75ae0000 00000000`75c16000   C:\Windows\SysWOW64\combase.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`76090000 00000000`7613c000   C:\Windows\SysWOW64\RPCRT4.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`748f0000 00000000`7490c000   C:\Windows\SysWOW64\SspiCli.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`748e0000 00000000`748e9000   C:\Windows\SysWOW64\CRYPTBASE.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`76f80000 00000000`76fb4000   C:\Windows\SysWOW64\sechost.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`74880000 00000000`748d1000   C:\Windows\SysWOW64\bcryptPrimitives.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+&lt;---- EVENT: break epr ----&gt;
+ntdll!NtTerminateProcess+0xa:
+000007f9`a9e42eaa c3              ret
+ModLoad: 00000000`71d90000 00000000`72ab0000   C:\Windows\SysWOW64\IEFRAME.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`763f0000 00000000`76430000   C:\Windows\SysWOW64\SHLWAPI.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`76730000 00000000`76849000   C:\Windows\SysWOW64\ole32.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`76140000 00000000`761cb000   C:\Windows\SysWOW64\OLEAUT32.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`74980000 00000000`75a46000   C:\Windows\SysWOW64\SHELL32.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`74670000 00000000`74867000   C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.9200.16384_none_893961408605e985\comctl32.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`71d50000 00000000`71d8d000   C:\Program Files (x86)\Internet Explorer\IEShims.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`75d90000 00000000`75e3e000   C:\Windows\SysWOW64\ADVAPI32.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`76ef0000 00000000`76f79000   C:\Windows\SysWOW64\comdlg32.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`74340000 00000000`743c8000   C:\Windows\SysWOW64\uxtheme.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`76fc0000 00000000`77179000   C:\Windows\SysWOW64\WININET.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`74650000 00000000`74659000   C:\Windows\SysWOW64\Secur32.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`76850000 00000000`76971000   C:\Windows\SysWOW64\urlmon.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a1d70000 000007f9`a1dd9000   C:\Windows\System32\oleacc.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`75d30000 00000000`75d80000   C:\Windows\SysWOW64\WS2_32.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`75d20000 00000000`75d28000   C:\Windows\SysWOW64\NSI.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`74410000 00000000`74492000   C:\Windows\SysWOW64\winhttp.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`74520000 00000000`7456a000   C:\Windows\SysWOW64\mswsock.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`743f0000 00000000`74410000   C:\Windows\SysWOW64\IPHLPAPI.DLL
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`743e0000 00000000`743e8000   C:\Windows\SysWOW64\WINNSI.DLL
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`74190000 00000000`741a9000   C:\Windows\SysWOW64\dwmapi.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`74500000 00000000`7451a000   C:\Windows\SysWOW64\CRYPTSP.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`744c0000 00000000`744fe000   C:\Windows\SysWOW64\rsaenh.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`76010000 00000000`76084000   C:\Windows\SysWOW64\clbcatq.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`71d00000 00000000`71d42000   C:\Program Files (x86)\Internet Explorer\ieproxy.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a3d30000 000007f9`a3d6f000   C:\Windows\system32\xmllite.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`70ee0000 00000000`70f43000   C:\Windows\SysWOW64\IEUI.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`70f50000 00000000`71cff000   C:\Windows\SysWOW64\MSHTML.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`70bb0000 00000000`70ed7000   C:\Windows\SysWOW64\d2d1.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`70a50000 00000000`70baf000   C:\Windows\SysWOW64\DWrite.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`709f0000 00000000`70a4c000   C:\Windows\SysWOW64\dxgi.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`709b0000 00000000`709e9000   C:\Program Files (x86)\Internet Explorer\sqmapi.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`70840000 00000000`709e3000   C:\Windows\SysWOW64\d3d11.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`70610000 00000000`706f6000   C:\Windows\SysWOW64\aticfx32.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`70830000 00000000`7083d000   C:\Windows\SysWOW64\atiuxpag.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`74660000 00000000`74668000   C:\Windows\SysWOW64\VERSION.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`6ff80000 00000000`70606000   C:\Windows\SysWOW64\atidxx32.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+DXX32: Warn: Registry value too long: MainVideo_SET in SYSTEM\ControlSet001\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0000\UMD
+ModLoad: 00000000`6ff80000 00000000`70606000   C:\Windows\SysWOW64\atidxx32.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+DXX32: Warn: Registry value too long: MainVideo_SET in SYSTEM\ControlSet001\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0000\UMD
+ModLoad: 000007f9`9f200000 000007f9`9f4da000   C:\Windows\system32\explorerframe.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a42e0000 000007f9`a4397000   C:\Windows\system32\DUser.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a4d60000 000007f9`a4f19000   C:\Windows\system32\DUI70.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a1ab0000 000007f9`a1ab7000   C:\Windows\SYSTEM32\MSIMG32.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`74080000 00000000`740f5000   C:\Windows\SysWOW64\DNSAPI.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`744a0000 00000000`744b1000   C:\Windows\SysWOW64\profapi.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`707f0000 00000000`70822000   C:\Windows\SysWOW64\MLANG.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`73a30000 00000000`73b49000   C:\Windows\SysWOW64\PROPSYS.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`74310000 00000000`74322000   C:\Windows\SysWOW64\netapi32.DLL
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`74300000 00000000`7430b000   C:\Windows\SysWOW64\netutils.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`742e0000 00000000`742fc000   C:\Windows\SysWOW64\srvcli.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`742d0000 00000000`742e0000   C:\Windows\SysWOW64\wkscli.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`73ce0000 00000000`73cf0000   C:\Windows\SysWOW64\NLAapi.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`74060000 00000000`74067000   C:\Windows\SysWOW64\rasadhlp.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`73e70000 00000000`73eaf000   C:\Windows\SysWOW64\fwpuclnt.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a6ca0000 000007f9`a6d52000   C:\Windows\SYSTEM32\sxs.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`733e0000 00000000`7349c000   C:\Windows\SysWOW64\actxprxy.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a0bf0000 000007f9`a0e00000   C:\Windows\System32\actxprxy.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a02e0000 000007f9`a031e000   C:\Windows\SYSTEM32\MLANG.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a37b0000 000007f9`a390a000   C:\Windows\SYSTEM32\PROPSYS.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a99c0000 000007f9`a9b90000   C:\Windows\system32\SETUPAPI.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a6e40000 000007f9`a6e8f000   C:\Windows\system32\CFGMGR32.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a7070000 000007f9`a7092000   C:\Windows\system32\DEVOBJ.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`707b0000 00000000`707ed000   C:\Windows\SysWOW64\ninput.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`6fcb0000 00000000`6ff76000   C:\Windows\SysWOW64\jscript9.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`70710000 00000000`707ae000   C:\Windows\SysWOW64\ieapfltr.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`70700000 00000000`7070b000   C:\Windows\SysWOW64\msimtf.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`73740000 00000000`7377f000   C:\Windows\SysWOW64\powrprof.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`6fc80000 00000000`6fca3000   C:\Windows\SysWOW64\dcomp.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`73f20000 00000000`73f70000   C:\Windows\SysWOW64\OLEACC.DLL
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`72f10000 00000000`72fb0000   C:\Windows\SysWOW64\sxs.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a6e90000 000007f9`a7067000   C:\Windows\system32\CRYPT32.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a6e20000 000007f9`a6e36000   C:\Windows\system32\MSASN1.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 000007f9`a5bf0000 000007f9`a5bf8000   C:\Windows\SYSTEM32\DPAPI.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`6fa40000 00000000`6fb1f000   C:\Windows\SysWOW64\uiautomationcore.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`74620000 00000000`74641000   C:\Windows\SysWOW64\WINMM.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`745f0000 00000000`7461a000   C:\Windows\SysWOW64\WINMMBASE.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+ModLoad: a4bd0000 a4d5a000   C:\Windows\SYSTEM32\WindowsCodecs.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+ModLoad: 00000000`6f660000 00000000`6f695000   C:\Windows\SysWOW64\XmlLite.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+(508.7d4): C++ EH exception - code e06d7363 (first chance)
+(508.7d4): C++ EH exception - code e06d7363 (first chance)
+ModLoad: 6fa30000 6fa39000   C:\Windows\SysWOW64\dispex.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+(508.d9c): C++ EH exception - code e06d7363 (first chance)
+ModLoad: 73b60000 73ca6000   C:\Windows\SysWOW64\windowscodecs.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+ModLoad: 00000000`736e0000 00000000`7370b000   C:\Windows\SysWOW64\msls31.dll
+&lt;---- EVENT: break ld ----&gt;
+ntdll!NtMapViewOfSection+0xa:
+000007f9`a9e42e6a c3              ret
+(508.7d4): Access violation - code c0000005 (first chance)
+</PRE></SPAN></FIELDSET><FIELDSET class="level0 hidden"><LEGEND onclick="flipLegend()" class="level0">Processes, threads and modules</LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Process 0xF44: iexplore.exe (main, terminated)
+     Command Line: "C:\Program Files (x86)\Internet Explorer\iexplore.exe" http://localhost:8080
+     Command Line: "C:\Program Files (x86)\Internet Explorer\iexplore.exe" http://localhost:8080
+     Command Line: "C:\Program Files (x86)\Internet Explorer\iexplore.exe" http://localhost:8080
+     Command Line: "C:\Program Files (x86)\Internet Explorer\iexplore.exe" http://localhost:8080
+     Command Line: "C:\Program Files (x86)\Internet Explorer\iexplore.exe" http://localhost:8080
+     Command Line: "C:\Program Files (x86)\Internet Explorer\iexplore.exe" http://localhost:8080
+     Command Line: "C:\Program Files (x86)\Internet Explorer\iexplore.exe" http://localhost:8080
+     Command Line: "C:\Program Files (x86)\Internet Explorer\iexplore.exe" http://localhost:8080
+     Command Line: "C:\Program Files (x86)\Internet Explorer\iexplore.exe" http://localhost:8080
+     Command Line: "C:\Program Files (x86)\Internet Explorer\iexplore.exe" http://localhost:8080
+     Command Line: "C:\Program Files (x86)\Internet Explorer\iexplore.exe" http://localhost:8080
+     Command Line: "C:\Program Files (x86)\Internet Explorer\iexplore.exe" http://localhost:8080
+     Command Line: "C:\Program Files (x86)\Internet Explorer\iexplore.exe" http://localhost:8080
+     Command Line: "C:\Program Files (x86)\Internet Explorer\iexplore.exe" http://localhost:8080
+     Command Line: "C:\Program Files (x86)\Internet Explorer\iexplore.exe" http://localhost:8080
+     Command Line: "C:\Program Files (x86)\Internet Explorer\iexplore.exe" http://localhost:8080
+     Command Line: "C:\Program Files (x86)\Internet Explorer\iexplore.exe" http://localhost:8080
+     Command Line: "C:\Program Files (x86)\Internet Explorer\iexplore.exe" http://localhost:8080
+     Command Line: "C:\Program Files (x86)\Internet Explorer\iexplore.exe" http://localhost:8080
+     Command Line: "C:\Program Files (x86)\Internet Explorer\iexplore.exe" http://localhost:8080
+     Command Line: "C:\Program Files (x86)\Internet Explorer\iexplore.exe" http://localhost:8080
+     Command Line: "C:\Program Files (x86)\Internet Explorer\iexplore.exe" http://localhost:8080
+     Command Line: "C:\Program Files (x86)\Internet Explorer\iexplore.exe" http://localhost:8080
+     Command Line: "C:\Program Files (x86)\Internet Explorer\iexplore.exe" http://localhost:8080
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+--- Threads for process 0xF44 not available ---
+--- Modules for process 0xF44 ---
+     dispex.dll: 0x6FA30000-0x6FA39000
+     WINNSI.DLL: 0xA4160000-0xA416A000
+     KERNEL32.DLL: 0x761E0000-0x76310000
+     OLEACC.DLL: 0x73F20000-0x73F70000
+     atidxx32.dll: 0x6FF80000-0x70606000
+     msvcrt.dll: 0x75C60000-0x75D11000
+     WININET.dll: 0x76FC0000-0x77179000
+     rsaenh.dll: 0xA6330000-0xA6379000
+     CRYPT32.dll: 0xA6E90000-0xA7067000
+     WindowsCodecs.dll: 0xA4BD0000-0xA4D5A000
+     netutils.dll: 0x74300000-0x7430B000
+     ntdll.dll: 0x77260000-0x773B7000
+     comctl32.dll: 0x74670000-0x74867000
+     CFGMGR32.dll: 0xA6E40000-0xA6E8F000
+     DWrite.dll: 0x70A50000-0x70BAF000
+     powrprof.dll: 0x73740000-0x7377F000
+     KERNELBASE.dll: 0x76E40000-0x76EE6000
+     VERSION.dll: 0x74660000-0x74668000
+     IEFRAME.dll: 0x71D90000-0x72AB0000
+     jscript9.dll: 0x6FCB0000-0x6FF76000
+     IMM32.DLL: 0x75C20000-0x75C40000
+     comdlg32.dll: 0x76EF0000-0x76F79000
+     DPAPI.dll: 0xA5BF0000-0xA5BF8000
+     uiautomationcore.dll: 0x6FA40000-0x6FB1F000
+     IEShims.dll: 0x71D50000-0x71D8D000
+     ntdll.dll: 0xA9E40000-0xA9FFE000
+     shcore.dll: 0x74570000-0x745E5000
+     d2d1.dll: 0x70BB0000-0x70ED7000
+     PROPSYS.dll: 0x73A30000-0x73B49000
+     aticfx32.dll: 0x70610000-0x706F6000
+     WS2_32.dll: 0xA9280000-0xA92D8000
+     xmllite.dll: 0xA3D30000-0xA3D6F000
+     dcomp.dll: 0x6FC80000-0x6FCA3000
+     user32.dll: 0x76430000-0x76546000
+     MSIMG32.dll: 0xA1AB0000-0xA1AB7000
+     dwmapi.dll: 0xA4FC0000-0xA4FE1000
+     srvcli.dll: 0x742E0000-0x742FC000
+     MSCTF.dll: 0x76310000-0x763ED000
+     iexplore.exe: 0x7DE0000-0x7E9D000
+     WINMM.dll: 0x74620000-0x74641000
+     MLANG.dll: 0x707F0000-0x70822000
+     actxprxy.dll: 0x733E0000-0x7349C000
+     bcryptPrimitives.dll: 0x74880000-0x748D1000
+     profapi.dll: 0xA6D70000-0xA6D85000
+     atiuxpag.dll: 0x70830000-0x7083D000
+     iexplore.exe: 0xE90000-0xF4C000
+     NOT_AN_IMAGE: 0x3940000-0x3A76000
+     clbcatq.dll: 0xA72B0000-0xA7346000
+     DUser.dll: 0xA42E0000-0xA4397000
+     MSASN1.dll: 0xA6E20000-0xA6E36000
+     SHLWAPI.dll: 0x763F0000-0x76430000
+     wow64win.dll: 0x77200000-0x7725A000
+     DNSAPI.dll: 0x74080000-0x740F5000
+     RPCRT4.dll: 0x76090000-0x7613C000
+     SSPICLI.DLL: 0xA6C00000-0xA6C2C000
+     mswsock.dll: 0xA66A0000-0xA66FC000
+     ADVAPI32.dll: 0x75D90000-0x75E3E000
+     SETUPAPI.dll: 0xA99C0000-0xA9B90000
+     ieproxy.dll: 0x996A0000-0x9974F000
+     GDI32.dll: 0x75F10000-0x7600D000
+     oleacc.dll: 0xA1D70000-0xA1DD9000
+     msimtf.dll: 0x70700000-0x7070B000
+     OLEAUT32.dll: 0x76140000-0x761CB000
+     MSHTML.dll: 0x70F50000-0x71CFF000
+     wow64.dll: 0x771B0000-0x771F5000
+     fwpuclnt.dll: 0x73E70000-0x73EAF000
+     NLAapi.dll: 0xA57F0000-0xA5806000
+     CRYPTSP.dll: 0xA6700000-0xA671A000
+     sxs.dll: 0xA6CA0000-0xA6D52000
+     combase.dll: 0x75AE0000-0x75C16000
+     d3d11.dll: 0x70840000-0x709E3000
+     WINMMBASE.dll: 0x745F0000-0x7461A000
+     wow64cpu.dll: 0x771A0000-0x771A8000
+     iertutil.dll: 0x76980000-0x76B20000
+     CRYPTBASE.dll: 0x748E0000-0x748E9000
+     wkscli.dll: 0x742D0000-0x742E0000
+     ole32.dll: 0x76730000-0x76849000
+     explorerframe.dll: 0x9F200000-0x9F4DA000
+     uxtheme.dll: 0x74340000-0x743C8000
+     DUI70.dll: 0xA4D60000-0xA4F19000
+     urlmon.dll: 0x76850000-0x76971000
+     verifier.dll: 0x10C0000-0x1137000
+     windowscodecs.dll: 0x73B60000-0x73CA6000
+     SHELL32.dll: 0x74980000-0x75A46000
+     msls31.dll: 0x736E0000-0x7370B000
+     ninput.dll: 0x707B0000-0x707ED000
+     NSI.dll: 0xA74D0000-0xA74D9000
+     ieapfltr.dll: 0x70710000-0x707AE000
+     sqmapi.dll: 0x709B0000-0x709E9000
+     sechost.dll: 0x76F80000-0x76FB4000
+     winhttp.dll: 0xA33F0000-0xA34A1000
+     WOW64_IMAGE_SECTION: 0x3940000-0x3A76000
+     SspiCli.dll: 0x748F0000-0x7490C000
+     IPHLPAPI.DLL: 0xA4180000-0xA41AA000
+     IEUI.dll: 0x9BA60000-0x9BAE5000
+     DEVOBJ.dll: 0xA7070000-0xA7092000
+     Secur32.dll: 0x74650000-0x74659000
+     XmlLite.dll: 0x6F660000-0x6F695000
+     verifier.dll: 0x72AB0000-0x72B19000
+     netapi32.DLL: 0x74310000-0x74322000
+     rasadhlp.dll: 0xA2A30000-0xA2A38000
+     dxgi.dll: 0x709F0000-0x70A4C000
+     apphelp.dll: 0x73980000-0x73A27000
+Process 0xF08: iexplore.exe (child)
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+--- Threads for process 0xF08 not available ---
+--- Modules for process 0xF08 ---
+     urlmon.dll: 0xA9510000-0xA9666000
+     IEShims.dll: 0x9C260000-0x9C2BA000
+     WINNSI.DLL: 0xA4160000-0xA416A000
+     KERNEL32.DLL: 0xA8C90000-0xA8DC6000
+     ntdll.dll: 0xA9E40000-0xA9FFE000
+     shcore.dll: 0xA4F20000-0xA4FB6000
+     clbcatq.dll: 0xA72B0000-0xA7346000
+     iertutil.dll: 0xA8DD0000-0xA8FE6000
+     CRYPTBASE.dll: 0xA6C90000-0xA6C9A000
+     wkscli.dll: 0xA5750000-0xA5765000
+     ole32.dll: 0xA7350000-0xA74CE000
+     iexplore.exe: 0xE90000-0xF4C000
+     msvcrt.dll: 0xA9820000-0xA98C5000
+     WININET.dll: 0xA92E0000-0xA950E000
+     uxtheme.dll: 0xA5C00000-0xA5CE3000
+     rsaenh.dll: 0xA6330000-0xA6379000
+     SHLWAPI.dll: 0xA8C40000-0xA8C90000
+     WS2_32.dll: 0xA9280000-0xA92D8000
+     netutils.dll: 0xA6110000-0xA611E000
+     verifier.dll: 0x9DA90000-0x9DB07000
+     user32.dll: 0xA8FF0000-0xA913C000
+     comdlg32.dll: 0xA9910000-0xA99B1000
+     SHELL32.dll: 0xA78F0000-0xA8BD8000
+     RPCRT4.dll: 0xA74E0000-0xA7620000
+     SSPICLI.DLL: 0xA6C00000-0xA6C2C000
+     comctl32.dll: 0xA43A0000-0xA4609000
+     ADVAPI32.dll: 0xA9D60000-0xA9E3E000
+     mswsock.dll: 0xA66A0000-0xA66FC000
+     dwmapi.dll: 0xA4FC0000-0xA4FE1000
+     KERNELBASE.dll: 0xA70A0000-0xA7193000
+     NSI.dll: 0xA74D0000-0xA74D9000
+     sqmapi.dll: 0xA0290000-0xA02D8000
+     sechost.dll: 0xA7690000-0xA76D8000
+     OLEAUT32.dll: 0xA7820000-0xA78E3000
+     winhttp.dll: 0xA33F0000-0xA34A1000
+     MSCTF.dll: 0xA9140000-0xA9255000
+     ieproxy.dll: 0x996A0000-0x9974F000
+     IEFRAME.dll: 0x93710000-0x945CB000
+     IPHLPAPI.DLL: 0xA4180000-0xA41AA000
+     GDI32.dll: 0xA76E0000-0xA7820000
+     NLAapi.dll: 0xA57F0000-0xA5806000
+     Secur32.dll: 0x9F520000-0x9F52B000
+     IMM32.DLL: 0xA98D0000-0xA9909000
+     bcryptPrimitives.dll: 0xA6C30000-0xA6C8C000
+     CRYPTSP.dll: 0xA6700000-0xA671A000
+     srvcli.dll: 0xA6A10000-0xA6A34000
+     netapi32.DLL: 0xA5810000-0xA5825000
+     combase.dll: 0xA9670000-0xA9820000
+     profapi.dll: 0xA6D70000-0xA6D85000
+     iexplore.exe: 0x62140000-0x621FD000
+     rasadhlp.dll: 0xA2A30000-0xA2A38000
+     apphelp.dll: 0xA34B0000-0xA354F000
+Process 0x508: iexplore.exe (child)
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files\Internet Explorer\IEXPLORE.EXE" http://localhost:8080
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+     Command Line: "C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE" SCODEF:3848 CREDAT:267521 /prefetch:2
+--- Threads for process 0x508 ---
+     0x748: (unnamed)
+     0x13B4: (unnamed)
+     0xCF4: (unnamed)
+     0x111C: (unnamed)
+     0xA60: (unnamed)
+     0xC08: (unnamed)
+     0xE28: (unnamed)
+     0xD9C: (unnamed)
+     0xF58: (unnamed)
+     0x1314: (unnamed)
+     0x1190: (unnamed)
+     0x770: (unnamed)
+     0xB90: (unnamed)
+     0x8A4: (unnamed)
+     0xFFC: (unnamed)
+     0x290: (unnamed)
+     0xA8C: (unnamed)
+     0x1360: (unnamed)
+     0xFD0: (unnamed)
+     0x10E8: (unnamed)
+     0x7D4: (unnamed) (event source)
+     0xD28: (unnamed)
+     0xCFC: (unnamed)
+     0xFC0: (unnamed)
+     0x1018: (unnamed)
+     0x4CC: (unnamed)
+     0x238: (unnamed)
+     0xC94: (unnamed)
+     0xFC8: (unnamed)
+--- Modules for process 0x508 ---
+     uiautomationcore.dll: 0x6FA40000-0x6FB1F000
+     IEShims.dll: 0x9C260000-0x9C2BA000
+     WINMMBASE.dll: 0x745F0000-0x7461A000
+     wow64.dll: 0x771B0000-0x771F5000
+     WINNSI.DLL: 0xA4160000-0xA416A000
+     wow64cpu.dll: 0x771A0000-0x771A8000
+     KERNEL32.DLL: 0x761E0000-0x76310000
+     DWrite.dll: 0x70A50000-0x70BAF000
+     ntdll.dll: 0xA9E40000-0xA9FFE000
+     VERSION.dll: 0x74660000-0x74668000
+     shcore.dll: 0xA4F20000-0xA4FB6000
+     clbcatq.dll: 0xA72B0000-0xA7346000
+     iertutil.dll: 0x76980000-0x76B20000
+     SspiCli.dll: 0x748F0000-0x7490C000
+     CRYPTBASE.dll: 0xA6C90000-0xA6C9A000
+     atidxx32.dll: 0x6FF80000-0x70606000
+     ole32.dll: 0xA7350000-0xA74CE000
+     XmlLite.dll: 0x6F660000-0x6F695000
+     PROPSYS.dll: 0x73A30000-0x73B49000
+     msvcrt.dll: 0x75C60000-0x75D11000
+     WININET.dll: 0xA92E0000-0xA950E000
+     fwpuclnt.dll: 0x73E70000-0x73EAF000
+     uxtheme.dll: 0xA5C00000-0xA5CE3000
+     powrprof.dll: 0x73740000-0x7377F000
+     rsaenh.dll: 0xA6330000-0xA6379000
+     SHLWAPI.dll: 0xA8C40000-0xA8C90000
+     winhttp.dll: 0xA33F0000-0xA34A1000
+     MSHTML.dll: 0x70F50000-0x71CFF000
+     CRYPTSP.dll: 0xA6700000-0xA671A000
+     WS2_32.dll: 0xA9280000-0xA92D8000
+     wow64win.dll: 0x77200000-0x7725A000
+     DNSAPI.dll: 0x74080000-0x740F5000
+     verifier.dll: 0x580000-0x5F7000
+     dcomp.dll: 0x6FC80000-0x6FCA3000
+     user32.dll: 0x76430000-0x76546000
+     ntdll.dll: 0x77260000-0x773B7000
+     SHELL32.dll: 0xA78F0000-0xA8BD8000
+     RPCRT4.dll: 0xA74E0000-0xA7620000
+     SSPICLI.DLL: 0xA6C00000-0xA6C2C000
+     comctl32.dll: 0xA43A0000-0xA4609000
+     ADVAPI32.dll: 0xA9D60000-0xA9E3E000
+     jscript9.dll: 0x6FCB0000-0x6FF76000
+     ieproxy.dll: 0x996A0000-0x9974F000
+     IEUI.dll: 0x9BA60000-0x9BAE5000
+     dwmapi.dll: 0xA4FC0000-0xA4FE1000
+     OLEACC.DLL: 0x73F20000-0x73F70000
+     sechost.dll: 0xA7690000-0xA76D8000
+     msimtf.dll: 0x70700000-0x7070B000
+     NSI.dll: 0xA74D0000-0xA74D9000
+     combase.dll: 0xA9670000-0xA9820000
+     ieapfltr.dll: 0x70710000-0x707AE000
+     WINMM.dll: 0x74620000-0x74641000
+     KERNELBASE.dll: 0x76E40000-0x76EE6000
+     OLEAUT32.dll: 0xA7820000-0xA78E3000
+     NOT_AN_IMAGE: 0x890000-0x9C6000
+     WOW64_IMAGE_SECTION: 0x890000-0x9C6000
+     msls31.dll: 0x736E0000-0x7370B000
+     MSCTF.dll: 0x76310000-0x763ED000
+     mswsock.dll: 0xA66A0000-0xA66FC000
+     d2d1.dll: 0x70BB0000-0x70ED7000
+     dispex.dll: 0x6FA30000-0x6FA39000
+     d3d11.dll: 0x70840000-0x709E3000
+     IEFRAME.dll: 0x93710000-0x945CB000
+     IPHLPAPI.DLL: 0xA4180000-0xA41AA000
+     GDI32.dll: 0x75F10000-0x7600D000
+     NLAapi.dll: 0xA57F0000-0xA5806000
+     MLANG.dll: 0x707F0000-0x70822000
+     ninput.dll: 0x707B0000-0x707ED000
+     Secur32.dll: 0x9F520000-0x9F52B000
+     IMM32.DLL: 0x75C20000-0x75C40000
+     windowscodecs.dll: 0x73B60000-0x73CA6000
+     actxprxy.dll: 0x733E0000-0x7349C000
+     bcryptPrimitives.dll: 0xA6C30000-0xA6C8C000
+     comdlg32.dll: 0xA9910000-0xA99B1000
+     verifier.dll: 0x72AB0000-0x72B19000
+     sxs.dll: 0x72F10000-0x72FB0000
+     urlmon.dll: 0xA9510000-0xA9666000
+     profapi.dll: 0xA6D70000-0xA6D85000
+     atiuxpag.dll: 0x70830000-0x7083D000
+     iexplore.exe: 0xE90000-0xF4C000
+     rasadhlp.dll: 0xA2A30000-0xA2A38000
+     dxgi.dll: 0x709F0000-0x70A4C000
+     aticfx32.dll: 0x70610000-0x706F6000
+     apphelp.dll: 0x73980000-0x73A27000
+</PRE></SPAN></FIELDSET><FIELDSET class="level0 "><LEGEND onclick="flipLegend()" class="level0">Stack frames</LEGEND><SPAN></SPAN><SPAN class="hideable "><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-0">Frame 0: MSHTML.dll!CControlTracker::IsSelected+0x19</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-MSHTML.dll!CControlTracker::IsSelected">MSHTML.dll!CControlTracker::IsSelected</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-1">Frame 1: MSHTML.dll!CControlTracker::RemoveControlElement+0x19</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-MSHTML.dll!CControlTracker::RemoveControlElement">MSHTML.dll!CControlTracker::RemoveControlElement</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-2">Frame 2: MSHTML.dll!CEditAdorner::Detach+0x1A</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-MSHTML.dll!CEditAdorner::Detach">MSHTML.dll!CEditAdorner::Detach</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-3">Frame 3: MSHTML.dll!CPeerHolder::DetachPeer+0x20</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-MSHTML.dll!CPeerHolder::DetachPeer">MSHTML.dll!CPeerHolder::DetachPeer</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-4">Frame 4: MSHTML.dll!CElement::Notify+0x117C</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-MSHTML.dll!CElement::Notify">MSHTML.dll!CElement::Notify</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-5">Frame 5: MSHTML.dll!CSite::Notify+0x13</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-MSHTML.dll!CSite::Notify">MSHTML.dll!CSite::Notify</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-6">Frame 6: MSHTML.dll!CImgElement::Notify+0x42</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-MSHTML.dll!CImgElement::Notify">MSHTML.dll!CImgElement::Notify</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-7">Frame 7: MSHTML.dll!CMarkup::UnloadContents+0x235E</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-MSHTML.dll!CMarkup::UnloadContents">MSHTML.dll!CMarkup::UnloadContents</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-8">Frame 8: MSHTML.dll!CMarkup::Passivate+0x8D</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-MSHTML.dll!CMarkup::Passivate">MSHTML.dll!CMarkup::Passivate</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-9">Frame 9: MSHTML.dll!CBase::PrivateRelease+0x8B</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-MSHTML.dll!CBase::PrivateRelease">MSHTML.dll!CBase::PrivateRelease</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-10">Frame 10: MSHTML.dll!CMarkup::Release+0x2D</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-MSHTML.dll!CMarkup::Release">MSHTML.dll!CMarkup::Release</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-11">Frame 11: MSHTML.dll!COmWindowProxy::ExecRefresh+0x966</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-MSHTML.dll!COmWindowProxy::ExecRefresh">MSHTML.dll!COmWindowProxy::ExecRefresh</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-12">Frame 12: MSHTML.dll!CDoc::UpdateDesignMode+0x142</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-MSHTML.dll!CDoc::UpdateDesignMode">MSHTML.dll!CDoc::UpdateDesignMode</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-13">Frame 13: MSHTML.dll!CDoc::SetDesignMode+0x123</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-MSHTML.dll!CDoc::SetDesignMode">MSHTML.dll!CDoc::SetDesignMode</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-14">Frame 14: MSHTML.dll!+0x5DA17</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-MSHTML.dll!memcpy">MSHTML.dll!memcpy</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-15">Frame 15: MSHTML.dll!NUMPROPPARAMS::SetEnumStringProperty+0x198</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-MSHTML.dll!NUMPROPPARAMS::SetEnumStringProperty">MSHTML.dll!NUMPROPPARAMS::SetEnumStringProperty</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-16">Frame 16: MSHTML.dll!CBase::put_StringHelper+0x49</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-MSHTML.dll!CBase::put_StringHelper">MSHTML.dll!CBase::put_StringHelper</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-17">Frame 17: MSHTML.dll!CFastDOM::CDocument::Trampoline_Set_designMode+0x74</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-MSHTML.dll!CFastDOM::CDocument::Trampoline_Set_designMode">MSHTML.dll!CFastDOM::CDocument::Trampoline_Set_designMode</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-18">Frame 18: jscript9.dll!Js::JavascriptExternalFunction::ExternalFunctionThunk+0x185</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-jscript9.dll!Js::JavascriptExternalFunction::ExternalFunctionThunk">jscript9.dll!Js::JavascriptExternalFunction::ExternalFunctionThunk</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-19">Frame 19: jscript9.dll!Js::JavascriptArray::GetSetter+0xCF</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-jscript9.dll!Js::JavascriptArray::GetSetter">jscript9.dll!Js::JavascriptArray::GetSetter</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-20">Frame 20: jscript9.dll!Js::JavascriptOperators::SetProperty+0x178</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-jscript9.dll!Js::JavascriptOperators::SetProperty">jscript9.dll!Js::JavascriptOperators::SetProperty</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-21">Frame 21: jscript9.dll!Js::JavascriptOperators::PatchPutValueNoLocalFastPath+0xDE</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-jscript9.dll!Js::JavascriptOperators::PatchPutValueNoLocalFastPath">jscript9.dll!Js::JavascriptOperators::PatchPutValueNoLocalFastPath</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-22">Frame 22: 0x1448007D</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-23">Frame 23: jscript9.dll!Js::JavascriptString::NewWithBufferT&lt;Js::LiteralString,1&gt;+0x9C</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-jscript9.dll!Js::JavascriptString::NewWithBufferT&lt;Js::LiteralString,1&gt;">jscript9.dll!Js::JavascriptString::NewWithBufferT&lt;Js::LiteralString,1&gt;</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-24">Frame 24: jscript9.dll!Js::GlobalObject::EntryEval+0x2B5</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-jscript9.dll!Js::GlobalObject::EntryEval">jscript9.dll!Js::GlobalObject::EntryEval</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-25">Frame 25: jscript9.dll!Js::JavascriptFunction::CallRootFunction+0x140</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-jscript9.dll!Js::JavascriptFunction::CallRootFunction">jscript9.dll!Js::JavascriptFunction::CallRootFunction</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-26">Frame 26: jscript9.dll!Js::JavascriptFunction::CallRootFunction+0x19</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-jscript9.dll!Js::JavascriptFunction::CallRootFunction">jscript9.dll!Js::JavascriptFunction::CallRootFunction</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-27">Frame 27: jscript9.dll!ScriptSite::CallRootFunction+0x40</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-jscript9.dll!ScriptSite::CallRootFunction">jscript9.dll!ScriptSite::CallRootFunction</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-28">Frame 28: jscript9.dll!ScriptSite::Execute+0x61</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-jscript9.dll!ScriptSite::Execute">jscript9.dll!ScriptSite::Execute</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-29">Frame 29: jscript9.dll!JavascriptDispatch::InvokeOnMember+0x229</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-jscript9.dll!JavascriptDispatch::InvokeOnMember">jscript9.dll!JavascriptDispatch::InvokeOnMember</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-30">Frame 30: jscript9.dll!JavascriptDispatch::InvokeEx+0x29A</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-jscript9.dll!JavascriptDispatch::InvokeEx">jscript9.dll!JavascriptDispatch::InvokeEx</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-31">Frame 31: MSHTML.dll!CBase::varInvokeEx+0x44</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-MSHTML.dll!CBase::varInvokeEx">MSHTML.dll!CBase::varInvokeEx</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-32">Frame 32: dispex.dll!IDispatchEx_InvokeEx_Stub+0x59</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-dispex.dll!IDispatchEx_InvokeEx_Stub">dispex.dll!IDispatchEx_InvokeEx_Stub</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-33">Frame 33: dispex.dll!IDispatchEx_RemoteInvokeEx_Thunk+0x56</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-dispex.dll!IDispatchEx_RemoteInvokeEx_Thunk">dispex.dll!IDispatchEx_RemoteInvokeEx_Thunk</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-34">Frame 34: RPCRT4.dll!NdrStubCall2+0x2EE</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-RPCRT4.dll!NdrStubCall2">RPCRT4.dll!NdrStubCall2</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-35">Frame 35: combase.dll!CStdStubBuffer_Invoke+0xC1</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-combase.dll!CStdStubBuffer_Invoke">combase.dll!CStdStubBuffer_Invoke</A>(struct IRpcStubBuffer *, struct tagRPCOLEMESSAGE *, struct IRpcChannelBuffer *)<BR>Source file:    d:\win8_gdr\com\combase\ndr\ndrole\stub.cxx:1507<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-36">Frame 36: combase.dll!SyncStubInvoke+0xD0</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-combase.dll!SyncStubInvoke">combase.dll!SyncStubInvoke</A>(struct tagRPCOLEMESSAGE *, struct _GUID *, class CIDObject *, void *, struct IRpcChannelBuffer *, struct IRpcStubBuffer *, unsigned long *)<BR>Source file:    d:\win8_gdr\com\combase\dcomrem\channelb.cxx:1263<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-37">Frame 37: combase.dll!CCtxComChnl::ContextInvoke+0x213</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-combase.dll!CCtxComChnl::ContextInvoke">combase.dll!CCtxComChnl::ContextInvoke</A>(struct tagRPCOLEMESSAGE *, struct IRpcStubBuffer *, struct tagIPIDEntry *, unsigned long *)<BR>Source file:    d:\win8_gdr\com\combase\dcomrem\ctxchnl.cxx:1344<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-38">Frame 38: combase.dll!AppInvoke+0x1D4</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-combase.dll!AppInvoke">combase.dll!AppInvoke</A>(class CMessageCall *, class CRpcChannelBuffer *, struct IRpcStubBuffer *, void *, void *, struct tagIPIDEntry *, struct LocalThis *)<BR>Source file:    d:\win8_gdr\com\combase\dcomrem\channelb.cxx:1097<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-39">Frame 39: combase.dll!ComInvokeWithLockAndIPID+0x5C1</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-combase.dll!ComInvokeWithLockAndIPID">combase.dll!ComInvokeWithLockAndIPID</A>(class CMessageCall *, struct tagIPIDEntry *)<BR>Source file:    d:\win8_gdr\com\combase\dcomrem\channelb.cxx:1833<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-40">Frame 40: combase.dll!ThreadWndProc+0x2B5</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-combase.dll!ThreadWndProc">combase.dll!ThreadWndProc</A>(struct HWND__ *, unsigned int, unsigned int, long)<BR>Source file:    d:\win8_gdr\com\combase\dcomrem\chancont.cxx:669<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-41">Frame 41: user32.dll!InternalCallWinProc+0x23</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-user32.dll!InternalCallWinProc">user32.dll!InternalCallWinProc</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-42">Frame 42: user32.dll!UserCallWinProcCheckWow+0x100</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-user32.dll!UserCallWinProcCheckWow">user32.dll!UserCallWinProcCheckWow</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-43">Frame 43: user32.dll!DispatchMessageWorker+0x3EF</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-user32.dll!DispatchMessageWorker">user32.dll!DispatchMessageWorker</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-44">Frame 44: user32.dll!DispatchMessageW+0x10</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-user32.dll!DispatchMessageW">user32.dll!DispatchMessageW</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-45">Frame 45: IEFRAME.dll!CTabWindow::_TabWindowThreadProc+0x981</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-IEFRAME.dll!CTabWindow::_TabWindowThreadProc">IEFRAME.dll!CTabWindow::_TabWindowThreadProc</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-46">Frame 46: IEFRAME.dll!LCIETab_ThreadProc+0x378</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-IEFRAME.dll!LCIETab_ThreadProc">IEFRAME.dll!LCIETab_ThreadProc</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-47">Frame 47: iertutil.dll!CIsoWinMsg::PostQueuedMessagesToComponent+0x60</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-iertutil.dll!CIsoWinMsg::PostQueuedMessagesToComponent">iertutil.dll!CIsoWinMsg::PostQueuedMessagesToComponent</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-48">Frame 48: IEShims.dll!NS_CreateThread::DesktopIE_ThreadProc+0x66</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-IEShims.dll!NS_CreateThread::DesktopIE_ThreadProc">IEShims.dll!NS_CreateThread::DesktopIE_ThreadProc</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-49">Frame 49: KERNEL32.DLL!BaseThreadInitThunk+0xE</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-KERNEL32.DLL!BaseThreadInitThunk">KERNEL32.DLL!BaseThreadInitThunk</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-50">Frame 50: ntdll.dll!__RtlUserThreadStart+0x72</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-ntdll.dll!__RtlUserThreadStart">ntdll.dll!__RtlUserThreadStart</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Frame-51">Frame 51: ntdll.dll!_RtlUserThreadStart+0x1B</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden">Function:       <A onclick="openAnchorEvent()" href="#Function-ntdll.dll!_RtlUserThreadStart">ntdll.dll!_RtlUserThreadStart</A>(unknown)<BR>Source:         not available<BR>Local variables: None (or no information available)<BR></SPAN></FIELDSET></SPAN></FIELDSET><FIELDSET class="level0 hidden"><LEGEND onclick="flipLegend()" class="level0">Memory regions</LEGEND><SPAN></SPAN><SPAN class="hideable hidden"></SPAN></FIELDSET><FIELDSET class="level0 hidden"><LEGEND onclick="flipLegend()" class="level0">Functions</LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-IEShims.dll!NS_CreateThread::DesktopIE_ThreadProc">IEShims.dll!NS_CreateThread::DesktopIE_ThreadProc</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (unknown)
+Address:        IEShims.dll+0x-2A50C5C4
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-KERNEL32.DLL!BaseThreadInitThunk">KERNEL32.DLL!BaseThreadInitThunk</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (unknown)
+Address:        KERNEL32.DLL+0x28535
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-iertutil.dll!CIsoWinMsg::PostQueuedMessagesToComponent">iertutil.dll!CIsoWinMsg::PostQueuedMessagesToComponent</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (unknown)
+Address:        iertutil.dll+0x1432EF
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-MSHTML.dll!CBase::PrivateRelease">MSHTML.dll!CBase::PrivateRelease</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (unknown)
+Address:        MSHTML.dll+0x234ED
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-MSHTML.dll!CBase::put_StringHelper">MSHTML.dll!CBase::put_StringHelper</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (unknown)
+Address:        MSHTML.dll+0x1C288D
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-MSHTML.dll!CBase::varInvokeEx">MSHTML.dll!CBase::varInvokeEx</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (unknown)
+Address:        MSHTML.dll+0x333E57
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-MSHTML.dll!CControlTracker::IsSelected">MSHTML.dll!CControlTracker::IsSelected</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (unknown)
+Address:        MSHTML.dll+0xAD5492
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-MSHTML.dll!CControlTracker::RemoveControlElement">MSHTML.dll!CControlTracker::RemoveControlElement</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (unknown)
+Address:        MSHTML.dll+0xAD1DD4
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-MSHTML.dll!CDoc::SetDesignMode">MSHTML.dll!CDoc::SetDesignMode</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (unknown)
+Address:        MSHTML.dll+0x69F1D5
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-MSHTML.dll!CDoc::UpdateDesignMode">MSHTML.dll!CDoc::UpdateDesignMode</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (unknown)
+Address:        MSHTML.dll+0x69EE88
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-MSHTML.dll!CEditAdorner::Detach">MSHTML.dll!CEditAdorner::Detach</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (unknown)
+Address:        MSHTML.dll+0xAEF6BC
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-MSHTML.dll!CElement::Notify">MSHTML.dll!CElement::Notify</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (unknown)
+Address:        MSHTML.dll+0x87E38
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-MSHTML.dll!CFastDOM::CDocument::Trampoline_Set_designMode">MSHTML.dll!CFastDOM::CDocument::Trampoline_Set_designMode</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (unknown)
+Address:        MSHTML.dll+0x879739
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-MSHTML.dll!CImgElement::Notify">MSHTML.dll!CImgElement::Notify</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (unknown)
+Address:        MSHTML.dll+0x31BA3F
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-MSHTML.dll!CMarkup::Passivate">MSHTML.dll!CMarkup::Passivate</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (unknown)
+Address:        MSHTML.dll+0x8B53D
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-MSHTML.dll!CMarkup::Release">MSHTML.dll!CMarkup::Release</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (unknown)
+Address:        MSHTML.dll+0x879BA
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-MSHTML.dll!CMarkup::UnloadContents">MSHTML.dll!CMarkup::UnloadContents</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (unknown)
+Address:        MSHTML.dll+0x8DB4E
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-MSHTML.dll!COmWindowProxy::ExecRefresh">MSHTML.dll!COmWindowProxy::ExecRefresh</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (unknown)
+Address:        MSHTML.dll+0x69C5E2
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-MSHTML.dll!CPeerHolder::DetachPeer">MSHTML.dll!CPeerHolder::DetachPeer</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (unknown)
+Address:        MSHTML.dll+0x563529
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-MSHTML.dll!CSite::Notify">MSHTML.dll!CSite::Notify</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (unknown)
+Address:        MSHTML.dll+0x88147
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-MSHTML.dll!NUMPROPPARAMS::SetEnumStringProperty">MSHTML.dll!NUMPROPPARAMS::SetEnumStringProperty</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (unknown)
+Address:        MSHTML.dll+0x5B9E59
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-MSHTML.dll!memcpy">MSHTML.dll!memcpy</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (unknown)
+Address:        MSHTML.dll+0x403F0
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-user32.dll!DispatchMessageW">user32.dll!DispatchMessageW</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (unknown)
+Address:        user32.dll+0x8A56
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-user32.dll!DispatchMessageWorker">user32.dll!DispatchMessageWorker</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (unknown)
+Address:        user32.dll+0x88A5
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-user32.dll!InternalCallWinProc">user32.dll!InternalCallWinProc</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (unknown)
+Address:        user32.dll+0x77B5
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-user32.dll!UserCallWinProcCheckWow">user32.dll!UserCallWinProcCheckWow</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (unknown)
+Address:        user32.dll+0x780E
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-ntdll.dll!_RtlUserThreadStart">ntdll.dll!_RtlUserThreadStart</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (unknown)
+Address:        ntdll.dll+0x5AC21
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-ntdll.dll!__RtlUserThreadStart">ntdll.dll!__RtlUserThreadStart</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (unknown)
+Address:        ntdll.dll+0x5AC42
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-RPCRT4.dll!NdrStubCall2">RPCRT4.dll!NdrStubCall2</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (unknown)
+Address:        RPCRT4.dll+0x-313B54C3
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-jscript9.dll!JavascriptDispatch::InvokeEx">jscript9.dll!JavascriptDispatch::InvokeEx</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (unknown)
+Address:        jscript9.dll+0x71DEA
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-jscript9.dll!JavascriptDispatch::InvokeOnMember">jscript9.dll!JavascriptDispatch::InvokeOnMember</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (unknown)
+Address:        jscript9.dll+0x12F8D1
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-jscript9.dll!Js::GlobalObject::EntryEval">jscript9.dll!Js::GlobalObject::EntryEval</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (unknown)
+Address:        jscript9.dll+0x15F5CE
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-jscript9.dll!Js::JavascriptArray::GetSetter">jscript9.dll!Js::JavascriptArray::GetSetter</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (unknown)
+Address:        jscript9.dll+0xA7010
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-jscript9.dll!Js::JavascriptExternalFunction::ExternalFunctionThunk">jscript9.dll!Js::JavascriptExternalFunction::ExternalFunctionThunk</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (unknown)
+Address:        jscript9.dll+0x16F4F
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-jscript9.dll!Js::JavascriptFunction::CallRootFunction">jscript9.dll!Js::JavascriptFunction::CallRootFunction</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (unknown)
+Address:        jscript9.dll+0xFF9D
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-jscript9.dll!Js::JavascriptOperators::PatchPutValueNoLocalFastPath">jscript9.dll!Js::JavascriptOperators::PatchPutValueNoLocalFastPath</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (unknown)
+Address:        jscript9.dll+0x15F7A
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-jscript9.dll!Js::JavascriptOperators::SetProperty">jscript9.dll!Js::JavascriptOperators::SetProperty</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (unknown)
+Address:        jscript9.dll+0x10DD1
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-jscript9.dll!Js::JavascriptString::NewWithBufferT&lt;Js::LiteralString,1&gt;">jscript9.dll!Js::JavascriptString::NewWithBufferT&lt;Js::LiteralString,1&gt;</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (unknown)
+Address:        (unknown)
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-jscript9.dll!ScriptSite::CallRootFunction">jscript9.dll!ScriptSite::CallRootFunction</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (unknown)
+Address:        jscript9.dll+0xFF23
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-jscript9.dll!ScriptSite::Execute">jscript9.dll!ScriptSite::Execute</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (unknown)
+Address:        jscript9.dll+0xFE8E
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-combase.dll!AppInvoke">combase.dll!AppInvoke</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (class CMessageCall *, class CRpcChannelBuffer *, struct IRpcStubBuffer *, void *, void *, struct tagIPIDEntry *, struct LocalThis *)
+Address:        combase.dll+0x-33A94D38
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-combase.dll!CCtxComChnl::ContextInvoke">combase.dll!CCtxComChnl::ContextInvoke</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (struct tagRPCOLEMESSAGE *, struct IRpcStubBuffer *, struct tagIPIDEntry *, unsigned long *)
+Address:        combase.dll+0x-33B7FF08
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-combase.dll!CStdStubBuffer_Invoke">combase.dll!CStdStubBuffer_Invoke</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (struct IRpcStubBuffer *, struct tagRPCOLEMESSAGE *, struct IRpcChannelBuffer *)
+Address:        combase.dll+0x-33A94ECB
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-combase.dll!ComInvokeWithLockAndIPID">combase.dll!ComInvokeWithLockAndIPID</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (class CMessageCall *, struct tagIPIDEntry *)
+Address:        combase.dll+0x-33A949D3
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-combase.dll!SyncStubInvoke">combase.dll!SyncStubInvoke</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (struct tagRPCOLEMESSAGE *, struct _GUID *, class CIDObject *, void *, struct IRpcChannelBuffer *, struct IRpcStubBuffer *, unsigned long *)
+Address:        combase.dll+0x-33A94FFB
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-combase.dll!ThreadWndProc">combase.dll!ThreadWndProc</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (struct HWND__ *, unsigned int, unsigned int, long)
+Address:        combase.dll+0x-33B839F3
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-dispex.dll!IDispatchEx_InvokeEx_Stub">dispex.dll!IDispatchEx_InvokeEx_Stub</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (unknown)
+Address:        dispex.dll+0x2484
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-dispex.dll!IDispatchEx_RemoteInvokeEx_Thunk">dispex.dll!IDispatchEx_RemoteInvokeEx_Thunk</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (unknown)
+Address:        dispex.dll+0x1ED1
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-IEFRAME.dll!CTabWindow::_TabWindowThreadProc">IEFRAME.dll!CTabWindow::_TabWindowThreadProc</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (unknown)
+Address:        IEFRAME.dll+0x-218DDB9D
+Disassembly: not available
+</PRE></SPAN></FIELDSET><FIELDSET class="level1 hidden"><LEGEND onclick="flipLegend()" class="level1"><A name="Function-IEFRAME.dll!LCIETab_ThreadProc">IEFRAME.dll!LCIETab_ThreadProc</A></LEGEND><SPAN></SPAN><SPAN class="hideable hidden"><PRE>Arguments:      (unknown)
+Address:        IEFRAME.dll+0x-218FE91F
+Disassembly: not available
+</PRE></SPAN></FIELDSET></SPAN></FIELDSET></BODY></HTML>

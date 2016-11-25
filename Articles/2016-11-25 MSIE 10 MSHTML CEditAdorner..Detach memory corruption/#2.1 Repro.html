@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      var oWindow = window.open("window.xhtml");
+      setInterval(function () {
+        try {
+          oWindow.eval("(" + function () {
+            document.designMode = "on";
+            document.execCommand("SelectAll");
+            var oSelection = window.getSelection();
+            oSelection.collapse(document,1);
+            document.execCommand("InsertImage", false);
+            document.designMode="off";
+          } + ")()");
+        } catch (e) {}
+      }, 1);
+    </script>
+  </head>
+</html>
