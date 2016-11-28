@@ -1,5 +1,5 @@
-Details
--------
+Description
+-----------
 The last line of script (`designMode = "off"`) will cause some cleanup in MSIE,
 which appears to trigger use of a stale pointer in `CEditAdorner::Detach`. I
 did not investigate further.
