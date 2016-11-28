@@ -1,0 +1,18 @@
+{
+  "sTitle": "MSIE 8-11 MSHTML DOMImplementation type confusion",
+  "sSummary": "A type confusion issue in Microsoft Internet Explorer 8 through to 11 might allow arbitrary code execution.",
+  "sSynopsisFileName": "Synopsis.md",
+  "adxSections": [
+    {"sType": "Text", "sFileName": "#1 Intro.md"},
+    {"sType": "Source code", "sFileName": "#2.1 Repro.svg", "sAttachmentFileName": "1 Repro.svg"},
+    {"sType": "Source code", "sFileName": "#2.2 Target.html", "sAttachmentFileName": "1 Target.html"},
+    {"sType": "Text", "sFileName": "#3 Details.md"},
+    {"sType": "Source code", "sFileName": "#4.1 Repro.html", "sAttachmentFileName": "2 Repro.html"},
+    {"sType": "Source code", "sFileName": "#4.2 Target.html", "sAttachmentFileName": "2 Target.html"},
+    {"sType": "Text", "sFileName": "#5 Details and time-line.md"}
+  ],
+  "asTags": [
+    "Vuln",
+    "Microsoft Internet Explorer"
+  ]
+}
