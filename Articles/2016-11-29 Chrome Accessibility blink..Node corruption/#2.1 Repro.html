@@ -1,0 +1,7 @@
+<iframe id=x></iframe>
+<script>
+  var u = 0;
+  onload = x.onload = function () {
+    x.src = "Target" + (u++ % 2) + ".html"
+  }
+</script>

@@ -1,0 +1,20 @@
+{
+  "sTitle": "Google Chrome Accessibility blink::Node corruption",
+  "sSummary": "A memory corruption issue in Google Chrome might allow arbitrary code execution.",
+  "sSynopsisFileName": "Synopsis.md",
+  "adxSections": [
+    {"sType": "Text", "sFileName": "#1 Intro.md"},
+    {"sType": "Source code", "sFileName": "#2.1 Repro.html", "sAttachmentFileName": "Repro.html"},
+    {"sType": "Source code", "sFileName": "#2.2 Target0.html", "sAttachmentFileName": "Target0.html"},
+    {"sType": "Source code", "sFileName": "#2.3 Target1.html", "sAttachmentFileName": "Target1.html"},
+    {"sType": "Text", "sFileName": "#3 Description.md"},
+    {"sType": "Source code snippet", "sFileName": "#4 Source.cpp"},
+    {"sType": "Text", "sFileName": "#5 Description.md"},
+    {"sType": "Source code snippet", "sFileName": "#6 Source.cpp"},
+    {"sType": "Text", "sFileName": "#7 Description, exploit, and time-line.md"}
+  ],
+  "asTags": [
+    "Vuln",
+    "Google Chrome"
+  ]
+}
