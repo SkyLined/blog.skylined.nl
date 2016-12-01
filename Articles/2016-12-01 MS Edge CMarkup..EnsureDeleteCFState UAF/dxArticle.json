@@ -1,0 +1,13 @@
+{
+  "sTitle": "MS Edge CMarkup::EnsureDeleteCFState use-after-free",
+  "sSummary": "A memory corruption vulnerability in Microsoft Edge might allow arbitrary code execution.",
+  "sSynopsisFileName": "Synopsis.md",
+  "adxSections": [
+    {"sType": "Text", "sFileName": "#1 Article.md"},
+    {"sType": "BugId report", "sFileName": "#2 AVR.Free microsoftedgecp.exe!EDGEHTML.dll!CMarkup..EnsureDeleteCFState 7C0A0A.html", "sAttachmentFileName": "AVR.Free microsoftedgecp.exe!EDGEHTML.dll!CMarkup..EnsureDeleteCFState 7C0A0A.html"}
+  ],
+  "asTags": [
+    "Vuln",
+    "Microsoft Edge"
+  ]
+}
