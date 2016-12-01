@@ -151,7 +151,7 @@ setInterval(function () {
   document.cookie = "LastCookieSetTime=" + new Date().valueOf() + "; expires=" + new Date(new Date().getTime() + 10 *YEARS).toGMTString();
   console.log("document.cookie: ", document.cookie);
 }, 10 *SECONDS);
-// Test ad-blocker by trying to load a file from a URL that matches ".com/ads.js", as this is commonly blocked:
+// Test ad-blocker by trying to load a file from a URL that matches "ads.js?", as this is commonly blocked:
 var bAdBlockerDetected = undefined,
     oXHR = new XMLHttpRequest(),
     bAdBlockerCheckCompleted = false;
@@ -173,7 +173,7 @@ oXHR.addEventListener("readystatechange", function() {
     ]);
   };
 });
-oXHR.open("GET", "/x.com/ads.js", true);
+oXHR.open("GET", "/ads.js?", true);
 oXHR.send();
 // Test WebRTC local IP address leak
 RTCPeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnection || window.webkitRTCPeerConnection;
