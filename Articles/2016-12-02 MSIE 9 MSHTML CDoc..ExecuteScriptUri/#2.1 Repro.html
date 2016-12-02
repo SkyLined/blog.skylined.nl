@@ -1,0 +1,7 @@
+<iframe style="border:1px solid red;width:100%;height:100%;" name="iframe"></iframe>
+<script>
+    window.open("Repro.xml", "iframe");
+    setTimeout(function () {
+      window.open('javascript:void(location.href = "about:blank");', "iframe");
+    }, 1000);
+</script>
