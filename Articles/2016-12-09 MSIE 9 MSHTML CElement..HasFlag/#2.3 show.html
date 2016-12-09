@@ -1,0 +1,11 @@
+//<!--
+  function show(sTitle, sMessage) {
+    showModalDialog("show.html", [sTitle, "<pre>" + sMessage + "</pre>"],
+      "dialogWidth:800px; dialogHeight:600px; resizable:yes");
+  }
+/*-->
+<script>
+  document.body.innerHTML = window.dialogArguments[1];
+  document.title = window.dialogArguments[0];
+</script>
+<!-- */ // -->

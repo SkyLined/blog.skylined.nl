@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <script src="getElementTree.js"></script>
+    <script src="show.html"></script>
+    <script>
+      // First tag can be any inline but must NOT be closed yet
+      // Second tag can be anything that's not inline.
+      // "text1" can be anything
+      document.write('<s><br>text1');
+      // The tree is in good shape.
+      show("DOM Tree after first write", getElementTree(document.body));
+      // At this point, it appears that MSIE is still waiting for the first tag from the first write to be closed.
+      // Inserting a P tag using any of the "Justify*"-, "Indent"- or "Outdent"-execCommands will mess up the DOM tree,
+      // specifically for the "Justify*"- and "Outdent"-execCommand:
+      // - the S tag will partially become a child of the P tag:
+      //      P.lastChild == S (but P.childNodes = [BR, text1])
+      // - the P tag will partially become a child of the S tag:
+      //      S.firstChild == P and S.childNodes = [P] (but S.lastChild = text1)
+      // - The P partially becomes a child of the BODY tag:
+      //      BODY.lastChild = P (but BODY.firstChild = S and BODY.childNodes = [S])
+      // (The situation is similar for "Indent", but includes a BLOCKQUOTE element)
+      document.execCommand('SelectAll');
+      document.execCommand('JustifyRight');
+      show("DOM Tree after outdent", getElementTree(document.body));
+      // At this point, MSIE is not yet crashing. However, another write will corrupt memory:
+      document.write('text2');
+      // You will probably not see this popup. If you do, it will display an obviously corrupt DOM element tree.
+      show("DOM Tree after write", getElementTree(document.body));
+    </script>
+  </head>
+</html>
