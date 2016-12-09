@@ -99,7 +99,6 @@ code {
   border-radius: 0.5em;
   margin-bottom: 1em;
   position: relative;
-
 }
 .internal-links {
   left: 0;
@@ -130,23 +129,6 @@ code {
   text-align: center;
 }
 
-/* main page index */
-.main-page-index {
-  display: block;
-  column-width: 28em;
-  -moz-column-width: 28em;
-  -ms-column-width: 28em;
-  column-count: auto;
-  -moz-column-count: auto;
-  -ms-column-count: auto;
-  column-gap: 1em;
-  -moz-column-gap: 1em;
-  -ms-column-gap: 1em;
-}
-.main-page-article {
-  display: inline-block;
-  padding: 1em;
-}
 .card {
   background-image: url("/Images/Canvas.jpg");
 }
@@ -202,6 +184,11 @@ code {
   padding-top: 2em;
 }
 
+.article-separator-section > hr {
+  border-top: 1px solid #C0C0C0;
+  margin: 2em 0;
+}
+
 .article-source-code-section, .article-bugid-report-section {
   margin: 1em 1em;
   display: block;
@@ -228,8 +215,8 @@ code {
 }
 
 .article-source-code, .article-bugid-report-synopsis{
-	display: block;
-	white-space: pre;
+  display: block;
+  white-space: pre;
   padding: 1em;
   overflow-x: auto;
   background-color: rgba(22, 19, 16,0.05);
@@ -273,6 +260,9 @@ h1 + *, h2 + * {
   margin-top: -8em;
 }
 
+/*******************************************************************************
+   Security warnings
+*******************************************************************************/
 .security-warnings {
   display: none;
   padding: 1em;
@@ -293,4 +283,44 @@ h1 + *, h2 + * {
 
 .creative-commons-license-icon {
   vertical-align: middle;
+}
+
+/*******************************************************************************
+   Main page
+*******************************************************************************/
+
+.main-page {
+  display: block;
+}
+/* Main page Articles group */
+.main-page-articles-group {
+  display: block;
+  column-width: 28em;
+  -moz-column-width: 28em;
+  -ms-column-width: 28em;
+  column-count: auto;
+  -moz-column-count: auto;
+  -ms-column-count: auto;
+  column-gap: 1em;
+  -moz-column-gap: 1em;
+  -ms-column-gap: 1em;
+}
+
+.main-page-articles-group-title {
+  display: flex;
+  align-items: center;
+  margin: 1em 0px;
+  width: 100%;
+}
+.main-page-articles-group-title::before, .main-page-articles-group-title::after {
+  content: "";
+  flex-grow: 1;
+  margin: 0px .5em;
+  border-top: 1px solid #C0C0C0;
+}
+
+/* Main page Article */
+.main-page-article {
+  display: inline-block;
+  padding: 1em;
 }
