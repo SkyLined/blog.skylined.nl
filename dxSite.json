@@ -7,8 +7,7 @@
     "sEmailAddress": "blog@skylined.nl",
     "sBitcoin": "183yyxa9s1s1f7JBpPHPmzQ346y91Rx5DX"
   },
-  "sAbsoluteBaseURL": "http://blog.skylined.nl/",
-  "sRelativeBaseURL": "/",
+  "sBaseRelativeURL": "/",
   "dxLicense": {
     "sDescription": "Creative Commons Attribution-Non\u2011Commercial 4.0 International License",
     "sImageRelativeURL": "Images/Creative Commons License by-nc.png",
@@ -27,5 +26,5 @@
     "Images/Banner Katakana.png",
     "Images/Banner Shark.png"
   ],
-  "sSiteAvatarRelativeURL": "Images/Avatar.png"
+  "sTwitterAvatarRelativeURL": "Images/Avatar.png"
 }
