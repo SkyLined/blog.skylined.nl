@@ -3,7 +3,7 @@
   <channel>
     <title><<sSiteTitle>></title>
     <description><<sSiteSummary>></description>
-    <link><<sSiteAbsoluteURL>></link>
+    <link><<sBaseAbsoluteURL>><<sMainPageRelativeURL>></link>
     <<sArticlesXML>>
   </channel>
 </rss>
