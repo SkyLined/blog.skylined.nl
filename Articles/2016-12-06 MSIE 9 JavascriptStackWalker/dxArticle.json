@@ -1,0 +1,23 @@
+{
+  "sTitle": "MSIE jscript9 JavaScriptStackWalker memory corruption",
+  "sSummary": "A memory corruption vulnerability in Microsoft Internet Explorer 9 might allow arbitrary code execution.",
+  "sSynopsisFileName": "Synopsis.md",
+  "adxSections": [
+    {"sType": "Text", "sFileName": "#1 Intro.md"},
+    {"sType": "Source code", "sFileName": "#2 Repro.html", "sAttachmentFileName": "Repro.html"},
+    {"sType": "Text", "sFileName": "#3 Description.md"},
+    {"sType": "Text", "sFileName": "#4.1 Exploit.md"},
+    {"sType": "Source code snippet", "sFileName": "#4.2 Stack layout.txt"},
+    {"sType": "Text", "sFileName": "#4.3 Exploit.md"},
+    {"sType": "Source code", "sFileName": "#5.1 Sploit.html", "sAttachmentFileName": "Sploit.html"},
+    {"sType": "Source code", "sFileName": "#5.2 String.js", "sAttachmentFileName": "String.js"},
+    {"sType": "Source code", "sFileName": "#5.3 sprayHeap.js", "sAttachmentFileName": "sprayHeap.js"},
+    {"sType": "Text", "sFileName": "#6 Time-line.md"},
+    {"sType": "BugId report", "sFileName": "#7.1 jscript9.dll!Js..JavascriptStackWalker..GetCaller Arbitrary AVE(E1D43340).html", "sAttachmentFileName": "jscript9.dll!Js..JavascriptStackWalker..GetCaller Arbitrary AVE(E1D43340).html"},
+    {"sType": "BugId report", "sFileName": "#7.2 jscript9.dll!Js..JavascriptStackWalker..Walk Arbitrary AVE(FF1CE79F).html", "sAttachmentFileName": "jscript9.dll!Js..JavascriptStackWalker..Walk Arbitrary AVE(FF1CE79F).html"}
+  ],
+  "asTags": [
+    "Vuln",
+    "Microsoft Internet Explorer"
+  ]
+}

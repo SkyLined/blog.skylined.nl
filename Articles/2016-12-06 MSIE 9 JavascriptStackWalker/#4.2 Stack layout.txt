@@ -1,0 +1,24 @@
+|                                                                              |
+|<--bottom of stack                                             top of stack-->|
+|                                                                              |
+| Stack layout at the moment the first exception is triggered:                 |
+|                                                                              |
+|                 [--- CALL X ---][-- CALL X-1 --][-- CALL X-2 --][...........]|
+|                                                                              |
+|<---------------> Stack space available is less than 4*N bytes                |
+|                                                                              |
+|                ^^^                                                           |
+|                Vulnerable pointer gets initialized to point around here      |
+|                                                                              |
+|                                                                              |
+|                                                                              |
+| Stack layout at the moment the second exception is triggered:                |
+|                                                                              |
+|    [CALL Y][CALL Y-1][CALL Y-2][CALL Y-3][CALL Y-3][........................]|
+|                                                                              |
+|<--> Stack space available is less than 4*M bytes                             |
+|                                                                              |
+|                ^^^                                                           |
+|                Vulnerable pointer still points around here, most likely at   |
+|                one of the arguments pushed onto the stack in a call.         |
+|                                                                              |

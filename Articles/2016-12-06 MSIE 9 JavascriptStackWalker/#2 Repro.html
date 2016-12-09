@@ -1,0 +1,7 @@
+<!doctype html>
+<script>
+  var oWindow = window.open("about:blank");
+  oWindow.execScript('window.oURIError = new URIError();oURIError.name = oURIError;')
+  try { "" + oWindow.oURIError; } catch(e) { }
+  try { "" + oWindow.oURIError; } catch(e) { }
+</script>

