@@ -43,5 +43,5 @@ Time-line
 * *November 2016*: Details of this issue are released.
 
 [ZDI]: http://www.zerodayinitiative.com/
-[iDefense]: [iDefense]: https://labs.idefense.com/vcpportal/
+[iDefense]: https://labs.idefense.com/vcpportal/
 
