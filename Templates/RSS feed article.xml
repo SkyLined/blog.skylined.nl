@@ -1,6 +1,7 @@
 <item>
   <title><<sArticleTitle>></title>
   <description><<sArticleDescription>></description>
+  <description-text><<sArticleDescriptionText>></description-text>
   <link><<sArticleAbsoluteURL>></link>
   <guid><<sArticleAbsoluteURL>></guid>
   <pubDate><<sArticleDate>></pubDate>
