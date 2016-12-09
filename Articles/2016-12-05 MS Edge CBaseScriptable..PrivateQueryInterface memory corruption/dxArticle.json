@@ -1,0 +1,31 @@
+{
+  "sTitle": "MS Edge CBaseScriptable::PrivateQueryInterface memory corruption",
+  "sSummary": "A memory corruption vulnerability in Microsoft Edge might allow arbitrary code execution.",
+  "sSynopsisFileName": "Synopsis.md",
+  "adxSections": [
+    {"sType": "Text", "sFileName": "#1 Article.md"},
+    {"sType": "Text", "sFileName": "#2 Article.md"},
+    {"sType": "Source code", "sFileName": "CanvasRenderingContext2D\\repro.html", "sAttachmentFileName": "CanvasRenderingContext2D repro.html"},
+    {"sType": "BugId report", "sFileName": "CanvasRenderingContext2D\\AVR.Unallocated e2d.0f3 microsoftedgecp.exe!edgehtml.dll!CBaseScriptable..PrivateQueryInterface.html", "sAttachmentFileName": "AVR.Unallocated e2d.0f3 microsoftedgecp.exe!edgehtml.dll!CBaseScriptable..PrivateQueryInterface.html"},
+    {"sType": "Separator"},
+    {"sType": "Source code", "sFileName": "navigator.mediaDevices\\repro.html", "sAttachmentFileName": "navigator.mediaDevices repro.html"},
+    {"sType": "BugId report", "sFileName": "navigator.mediaDevices\\AVR.Unallocated 02f.e2d microsoftedgecp.exe!chakra.dll!ThreadContext..PreSweepCallback.html", "sAttachmentFileName": "AVR.Unallocated 02f.e2d microsoftedgecp.exe!chakra.dll!ThreadContext..PreSweepCallback.html"},
+    {"sType": "Separator"},
+    {"sType": "Source code", "sFileName": "navigator.mediaDevices\\repro.html", "sAttachmentFileName": "navigator.mediaDevices repro.html"},
+    {"sType": "BugId report", "sFileName": "navigator.mediaDevices\\AVR.Unallocated 02f.e2d microsoftedgecp.exe!chakra.dll!ThreadContext..PreSweepCallback.html", "sAttachmentFileName": "AVR.Unallocated 02f.e2d microsoftedgecp.exe!chakra.dll!ThreadContext..PreSweepCallback.html"},
+    {"sType": "Separator"},
+    {"sType": "Source code", "sFileName": "Window.crypto\\repro.html", "sAttachmentFileName": "Window.crypto repro.html"},
+    {"sType": "BugId report", "sFileName": "Window.crypto\\AVR.NULL+N e2d.0f3 microsoftedgecp.exe!edgehtml.dll!CBaseScriptable..PrivateQueryInterface.html", "sAttachmentFileName": "AVR.NULL+N e2d.0f3 microsoftedgecp.exe!edgehtml.dll!CBaseScriptable..PrivateQueryInterface.html"},
+    {"sType": "BugId report", "sFileName": "Window.crypto\\AVR.NULL+4#N e2d.0f3 microsoftedgecp.exe!edgehtml.dll!CBaseScriptable..PrivateQueryInterface.html", "sAttachmentFileName": "AVR.NULL+4#N e2d.0f3 microsoftedgecp.exe!edgehtml.dll!CBaseScriptable..PrivateQueryInterface.html"},
+    {"sType": "Separator"},
+    {"sType": "Source code", "sFileName": "Window.msCredentials\\repro.html", "sAttachmentFileName": "Window.msCredentials repro.html"},
+    {"sType": "BugId report", "sFileName": "Window.msCredentials\\AVR.Reserved e2d.003 microsoftedgecp.exe!edgehtml.dll!CBaseScriptable..PrivateQueryInterface.html", "sAttachmentFileName": "AVR.Reserved e2d.003 microsoftedgecp.exe!edgehtml.dll!CBaseScriptable..PrivateQueryInterface.html"},
+    {"sType": "Separator"},
+    {"sType": "Source code", "sFileName": "Window.toString\\repro.html", "sAttachmentFileName": "Window.toString repro.html"},
+    {"sType": "BugId report", "sFileName": "Window.toString\\Assert 368.80c microsoftedgecp.exe!edgehtml.dll!CBase..ContextInvokeEx.html", "sAttachmentFileName": "Assert 368.80c microsoftedgecp.exe!edgehtml.dll!CBase..ContextInvokeEx.html"}
+  ],
+  "asTags": [
+    "Vuln",
+    "Microsoft Edge"
+  ]
+}
