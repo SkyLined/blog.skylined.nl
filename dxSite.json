@@ -7,6 +7,7 @@
     "sEmailAddress": "blog@skylined.nl",
     "sBitcoin": "183yyxa9s1s1f7JBpPHPmzQ346y91Rx5DX"
   },
+  "sBaseAbsoluteURL": "http://blog.skylined.nl/",
   "sBaseRelativeURL": "/",
   "dxLicense": {
     "sDescription": "Creative Commons Attribution-Non\u2011Commercial 4.0 International License",
