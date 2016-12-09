@@ -1,0 +1,16 @@
+{
+  "sTitle": "MSIE 9 MSHTML CDispNode::InsertSiblingNode use-after-free",
+  "sSummary": "A use-after-free vulnerability in Microsoft Internet Explorer 9 might allow arbitrary code execution.",
+  "sSynopsisFileName": "Synopsis.md",
+  "adxSections": [
+    {"sType": "Text", "sFileName": "#1 Article.md"},
+    {"sType": "Source code", "sFileName": "#2 Repro.html", "sAttachmentFileName": "Repro.html"},
+    {"sType": "Text", "sFileName": "#3 Time-line.md"},
+    {"sType": "BugId report", "sFileName": "#4.1 Arbitrary AVR@MSHTML.dll!CDisplay..HandleNegativelyPositionedContent(Vu9v).html", "sAttachmentFileName": "Arbitrary AVR@MSHTML.dll!CDisplay..HandleNegativelyPositionedContent(Vu9v).html"},
+    {"sType": "BugId report", "sFileName": "#4.2 Free AVW@MSHTML.dll!CDispNode..InsertSiblingNode(vW5t).html", "sAttachmentFileName": "Free AVW@MSHTML.dll!CDispNode..InsertSiblingNode(vW5t).html"}
+  ],
+  "asTags": [
+    "Vuln",
+    "Microsoft Internet Explorer"
+  ]
+}
