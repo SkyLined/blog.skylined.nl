@@ -1,0 +1,36 @@
+<svg xmlns='http://www.w3.org/2000/svg'>
+  <script type="text/javascript">
+    function B(bValue) { return bValue ? "T" : "F" };
+    var oElement = document.createElement("x");
+    var oCDATASection = document.createCDATASection("AB");
+    oElement.appendChild(oCDATASection);
+    // splitText should split a Text node into two text Nodes, each containing a substring of the data of the original Text node.
+    // However, MSIE does not implement this correctly, causing both Text nodes to refer to the same data.
+    oTextNode1 = oCDATASection.splitText(0);
+    alert("[AB**|AB**AB=AB]\r\n[" +
+        oElement.textContent + "**" + 
+        oCDATASection.nodeValue + "|" + oTextNode1.nodeValue + "**" +
+        oCDATASection.wholeText + "=" + oTextNode1.wholeText + "]");
+    oCDATASection.appendData("CD");
+    alert("[CDAB**CD|AB**CDAB=CDAB]TT\r\n[" +
+        oElement.textContent + "**" + 
+        oCDATASection.nodeValue + "|" + oTextNode1.nodeValue + "**" +
+        oCDATASection.wholeText + "=" + oTextNode1.wholeText + "]" +
+        B(oCDATASection.parentNode === oElement) + B(oTextNode1.parentNode === oElement)
+    );
+    var oTextNode2 = oCDATASection.splitText(0);
+    alert("[CDAB**|CD|AB**CDAB=CDAB=CDAB]TTT\r\n[" +
+        oElement.textContent + "**" + 
+        oCDATASection.nodeValue + "|" + oTextNode2.nodeValue + "|" + oTextNode1.nodeValue + "**" +
+        oCDATASection.wholeText + "=" + oTextNode2.wholeText + "=" + oTextNode1.wholeText + "]" +
+        B(oCDATASection.parentNode === oElement) + B(oTextNode2.parentNode === oElement) + B(oTextNode1.parentNode === oElement)
+    );
+    var oTextNode3 = oCDATASection.replaceWholeText("EF");
+    alert("[EF**EF||**EF=EF=EF]TFF\r\n[" +
+        oElement.textContent + "**" + 
+        oCDATASection.nodeValue + "|" + oTextNode2.nodeValue + "|" + oTextNode1.nodeValue + "**" +
+        oCDATASection.wholeText + "=" + oTextNode2.wholeText + "=" + oTextNode1.wholeText + "]" +
+        oCDATASection.parentNode + "/" + oTextNode2.parentNode + "/" + oTextNode1.parentNode
+    );
+  </script>
+</svg>
