@@ -2,7 +2,7 @@
   <title><<sArticleTitle>></title>
   <description><<sArticleDescription>></description>
   <description-text><<sArticleDescriptionText>></description-text>
-  <link><<sArticleAbsoluteURL>></link>
-  <guid><<sArticleAbsoluteURL>></guid>
+  <link><<sBaseAbsoluteURL>><<sArticleRelativeURL>></link>
+  <guid><<sBaseAbsoluteURL>><<sArticleRelativeURL>></guid>
   <pubDate><<sArticleDate>></pubDate>
 </item>
