@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" >
+    <script>
+      function go() {
+        document.execCommand('SelectAll');
+        document.execCommand('superscript');
+        setTimeout(function() {
+          oSupElement=document.getElementsByTagName('sup')[0];
+          oSupElement.swapNode(document.documentElement);
+        }, 0);
+      }
+    </script>
+  </head>
+  <body onload="go()">
+    <address></address>
+    <fieldset></fieldset>
+  </body>
+</html>

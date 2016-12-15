@@ -1,0 +1,15 @@
+{
+  "sTitle": "MSIE 9 IEFRAME CSelectionInteractButtonBehavior::_UpdateButtonLocation use-after-free",
+  "sSummary": "A use-after-free vulnerability in Microsoft Internet Explorer 9 might allow arbitrary code execution.",
+  "sSynopsisFileName": "Synopsis.md",
+  "adxSections": [
+    {"sType": "Text", "sFileName": "#1 Article.md"},
+    {"sType": "Source code", "sFileName": "#2 Repro.html", "sAttachmentFileName": "Repro.html"},
+    {"sType": "Text", "sFileName": "#3 Time-line.md"},
+    {"sType": "BugId report", "sFileName": "#4 Arbitrary AVW@IEFRAME.dll!CSelectionInteractButtonBehavior.._UpdateButtonLocation(ZDZd).html", "sAttachmentFileName": "Arbitrary AVW@IEFRAME.dll!CSelectionInteractButtonBehavior.._UpdateButtonLocation(ZDZd).html"}
+  ],
+  "asTags": [
+    "Vuln",
+    "Microsoft Internet Explorer"
+  ]
+}

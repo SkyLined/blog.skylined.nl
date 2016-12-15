@@ -14,8 +14,8 @@ in a stack-based analog to a heap use-after-free vulnerability. The stack
 memory where the data was stored can be modified by an attacker before it is
 used, allowing remote code execution.
 
-Known affected software and attack vectors
-------------------------------------------
+Known affected software, attack vectors and potential mitigations
+-----------------------------------------------------------------
 * **Microsoft Internet Explorer 9**
 
   An attacker would need to get a target user to open a specially crafted

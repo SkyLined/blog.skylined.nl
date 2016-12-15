@@ -8,7 +8,7 @@
     {"sType": "Source code", "sFileName": "#2.2 getElementTree.js", "sAttachmentFileName": "getElementTree.js"},
     {"sType": "Source code", "sFileName": "#2.3 show.html", "sAttachmentFileName": "show.html"},
     {"sType": "Text", "sFileName": "#3 Time-line.md"},
-    {"sType": "BugId report", "sFileName": "#4 Arbitrary AVR@MSHTML.dll!CElement..HasFlag(Zn8v).html", "sAttachmentFileName": "#4 Arbitrary AVR@MSHTML.dll!CElement..HasFlag(Zn8v).html"}
+    {"sType": "BugId report", "sFileName": "#4 Arbitrary AVR@MSHTML.dll!CElement..HasFlag(Zn8v).html", "sAttachmentFileName": "Arbitrary AVR@MSHTML.dll!CElement..HasFlag(Zn8v).html"}
   ],
   "asTags": [
     "Vuln",
