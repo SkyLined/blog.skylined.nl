@@ -1,0 +1,15 @@
+{
+  "sTitle": "MSIE 9 MSHTML CMarkup::ReloadInCompatView use-after-free",
+  "sSummary": "A use-after-free vulnerability in Microsoft Internet Explorer 9 might allow arbitrary code execution.",
+  "sSynopsisFileName": "Synopsis.md",
+  "adxSections": [
+    {"sType": "Text", "sFileName": "#1 Intro.md"},
+    {"sType": "Source code", "sFileName": "#2 Repro.html", "sAttachmentFileName": "Repro.html"},
+    {"sType": "Text", "sFileName": "#3 Details, exploit, time-line.md"},
+    {"sType": "BugId report", "sFileName": "#4 MSHTML.dll!CMarkup..ReloadInCompatView Arbitrary~E58 AVR(D6B0C524).html", "sAttachmentFileName": "MSHTML.dll!CMarkup..ReloadInCompatView Arbitrary~E58 AVR(D6B0C524).html"}
+  ],
+  "asTags": [
+    "Vuln",
+    "Microsoft Internet Explorer"
+  ]
+}
