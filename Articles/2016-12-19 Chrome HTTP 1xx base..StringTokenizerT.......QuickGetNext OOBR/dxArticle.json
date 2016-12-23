@@ -1,0 +1,20 @@
+{
+  "sTitle": "Chrome Chrome HTTP 1xx base::StringTokenizerT<...>::QuickGetNext OOBR",
+  "sSummary": "A use-after-free vulnerability in Microsoft Internet Explorer 9 might allow arbitrary code execution.",
+  "sSynopsisFileName": "Synopsis.md",
+  "adxSections": [
+    {"sType": "Text", "sFileName": "#1.1 Intro.md"},
+    {"sType": "Text", "sFileName": "#1.2 Details.md"},
+    {"sType": "Source code snippet", "sFileName": "#1.3 Diagram.txt"},
+    {"sType": "Text", "sFileName": "#1.4 Repro.md"},
+    {"sType": "Source code", "sFileName": "#2.1 PoC.py", "sAttachmentFileName": "PoC.py"},
+    {"sType": "Source code", "sFileName": "#2.2 Proxy.html", "sAttachmentFileName": "Proxy.html"},
+    {"sType": "Text", "sFileName": "#3 Exploit, Fix, Time-line.md"},
+    {"sType": "BugId report", "sFileName": "#4 chrome.dll!base..StringTokenizerT.......QuickGetNext Arbitrary AVR(AD11CFDE).html", "sAttachmentFileName": "chrome.dll!base..StringTokenizerT.......QuickGetNext Arbitrary AVR(AD11CFDE).html"}
+  ],
+  "asTags": [
+    "Vuln",
+    "Sploit",
+    "Google Chrome"
+  ]
+}
