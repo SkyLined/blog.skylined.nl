@@ -1,0 +1,450 @@
+MSHTML!CPasteCommand::PasteFromClipboard(
+    self<ecx>,
+    xArg1<ebp+8>,
+    xArg2<ebp+C>,
+    xArg3<ebp+10>,
+    xArg4<ebp+14>,
+    xArg5<ebp+18>,
+    xArg6<ebp+1C>,
+    xArg7<ebp+20>,
+    xArg8<ebp+24>):
+esp+34 = VOID* var34 (poBitmap)
+esp+38 = BYTE[]* var38 (pabImageData)
+esp+4C = UINT var4C (uBitmapSize)
+esp+50 = UINT var50 (uBitmapInfoSize / uPngImageSize)
+
+MSHTML!CPasteCommand::PasteFromClipboard:
+72cf6235 8bff            mov     edi,edi
+72cf6237 55              push    ebp
+72cf6238 8bec            mov     ebp,esp
+72cf623a 83e4f8          and     esp,0FFFFFFF8h
+72cf623d 83ec74          sub     esp,74h
+72cf6240 53              push    ebx
+72cf6241 56              push    esi
+72cf6242 57              push    edi
+72cf6243 8bd9            mov     ebx,ecx
+72cf6245 e8b1cdfdff      call    MSHTML!CCommand::Doc (72cd2ffb)
+72cf624a 50              push    eax
+72cf624b 8d4c2478        lea     ecx,[esp+78h]
+72cf624f e86fb1afff      call    MSHTML!CPasteOperationState::CPasteOperationState (727f13c3)
+72cf6254 33ff            xor     edi,edi
+72cf6256 8bcb            mov     ecx,ebx
+72cf6258 897c243c        mov     dword ptr [esp+3Ch],edi
+72cf625c 897c2410        mov     dword ptr [esp+10h],edi
+72cf6260 897c2430        mov     dword ptr [esp+30h],edi
+72cf6264 897c2468        mov     dword ptr [esp+68h],edi
+72cf6268 897c246c        mov     dword ptr [esp+6Ch],edi
+72cf626c 897c2470        mov     dword ptr [esp+70h],edi
+72cf6270 897c2414        mov     dword ptr [esp+14h],edi
+72cf6274 897c2424        mov     dword ptr [esp+24h],edi
+72cf6278 e87ecdfdff      call    MSHTML!CCommand::Doc (72cd2ffb)
+72cf627d 8b4b08          mov     ecx,dword ptr [ebx+8]
+72cf6280 8bf0            mov     esi,eax
+72cf6282 83c110          add     ecx,10h
+72cf6285 897c2428        mov     dword ptr [esp+28h],edi
+72cf6289 897c242c        mov     dword ptr [esp+2Ch],edi
+72cf628d 897c2440        mov     dword ptr [esp+40h],edi
+72cf6291 6a01            push    1
+72cf6293 8b01            mov     eax,dword ptr [ecx]
+72cf6295 89742454        mov     dword ptr [esp+54h],esi
+72cf6299 897c241c        mov     dword ptr [esp+1Ch],edi
+72cf629d 897c2420        mov     dword ptr [esp+20h],edi
+72cf62a1 ff503c          call    dword ptr [eax+3Ch]
+72cf62a4 56              push    esi
+72cf62a5 8d4c2460        lea     ecx,[esp+60h]
+72cf62a9 8944245c        mov     dword ptr [esp+5Ch],eax
+72cf62ad 897c2464        mov     dword ptr [esp+64h],edi
+72cf62b1 e8899265ff      call    MSHTML!CEnableDeferringAccessibilityEvents::CEnableDeferringAccessibilityEvents (7234f53f)
+72cf62b6 8b7d08          mov     edi,dword ptr [ebp+8]
+72cf62b9 8bcf            mov     ecx,edi
+72cf62bb 8b07            mov     eax,dword ptr [edi]
+72cf62bd ff9080000000    call    dword ptr [eax+80h]
+72cf62c3 85c0            test    eax,eax
+72cf62c5 0f84fd050000    je      MSHTML!CPasteCommand::PasteFromClipboard+0x693 (72cf68c8)
+72cf62cb 8b4d0c          mov     ecx,dword ptr [ebp+0Ch]
+72cf62ce 8b01            mov     eax,dword ptr [ecx]
+72cf62d0 ff9080000000    call    dword ptr [eax+80h]
+72cf62d6 85c0            test    eax,eax
+72cf62d8 0f84ea050000    je      MSHTML!CPasteCommand::PasteFromClipboard+0x693 (72cf68c8)
+72cf62de 837d2000        cmp     dword ptr [ebp+20h],0
+72cf62e2 741c            je      MSHTML!CPasteCommand::PasteFromClipboard+0xcb (72cf6300)
+72cf62e4 8bcb            mov     ecx,ebx
+72cf62e6 e810cdfdff      call    MSHTML!CCommand::Doc (72cd2ffb)
+72cf62eb 8bf0            mov     esi,eax
+72cf62ed 8bcf            mov     ecx,edi
+72cf62ef 8b07            mov     eax,dword ptr [edi]
+72cf62f1 ff5078          call    dword ptr [eax+78h]
+72cf62f4 50              push    eax
+72cf62f5 8d8e7c010000    lea     ecx,[esi+17Ch]
+72cf62fb e8bd2967ff      call    MSHTML!TSmartPointer<CMarkup>::operator= (72368cbd)
+72cf6300 8b4b08          mov     ecx,dword ptr [ebx+8]
+72cf6303 8d542418        lea     edx,[esp+18h]
+72cf6307 8d4910          lea     ecx,[ecx+10h]
+72cf630a e8ea7062ff      call    MSHTML!CreateMarkupPointer2 (7231d3f9)
+72cf630f 8bf0            mov     esi,eax
+72cf6311 85f6            test    esi,esi
+72cf6313 0f88b4050000    js      MSHTML!CPasteCommand::PasteFromClipboard+0x698 (72cf68cd)
+72cf6319 8b4c2418        mov     ecx,dword ptr [esp+18h]
+72cf631d 57              push    edi
+72cf631e 51              push    ecx
+72cf631f 8b01            mov     eax,dword ptr [ecx]
+72cf6321 ff5030          call    dword ptr [eax+30h]
+72cf6324 8bf0            mov     esi,eax
+72cf6326 85f6            test    esi,esi
+72cf6328 0f889f050000    js      MSHTML!CPasteCommand::PasteFromClipboard+0x698 (72cf68cd)
+72cf632e 8b4c2418        mov     ecx,dword ptr [esp+18h]
+72cf6332 6a00            push    0
+72cf6334 51              push    ecx
+72cf6335 8b01            mov     eax,dword ptr [ecx]
+72cf6337 ff5014          call    dword ptr [eax+14h]
+72cf633a 8bf0            mov     esi,eax
+72cf633c 85f6            test    esi,esi
+72cf633e 0f8889050000    js      MSHTML!CPasteCommand::PasteFromClipboard+0x698 (72cf68cd)
+72cf6344 8b4b08          mov     ecx,dword ptr [ebx+8]
+72cf6347 8d54241c        lea     edx,[esp+1Ch]
+72cf634b 8d4910          lea     ecx,[ecx+10h]
+72cf634e e8a67062ff      call    MSHTML!CreateMarkupPointer2 (7231d3f9)
+72cf6353 8bf0            mov     esi,eax
+72cf6355 85f6            test    esi,esi
+72cf6357 0f8870050000    js      MSHTML!CPasteCommand::PasteFromClipboard+0x698 (72cf68cd)
+72cf635d 8b4c241c        mov     ecx,dword ptr [esp+1Ch]
+72cf6361 57              push    edi
+72cf6362 51              push    ecx
+72cf6363 8b01            mov     eax,dword ptr [ecx]
+72cf6365 ff5030          call    dword ptr [eax+30h]
+72cf6368 8bf0            mov     esi,eax
+72cf636a 85f6            test    esi,esi
+72cf636c 0f885b050000    js      MSHTML!CPasteCommand::PasteFromClipboard+0x698 (72cf68cd)
+72cf6372 8b4c241c        mov     ecx,dword ptr [esp+1Ch]
+72cf6376 6a01            push    1
+72cf6378 51              push    ecx
+72cf6379 8b01            mov     eax,dword ptr [ecx]
+72cf637b ff5014          call    dword ptr [eax+14h]
+72cf637e 8bf0            mov     esi,eax
+72cf6380 85f6            test    esi,esi
+72cf6382 0f8845050000    js      MSHTML!CPasteCommand::PasteFromClipboard+0x698 (72cf68cd)
+72cf6388 8b03            mov     eax,dword ptr [ebx]
+72cf638a 8d4c2448        lea     ecx,[esp+48h]
+72cf638e 51              push    ecx
+72cf638f 8d4c2458        lea     ecx,[esp+58h]
+72cf6393 51              push    ecx
+72cf6394 8d4c241c        lea     ecx,[esp+1Ch]
+72cf6398 51              push    ecx
+72cf6399 8bcb            mov     ecx,ebx
+72cf639b ff5030          call    dword ptr [eax+30h]
+72cf639e 8bf0            mov     esi,eax
+72cf63a0 85f6            test    esi,esi
+72cf63a2 0f8825050000    js      MSHTML!CPasteCommand::PasteFromClipboard+0x698 (72cf68cd)
+72cf63a8 8b442450        mov     eax,dword ptr [esp+50h]
+72cf63ac 85c0            test    eax,eax
+72cf63ae 741e            je      MSHTML!CPasteCommand::PasteFromClipboard+0x199 (72cf63ce)
+72cf63b0 6afe            push    0FFFFFFFEh
+72cf63b2 59              pop     ecx
+72cf63b3 663b88840e0000  cmp     cx,word ptr [eax+0E84h]
+72cf63ba 7512            jne     MSHTML!CPasteCommand::PasteFromClipboard+0x199 (72cf63ce)
+72cf63bc 66894c2464      mov     word ptr [esp+64h],cx
+72cf63c1 33c9            xor     ecx,ecx
+72cf63c3 89442460        mov     dword ptr [esp+60h],eax
+72cf63c7 668988840e0000  mov     word ptr [eax+0E84h],cx
+72cf63ce 837d1000        cmp     dword ptr [ebp+10h],0
+72cf63d2 7558            jne     MSHTML!CPasteCommand::PasteFromClipboard+0x1f7 (72cf642c)
+72cf63d4 8d44243c        lea     eax,[esp+3Ch]
+72cf63d8 50              push    eax
+72cf63d9 ff15b8c1d972    call    dword ptr [MSHTML!_imp__OleGetClipboard (72d9c1b8)]
+72cf63df 8bf0            mov     esi,eax
+72cf63e1 85f6            test    esi,esi
+72cf63e3 0f85e4040000    jne     MSHTML!CPasteCommand::PasteFromClipboard+0x698 (72cf68cd)
+72cf63e9 8d44242c        lea     eax,[esp+2Ch]
+72cf63ed 50              push    eax
+72cf63ee b8c0bfff71      mov     eax,offset MSHTML!IID_IDocHostUIHandler (71ffbfc0)
+72cf63f3 50              push    eax
+72cf63f4 50              push    eax
+72cf63f5 8b4308          mov     eax,dword ptr [ebx+8]
+72cf63f8 ff7018          push    dword ptr [eax+18h]
+72cf63fb e854465dff      call    MSHTML!CDocument::QueryService (722caa54)
+72cf6400 8b4c242c        mov     ecx,dword ptr [esp+2Ch]
+72cf6404 8b54243c        mov     edx,dword ptr [esp+3Ch]
+72cf6408 895510          mov     dword ptr [ebp+10h],edx
+72cf640b 85c9            test    ecx,ecx
+72cf640d 741d            je      MSHTML!CPasteCommand::PasteFromClipboard+0x1f7 (72cf642c)
+72cf640f 8b01            mov     eax,dword ptr [ecx]
+72cf6411 8d742428        lea     esi,[esp+28h]
+72cf6415 56              push    esi
+72cf6416 52              push    edx
+72cf6417 51              push    ecx
+72cf6418 ff5044          call    dword ptr [eax+44h]
+72cf641b 85c0            test    eax,eax
+72cf641d 750d            jne     MSHTML!CPasteCommand::PasteFromClipboard+0x1f7 (72cf642c)
+72cf641f 39442428        cmp     dword ptr [esp+28h],eax
+72cf6423 7407            je      MSHTML!CPasteCommand::PasteFromClipboard+0x1f7 (72cf642c)
+72cf6425 8b442428        mov     eax,dword ptr [esp+28h]
+72cf6429 894510          mov     dword ptr [ebp+10h],eax
+72cf642c 8b4b08          mov     ecx,dword ptr [ebx+8]
+72cf642f 8d442424        lea     eax,[esp+24h]
+72cf6433 50              push    eax
+72cf6434 57              push    edi
+72cf6435 e886255aff      call    MSHTML!CHTMLEditor::GetFlowElement (722989c0)
+72cf643a 8bf0            mov     esi,eax
+72cf643c 85f6            test    esi,esi
+72cf643e 0f8889040000    js      MSHTML!CPasteCommand::PasteFromClipboard+0x698 (72cf68cd)
+72cf6444 8b442424        mov     eax,dword ptr [esp+24h]
+72cf6448 85c0            test    eax,eax
+72cf644a 750a            jne     MSHTML!CPasteCommand::PasteFromClipboard+0x221 (72cf6456)
+72cf644c c744244401000000 mov     dword ptr [esp+44h],1
+72cf6454 eb3a            jmp     MSHTML!CPasteCommand::PasteFromClipboard+0x25b (72cf6490)
+72cf6456 8b30            mov     esi,dword ptr [eax]
+72cf6458 8d4c2440        lea     ecx,[esp+40h]
+72cf645c e82e5462ff      call    MSHTML!CSmartPtr<IHTMLElement3>::operator& (7231b88f)
+72cf6461 50              push    eax
+72cf6462 6854e82172      push    offset MSHTML!IID_IHTMLElement3 (7221e854)
+72cf6467 ff74242c        push    dword ptr [esp+2Ch]
+72cf646b ff16            call    dword ptr [esi]
+72cf646d 8bf0            mov     esi,eax
+72cf646f 85f6            test    esi,esi
+72cf6471 0f8856040000    js      MSHTML!CPasteCommand::PasteFromClipboard+0x698 (72cf68cd)
+72cf6477 8b442440        mov     eax,dword ptr [esp+40h]
+72cf647b 8d542444        lea     edx,[esp+44h]
+72cf647f 52              push    edx
+72cf6480 50              push    eax
+72cf6481 8b08            mov     ecx,dword ptr [eax]
+72cf6483 ff5124          call    dword ptr [ecx+24h]
+72cf6486 8bf0            mov     esi,eax
+72cf6488 85f6            test    esi,esi
+72cf648a 0f883d040000    js      MSHTML!CPasteCommand::PasteFromClipboard+0x698 (72cf68cd)
+72cf6490 8b7c2454        mov     edi,dword ptr [esp+54h]
+72cf6494 6bc714          imul    eax,edi,14h
+72cf6497 01442414        add     dword ptr [esp+14h],eax
+72cf649b e9cc010000      jmp     MSHTML!CPasteCommand::PasteFromClipboard+0x437 (72cf666c)
+72cf64a0 66837c244400    cmp     word ptr [esp+44h],0
+72cf64a6 750e            jne     MSHTML!CPasteCommand::PasteFromClipboard+0x281 (72cf64b6)
+72cf64a8 83ff03          cmp     edi,3
+72cf64ab 7409            je      MSHTML!CPasteCommand::PasteFromClipboard+0x281 (72cf64b6)
+72cf64ad 83ff02          cmp     edi,2
+72cf64b0 0f85b0010000    jne     MSHTML!CPasteCommand::PasteFromClipboard+0x431 (72cf6666)
+72cf64b6 8b4d10          mov     ecx,dword ptr [ebp+10h]
+72cf64b9 ff742414        push    dword ptr [esp+14h]
+72cf64bd 51              push    ecx
+72cf64be 8b01            mov     eax,dword ptr [ecx]
+72cf64c0 ff5014          call    dword ptr [eax+14h]
+72cf64c3 85c0            test    eax,eax
+72cf64c5 0f859b010000    jne     MSHTML!CPasteCommand::PasteFromClipboard+0x431 (72cf6666)
+72cf64cb 83ff04          cmp     edi,4
+72cf64ce 7418            je      MSHTML!CPasteCommand::PasteFromClipboard+0x2b3 (72cf64e8)
+72cf64d0 83ff01          cmp     edi,1
+72cf64d3 7413            je      MSHTML!CPasteCommand::PasteFromClipboard+0x2b3 (72cf64e8)
+72cf64d5 83ff03          cmp     edi,3
+72cf64d8 740e            je      MSHTML!CPasteCommand::PasteFromClipboard+0x2b3 (72cf64e8)
+72cf64da 83ff02          cmp     edi,2
+72cf64dd 7409            je      MSHTML!CPasteCommand::PasteFromClipboard+0x2b3 (72cf64e8)
+72cf64df 85ff            test    edi,edi
+72cf64e1 7405            je      MSHTML!CPasteCommand::PasteFromClipboard+0x2b3 (72cf64e8)
+72cf64e3 83ff08          cmp     edi,8
+72cf64e6 7524            jne     MSHTML!CPasteCommand::PasteFromClipboard+0x2d7 (72cf650c)
+72cf64e8 8b4d10          mov     ecx,dword ptr [ebp+10h]
+72cf64eb 8d542468        lea     edx,[esp+68h]
+72cf64ef 52              push    edx
+72cf64f0 ff742418        push    dword ptr [esp+18h]
+72cf64f4 8b01            mov     eax,dword ptr [ecx]
+72cf64f6 51              push    ecx
+72cf64f7 ff500c          call    dword ptr [eax+0Ch]
+72cf64fa 85c0            test    eax,eax
+72cf64fc 0f8564010000    jne     MSHTML!CPasteCommand::PasteFromClipboard+0x431 (72cf6666)
+72cf6502 8b44246c        mov     eax,dword ptr [esp+6Ch]
+72cf6506 89442410        mov     dword ptr [esp+10h],eax
+72cf650a eb04            jmp     MSHTML!CPasteCommand::PasteFromClipboard+0x2db (72cf6510)
+72cf650c 8b442410        mov     eax,dword ptr [esp+10h]
+72cf6510 85ff            test    edi,edi
+72cf6512 0f84f8000000    je      MSHTML!CPasteCommand::PasteFromClipboard+0x3db (72cf6610)
+72cf6518 83ff01          cmp     edi,1
+72cf651b 744d            je      MSHTML!CPasteCommand::PasteFromClipboard+0x335 (72cf656a)
+72cf651d 83ff02          cmp     edi,2
+72cf6520 0f84d1020000    je      MSHTML!CPasteCommand::PasteFromClipboard+0x5c2 (72cf67f7)
+72cf6526 0f8e3a010000    jle     MSHTML!CPasteCommand::PasteFromClipboard+0x431 (72cf6666)
+72cf652c 83ff04          cmp     edi,4
+72cf652f 0f8e0d020000    jle     MSHTML!CPasteCommand::PasteFromClipboard+0x50d (72cf6742)
+72cf6535 83ff08          cmp     edi,8
+72cf6538 0f8528010000    jne     MSHTML!CPasteCommand::PasteFromClipboard+0x431 (72cf6666)
+72cf653e 50              push    eax
+72cf653f ff15e043dc72    call    dword ptr [MSHTML!_imp__GlobalLock (72dc43e0)]
+72cf6545 8bf8            mov     edi,eax
+72cf6547 8b442410        mov     eax,dword ptr [esp+10h]
+72cf654b 89442420        mov     dword ptr [esp+20h],eax
+72cf654f 85ff            test    edi,edi
+72cf6551 0f8524010000    jne     MSHTML!CPasteCommand::PasteFromClipboard+0x446 (72cf667b)
+72cf6557 be0e000780      mov     esi,8007000Eh
+72cf655c 8d4c2420        lea     ecx,[esp+20h]
+72cf6560 e819f1bfff      call    MSHTML!TSmartHandle<void *,&GlobalUnlock>::~TSmartHandle<void *,&GlobalUnlock> (728f567e)
+72cf6565 e963030000      jmp     MSHTML!CPasteCommand::PasteFromClipboard+0x698 (72cf68cd)
+72cf656a 8b4c242c        mov     ecx,dword ptr [esp+2Ch]
+72cf656e e87b8f0200      call    MSHTML!EdUtil::IsRtfConverterEnabled (72d1f4ee)
+72cf6573 85c0            test    eax,eax
+72cf6575 0f84eb000000    je      MSHTML!CPasteCommand::PasteFromClipboard+0x431 (72cf6666)
+72cf657b ff742410        push    dword ptr [esp+10h]
+72cf657f ff15e043dc72    call    dword ptr [MSHTML!_imp__GlobalLock (72dc43e0)]
+72cf6585 85c0            test    eax,eax
+72cf6587 0f84ff010000    je      MSHTML!CPasteCommand::PasteFromClipboard+0x557 (72cf678c)
+72cf658d 8d4c2420        lea     ecx,[esp+20h]
+72cf6591 8bd0            mov     edx,eax
+72cf6593 51              push    ecx
+72cf6594 e8a598fdff      call    MSHTML!CRtfToHtmlConverter::StringRtfToStringHtml (72ccfe3e)
+72cf6599 ff742410        push    dword ptr [esp+10h]
+72cf659d 8bf0            mov     esi,eax
+72cf659f ff15dc43dc72    call    dword ptr [MSHTML!_imp__GlobalUnlock (72dc43dc)]
+72cf65a5 85f6            test    esi,esi
+72cf65a7 0f85b4000000    jne     MSHTML!CPasteCommand::PasteFromClipboard+0x42c (72cf6661)
+72cf65ad 397518          cmp     dword ptr [ebp+18h],esi
+72cf65b0 7436            je      MSHTML!CPasteCommand::PasteFromClipboard+0x3b3 (72cf65e8)
+72cf65b2 397520          cmp     dword ptr [ebp+20h],esi
+72cf65b5 741d            je      MSHTML!CPasteCommand::PasteFromClipboard+0x39f (72cf65d4)
+72cf65b7 ff7524          push    dword ptr [ebp+24h]
+72cf65ba 8bcb            mov     ecx,ebx
+72cf65bc ff751c          push    dword ptr [ebp+1Ch]
+72cf65bf ff750c          push    dword ptr [ebp+0Ch]
+72cf65c2 ff7508          push    dword ptr [ebp+8]
+72cf65c5 e802bbffff      call    MSHTML!CPasteCommand::FirePasteEventAndRemoveSelection (72cf20cc)
+72cf65ca 8bf0            mov     esi,eax
+72cf65cc 85f6            test    esi,esi
+72cf65ce 0f85f9020000    jne     MSHTML!CPasteCommand::PasteFromClipboard+0x698 (72cf68cd)
+72cf65d4 ff742420        push    dword ptr [esp+20h]
+72cf65d8 8b4b08          mov     ecx,dword ptr [ebx+8]
+72cf65db ff750c          push    dword ptr [ebp+0Ch]
+72cf65de ff7508          push    dword ptr [ebp+8]
+72cf65e1 e89158fdff      call    MSHTML!CHTMLEditor::DoTheDarnIE50PasteHTML (72ccbe77)
+72cf65e6 eb1a            jmp     MSHTML!CPasteCommand::PasteFromClipboard+0x3cd (72cf6602)
+72cf65e8 ff7524          push    dword ptr [ebp+24h]
+72cf65eb 8bcb            mov     ecx,ebx
+72cf65ed ff751c          push    dword ptr [ebp+1Ch]
+72cf65f0 ff7520          push    dword ptr [ebp+20h]
+72cf65f3 ff74242c        push    dword ptr [esp+2Ch]
+72cf65f7 ff750c          push    dword ptr [ebp+0Ch]
+72cf65fa ff7508          push    dword ptr [ebp+8]
+72cf65fd e861e4ffff      call    MSHTML!CPasteCommand::HandleUIPasteHTML (72cf4a63)
+72cf6602 ff742420        push    dword ptr [esp+20h]
+72cf6606 8bf0            mov     esi,eax
+72cf6608 ff15f044dc72    call    dword ptr [MSHTML!_imp__GlobalFree (72dc44f0)]
+72cf660e eb23            jmp     MSHTML!CPasteCommand::PasteFromClipboard+0x3fe (72cf6633)
+72cf6610 837d1800        cmp     dword ptr [ebp+18h],0
+72cf6614 0f8578020000    jne     MSHTML!CPasteCommand::PasteFromClipboard+0x65d (72cf6892)
+72cf661a ff7524          push    dword ptr [ebp+24h]
+72cf661d 8bcb            mov     ecx,ebx
+72cf661f ff751c          push    dword ptr [ebp+1Ch]
+72cf6622 ff7520          push    dword ptr [ebp+20h]
+72cf6625 50              push    eax
+72cf6626 ff750c          push    dword ptr [ebp+0Ch]
+72cf6629 ff7508          push    dword ptr [ebp+8]
+72cf662c e832e4ffff      call    MSHTML!CPasteCommand::HandleUIPasteHTML (72cf4a63)
+72cf6631 8bf0            mov     esi,eax
+72cf6633 85f6            test    esi,esi
+72cf6635 0f8992020000    jns     MSHTML!CPasteCommand::PasteFromClipboard+0x698 (72cf68cd)
+72cf663b 8b4d08          mov     ecx,dword ptr [ebp+8]
+72cf663e 8b01            mov     eax,dword ptr [ecx]
+72cf6640 ff9080000000    call    dword ptr [eax+80h]
+72cf6646 85c0            test    eax,eax
+72cf6648 0f847f020000    je      MSHTML!CPasteCommand::PasteFromClipboard+0x698 (72cf68cd)
+72cf664e 8b4d0c          mov     ecx,dword ptr [ebp+0Ch]
+72cf6651 8b01            mov     eax,dword ptr [ecx]
+72cf6653 ff9080000000    call    dword ptr [eax+80h]
+72cf6659 85c0            test    eax,eax
+72cf665b 0f846c020000    je      MSHTML!CPasteCommand::PasteFromClipboard+0x698 (72cf68cd)
+72cf6661 be64000480      mov     esi,80040064h
+72cf6666 47              inc     edi
+72cf6667 8344241414      add     dword ptr [esp+14h],14h
+72cf666c 3b7c2448        cmp     edi,dword ptr [esp+48h]
+72cf6670 0f8d57020000    jge     MSHTML!CPasteCommand::PasteFromClipboard+0x698 (72cf68cd)
+72cf6676 e925feffff      jmp     MSHTML!CPasteCommand::PasteFromClipboard+0x26b (72cf64a0)
+
+7202667b 50              push    eax                                            
+7202667c ff15e4430f72    call    dword ptr [MSHTML!_imp__GlobalSize (720f43e4)] <eax> = 
+72026682 89442450        mov     dword ptr [esp+50h],eax                        uBitmapInfoSize<stack> = uBitmapInfoSize<eax>
+72026686 83f82c          cmp     eax,2Ch                                        if (uBitmapInfoSize<eax> < 0x2C)
+72026689 0f82cdfeffff    jb      7202655c                                           goto label1
+7202668f 8b17            mov     edx,dword ptr [edi]                            larg2<edx> = poBitmapInfo<edi>->BITMAPINFOHEADER.biSize
+72026691 8d442438        lea     eax,[esp+38h]                                  &uActualBitmapInfoSize<eax> = &(uActualBitmapInfoSize<stack>)
+72026695 8b4f14          mov     ecx,dword ptr [edi+14h]                        larg1<ecx> = poBitmapInfo<edi>->BITMAPINFOHEADER.biSizeImage
+72026698 8364243800      and     dword ptr [esp+38h],0                          uActualBitmapInfoSize<stack> = 0
+7202669d 50              push    eax                                            larg3<stack> = &pabImageData<eax>
+7202669e e8f9da28ff      call    712b419c                                       hResult<eax> = MSHTML!UIntAdd(                                                  uActualBitmapInfoSize = poBitmapInfo->biSizeImage + poBitmapInfo->biSize
+                                                                                    poBitmapInfo<edi>->biSizeImage<ecx>                                         hResult<eax> = error code on integer overflow
+                                                                                    poBitmapInfo<edi>->biSize<edx>
+                                                                                    &uActualBitmapInfoSize<eax>
+                                                                                    );
+720266a3 8bf0            mov     esi,eax                                        hResult<esi> = hResult<eax>
+720266a5 85f6            test    esi,esi                                        if (hResult<esi> < 0)
+720266a7 0f88affeffff    js      7202655c                                           goto label1
+720266ad 8b442450        mov     eax,dword ptr [esp+50h]                        uBitmapInfoSize<eax> = uBitmapInfoSize<stack>
+720266b1 3b442438        cmp     eax,dword ptr [esp+38h]                        if (uBitmapInfoSize<eax> < uActualBitmapInfoSize<stack>)
+720266b5 0f82a1feffff    jb      7202655c                                           goto label1
+720266bb 8364243400      and     dword ptr [esp+34h],0                          poOriginalBitmap<stack> = 0
+720266c0 8d4c244c        lea     ecx,[esp+4Ch]                                  &uBitmapSize<ecx> = &(uBitmapSize<stack>)
+720266c4 8364244c00      and     dword ptr [esp+4Ch],0                          uBitmapSize<stack> = 0
+720266c9 51              push    ecx                                            larg4<stack> = &uBitmapSize<ecx>
+720266ca 8d4c2438        lea     ecx,[esp+38h]                                  &poBitmap<ecx> = &(poBitmap<stack>)
+720266ce 51              push    ecx                                            larg3<stack> = &poBitmap<ecx>
+720266cf 50              push    eax                                            larg2<stack> = uBitmapInfoSize<eax>
+720266d0 57              push    edi                                            larg1<stack> = poBitmapInfo<edi>
+720266d1 e8af020000      call    72026985                                       hResult<eax> = MSHTML!CPasteCommand::PrependBitmapHeader(
+                                                                                    poBitmapInfo = poBitmapInfo<edi>
+                                                                                    uBitmapInfoSize = uBitmapInfoSize<eax>
+                                                                                    ppoBitmap = &poBitmap,
+                                                                                    puBitmapSize = &uBitmapSize);
+720266d6 8bf0            mov     esi,eax                                        hResult<esi> = hResult<eax>
+720266d8 85f6            test    esi,esi                                        if (hResult<esi> != 0)
+720266da 0f857cfeffff    jne     7202655c                                           goto label1
+720266e0 21442438        and     dword ptr [esp+38h],eax                        pabImageData<stack> = NULL<eax>
+720266e4 21442450        and     dword ptr [esp+50h],eax                        uPngImageSize<stack> = 0<eax>
+720266e8 8d442450        lea     eax,[esp+50h]                                  &uPngImageSize<eax> = &(uPngImageSize<stack>)
+720266ec 50              push    eax                                            larg4<stack> = &uPngImageSize<eax>
+720266ed 8d44243c        lea     eax,[esp+3Ch]                                  &pabImageData<eax> = &(pabImageData<stack>)
+720266f1 50              push    eax                                            larg3<stack> = &pabImageData<eax>
+720266f2 ff742454        push    dword ptr [esp+54h]                            larg2<stack> = uBitmapSize<stack>
+720266f6 ff742440        push    dword ptr [esp+40h]                            larg1<stack> = poBitmap<stack>
+720266fa e8feb1ffff      call    720218fd                                       MSHTML!CPasteCommand::ConvertBitmaptoPng(
+                                                                                    poBitmap = poBitmap<stack>,
+   **** SHIT HITS FAN ****                                                          uBitmapSize = uBitmapSize<stack>,
+                                                                                    ppoPngImage = &pabImageData,
+                                                                                    puPngImageSize = &uPngImageSize<stack>)
+720266ff ff742434        push    dword ptr [esp+34h]
+72026703 8bf0            mov     esi,eax
+72026705 e8fdc85fff      call    71623007                                       MSHTML!operator delete(...)
+7202670a 59              pop     ecx
+7202670b 85f6            test    esi,esi
+7202670d 0f8549feffff    jne     7202655c                                           goto label1;
+72026713 ff7524          push    dword ptr [ebp+24h]
+72026716 8bcb            mov     ecx,ebx
+72026718 ff751c          push    dword ptr [ebp+1Ch]
+7202671b ff7520          push    dword ptr [ebp+20h]
+7202671e ff74245c        push    dword ptr [esp+5Ch]
+72026722 ff742448        push    dword ptr [esp+48h]
+72026726 ff750c          push    dword ptr [ebp+0Ch]
+72026729 ff7508          push    dword ptr [ebp+8]
+7202672c e81ce2ffff      call    7202494d                                       MSHTML!CPasteCommand::HandlePasteImage(...)
+72026731 ff742438        push    dword ptr [esp+38h]
+72026735 8bf0            mov     esi,eax
+72026737 e8cbc85fff      call    MSHTML!operator delete (71623007)
+7202673c 59              pop     ecx
+7202673d e91afeffff      jmp     7202655c                                  label1
+
+7202650c 8b442410        mov     eax,dword ptr [esp+10h]
+72026510 85ff            test    edi,edi
+72026512 0f84f8000000    je      MSHTML!CPasteCommand::PasteFromClipboard+0x3db (72026610)
+72026518 83ff01          cmp     edi,1
+7202651b 744d            je      MSHTML!CPasteCommand::PasteFromClipboard+0x335 (7202656a)
+7202651d 83ff02          cmp     edi,2
+72026520 0f84d1020000    je      MSHTML!CPasteCommand::PasteFromClipboard+0x5c2 (720267f7)
+72026526 0f8e3a010000    jle     MSHTML!CPasteCommand::PasteFromClipboard+0x431 (72026666)
+7202652c 83ff04          cmp     edi,4
+7202652f 0f8e0d020000    jle     MSHTML!CPasteCommand::PasteFromClipboard+0x50d (72026742)
+72026535 83ff08          cmp     edi,8
+72026538 0f8528010000    jne     MSHTML!CPasteCommand::PasteFromClipboard+0x431 (72026666)
+7202653e 50              push    eax
+7202653f ff15e0430f72    call    dword ptr [MSHTML!_imp__GlobalLock (720f43e0)]
+72026545 8bf8            mov     edi,eax
+72026547 8b442410        mov     eax,dword ptr [esp+10h]
+7202654b 89442420        mov     dword ptr [esp+20h],eax
+7202654f 85ff            test    edi,edi
+72026551 0f8524010000    jne     MSHTML!CPasteCommand::PasteFromClipboard+0x446 (7202667b)
+72026557 be0e000780      mov     esi,8007000Eh
+label1:
+7202655c 8d4c2420        lea     ecx,[esp+20h]
+72026560 e819f1bfff      call    MSHTML!TSmartHandle<void *,&GlobalUnlock>::~TSmartHandle<void *,&GlobalUnlock> (71c2567e)
+72026565 e963030000      jmp     MSHTML!CPasteCommand::PasteFromClipboard+0x698 (720268cd)

@@ -1,0 +1,11 @@
+<svg style="width:1px; height: 1px;" xmlns="http://www.w3.org/2000/svg">
+  <script>
+    window.onload = function () {
+      document.designMode="on";
+      document.execCommand("SelectAll");/*exec*/
+      window.getSelection().collapseToEnd();/*js_om*/
+      document.execCommand("Copy");/*exec*/
+      document.execCommand("Paste", false);/*exec*/
+    }
+  </script>
+</svg>

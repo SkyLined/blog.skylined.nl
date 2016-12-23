@@ -1,0 +1,67 @@
+MSHTML!CPasteCommandPrependBitmapHeader(
+  VOID* poBitmapInfo<ebp+8>,
+  UINT uBitmapInfoSize<ebp+C>,
+  VOID** ppoBitmap<ebp+10>,
+  UINT* uBitmapSize<ebp+14>
+):
+  uBitmapSize<ebp-4>
+72cf6985 8bff            mov     edi,edi                                        
+72cf6987 55              push    ebp                                            
+72cf6988 8bec            mov     ebp,esp                                        
+72cf698a 51              push    ecx                                            
+72cf698b 8b4d0c          mov     ecx,dword ptr [ebp+0Ch]                        larg1<ecx> = uBitmapInfoSize<ebp+C>
+72cf698e 8d45fc          lea     eax,[ebp-4]                                    &uBitmapSize<eax> = &uBitmapSize<ebp-4>
+72cf6991 8365fc00        and     dword ptr [ebp-4],0                            uBitmapSize<ebp-4> = 0
+72cf6995 56              push    esi                                            
+72cf6996 57              push    edi                                            
+72cf6997 50              push    eax                                            larg3<stack> = &uBitmapSize<eax>
+72cf6998 6a0e            push    0Eh                                            
+72cf699a 5a              pop     edx                                            larg2<edx> = 0xE
+72cf699b e8fcd728ff      call    71f8419c                                       MSHTML!UIntAdd(                                                                 uBitmapSize = uBitmapInfoSize + 0xE
+                                                                                    uBitmapInfoSize<ecx>,                                                       
+                                                                                    0xE<edx>,                                                                   hResult = error code on integer overflow
+                                                                                    &uBitmapSize<eax>);
+72cf69a0 8bf8            mov     edi,eax                                        hResult<edi> = hResult<eax>
+72cf69a2 85ff            test    edi,edi                                        if (hResult<edi> < 0)                                                           if (hResult < 0)
+72cf69a4 7850            js      72cf69f6                                           goto return_error;                                                              return 0x8007000E;
+72cf69a6 8b75fc          mov     esi,dword ptr [ebp-4]                          uBitmapSize<esi> = uBitmapSize<ebp-4>
+72cf69a9 56              push    esi                                            larg3<stack> = uBitmapSize<esi>
+72cf69aa 6a00            push    0                                              larg2<stack> = 0
+72cf69ac ff3510ccd972    push    dword ptr [72d9cc10]                           larg1<stack> = MSHTML!g_hProcessHeap
+72cf69b2 e8eaa620ff      call    71f010a1                                       poBitmap<eax> = MSHTML!HeapAlloc(                                               poBitmap<eax> = HeapAlloc(g_hProcessHeap, 0, uBitmapSize);
+                                                                                    MSHTML!g_hProcessHeap,
+                                                                                    0,
+                                                                                    uBitmapSize<esi>);
+72cf69b7 8b4d10          mov     ecx,dword ptr [ebp+10h]                        ppoBitmap<ecx> = ppoBitmap<ebp+10>
+72cf69ba 8901            mov     dword ptr [ecx],eax                            *(ppoBitmap<ecx>) = poBitmap<eax>                                               *ppoBitmap = poBitmap
+72cf69bc 85c0            test    eax,eax                                        if (poBitmap<eax> == NULL)                                                      if (poBitmap == NULL)
+72cf69be 7436            je      72cf69f6                                           goto return_error;                                                              return 0x8007000E;
+72cf69c0 ff750c          push    dword ptr [ebp+0Ch]                            larg4<stack> = uBitmapInfoSize
+72cf69c3 b9424d0000      mov     ecx,4D42h                                      "BM"<ecx> = 0x4D42
+72cf69c8 897002          mov     dword ptr [eax+2],esi                          poBitmap<eax>->BITMAPFILEHEADER.bfSize = uBitmapSize<esi>                       poBitmap->BITMAPFILEHEADER.bfSize = uBitmapSize
+72cf69cb ff7508          push    dword ptr [ebp+8]                              larg3<stack> = poBitmapInfo<ebp+8>
+72cf69ce 668908          mov     word ptr [eax],cx                              poBitmap<eax>->BITMAPFILEHEADER.bfType = "BM"<cx>                               poBitmap->BITMAPFILEHEADER.bfType = "BM"
+72cf69d1 33c9            xor     ecx,ecx                                        0<ecx> = 0
+72cf69d3 ff750c          push    dword ptr [ebp+0Ch]                            larg2<stack> = uBitmapInfoSize                                                  poBitmap->BITMAPFILEHEADER.bfReserved1 = 0
+72cf69d6 894806          mov     dword ptr [eax+6],ecx                          poBitmap<eax>->BITMAPFILEHEADER.bfReserved12 = 0                                poBitmap->BITMAPFILEHEADER.bfReserved2 = 0
+72cf69d9 c7400a36000000  mov     dword ptr [eax+0Ah],36h                        poBitmap<eax>->BITMAPFILEHEADER.bfOffBits = 0x36                                poBitmap->BITMAPFILEHEADER.bfOffBits = 0x36
+72cf69e0 83c00e          add     eax,0Eh                                        &(poBitmap.BITMAPINFO)<eax> = poBitmap<eax> + sizeof(BITMAPFILEHEADER)
+72cf69e3 50              push    eax                                            larg1<stack> = &oBitmapInfo<eax>
+72cf69e4 ff159841dc72    call    dword ptr [72dc4198]                           MSHTML!_imp__memcpy_s(                                                          memcpy_s(&(poBitmap->BITMAPINFO), uBitmapInfoSize, poBitmapInfo, uBitmapInfoSize)
+                                                                                    &(poBitmap.BITMAPINFO)<stack>,
+                                                                                    uBitmapInfoSize<stack>,
+                                                                                    poBitmapInfo<stack>,
+                                                                                    uBitmapInfoSize<stack>);
+72cf69ea 8b4514          mov     eax,dword ptr [ebp+14h]                        puBitmapSize<eax> = puBitmapSize<ebp+14>
+72cf69ed 83c410          add     esp,10h                                        WTF!?
+72cf69f0 8930            mov     dword ptr [eax],esi                            *(puBitmapSize<eax>) = uBitmapSize<esi>                                         *puBitmapSize = uBitmapSize
+72cf69f2 8bc7            mov     eax,edi                                        hResult<eax> = hResult<edi>                                                     return s_OK;
+72cf69f4 eb05            jmp     72cf69fb                                       goto return;
+                                                                                return_error:
+72cf69f6 b80e000780      mov     eax,8007000Eh                                  hResult<eax> = 0x8007000E
+                                                                                return:
+72cf69fb 5f              pop     edi                                            
+72cf69fc 5e              pop     esi                                            
+72cf69fd 8be5            mov     esp,ebp                                        
+72cf69ff 5d              pop     ebp                                            
+72cf6a00 c21000          ret     10h                                            return hResult<eax>

@@ -1,0 +1,19 @@
+{
+  "sTitle": "MSIE 11 MSHTML CPasteCommand::ConvertBitmaptoPng heap-based buffer overflow",
+  "sSummary": "An out-of-bounds write vulnerability in Microsoft Internet Explorer 11 might allow arbitrary code execution.",
+  "sSynopsisFileName": "Synopsis.md",
+  "adxSections": [
+    {"sType": "Text", "sFileName": "#1 Intro, Details.md"},
+    {"sType": "Source code", "sFileName": "#2 Repro.svg", "sAttachmentFileName": "Repro.svg"},
+    {"sType": "Text", "sFileName": "#3 Reverse.md"},
+    {"sType": "Source code", "sFileName": "#4.1 MSHTML!CPasteCommand..ConvertBitmaptoPng.txt", "sAttachmentFileName": "MSHTML!CPasteCommand..ConvertBitmaptoPng.txt"},
+    {"sType": "Source code", "sFileName": "#4.2 MSHTML!CPasteCommand..PasteFromClipboard.txt", "sAttachmentFileName": "MSHTML!CPasteCommand..PasteFromClipboard.txt"},
+    {"sType": "Source code", "sFileName": "#4.3 MSHTML!CPasteCommand..PrependBitmapHeader.txt", "sAttachmentFileName": "MSHTML!CPasteCommand..PrependBitmapHeader.txt"},
+    {"sType": "Text", "sFileName": "#5 Exploit, Time-line.md"},
+    {"sType": "BugId report", "sFileName": "#6 MSHTML.dll!CPasteCommand..ConvertBitmaptoPng Arbitrary~01A AVW(322844B8).html", "sAttachmentFileName": "MSHTML.dll!CPasteCommand..ConvertBitmaptoPng Arbitrary~01A AVW(322844B8).html"}
+  ],
+  "asTags": [
+    "Vuln",
+    "Microsoft Internet Explorer"
+  ]
+}
