@@ -8,8 +8,8 @@ A specially crafted web-page can trigger a use-after-free vulnerability in
 Microsoft Internet Explorer 9. The use appears to happen only once almost
 immediately after the free, which makes practical exploitation unlikely.
 
-Known affected software and attack vectors
-------------------------------------------
+Known affected software, attack vectors and potential mitigations
+-----------------------------------------------------------------
 * **Microsoft Internet Explorer 9**
 
   An attacker would need to get a target user to open a specially crafted

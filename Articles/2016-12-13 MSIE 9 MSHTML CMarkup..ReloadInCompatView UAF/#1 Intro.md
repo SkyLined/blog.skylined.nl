@@ -12,8 +12,8 @@ It appears that there is little to no time for an attacker to attempt to
 control the contents of the freed memory before the re-use, which would allow
 remote code execution.
 
-Known affected software and attack vectors
-------------------------------------------
+Known affected software, attack vectors and potential mitigations
+-----------------------------------------------------------------
 * **Microsoft Internet Explorer 9**
 
   An attacker would need to get a target user to open a specially crafted
