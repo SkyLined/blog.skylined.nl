@@ -1,0 +1,19 @@
+{
+  "sTitle": "MSIE 11 MSHTML CSpliceTreeEngine::RemoveSplice use-after-free",
+  "sSummary": "A use-after-free vulnerability in Microsoft Internet Explorer 11 might allow arbitrary code execution.",
+  "sSynopsisFileName": "Synopsis.md",
+  "adxSections": [
+    {"sType": "Text", "sFileName": "#1 Article.md"},
+    {"sType": "Source code", "sFileName": "#2 Repro.html", "sAttachmentFileName": "Repro.html"},
+    {"sType": "Text", "sFileName": "#3 Sploit.md"},
+    {"sType": "Source code", "sFileName": "#4.1 Sploit.html", "sAttachmentFileName": "Sploit.html"},
+    {"sType": "Source code", "sFileName": "#4.2 cLFHSpray.js", "sAttachmentFileName": "cLFHSpray.js"},
+    {"sType": "Source code", "sFileName": "#4.3 cBlockSpray.js", "sAttachmentFileName": "cBlockSpray.js"},
+    {"sType": "Text", "sFileName": "#5 Time-line.md"}
+  ],
+  "asTags": [
+    "Vuln",
+    "Sploit",
+    "Microsoft Internet Explorer"
+  ]
+}
