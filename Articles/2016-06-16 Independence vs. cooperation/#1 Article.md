@@ -36,4 +36,3 @@ such as in government surveillance, law enforcement and cyber-warfare.
 
   [LinkedIn profile]: https://www.linkedin.com/in/skylined
   [Twitter]: https://twitter.com/berendjanwever
-  [email]: mailto:berendjanwever@gmail.com
