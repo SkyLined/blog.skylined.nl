@@ -1,32 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond|Source+Code+Pro|Playfair+Display');
+
 * {
   border: 0;
   margin: 0;
   padding: 0;
   border-spacing: 0;
   border-collapse: collapse;
-  color: inherit;
   background: transparent;
   word-wrap: break-word;
   line-break: loose;
   overflow-wrap: break-word;
   hyphens: auto;
+  color: inherit;
+  text-align: inherit;
   font-size: inherit;
 }
 html {
   overflow-y: scroll; /* prevent center jumping */
   color: #161310; /* rgba(22, 19, 16, 1); */
-  background: #E5E2DE;
-  font-weight: 400;
+  background: rgba(255, 251, 247, 1);
+  font-weight: 300;
   padding: 1em;
-  font-family: Sans-serif;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 125%;
+}
+code, .source-code {
+  font-family: 'Source Code Pro', monospace;
+  background: rgba(22, 19, 16,0.04);
+  font-size: 80%;
 }
 body {
   margin: auto;
 }
-h1, h2, h3, h4, h5 {
-  max-width: 100%;
-  font-weight: 700;
-}
+/* links */
 a {
   color: inherit;
   text-decoration: none;
@@ -48,37 +54,12 @@ a.icon, a.icon:hover, a.icon:active, a.icon:visited, a.icon:visited:hover, a.ico
   border-bottom: 0;
 }
 
-pre code {
-  font-family: monospace;
-  display: block;
-  overflow: auto;
-  padding: 0.5em;
-}
-
-code {
-  background: rgba(22, 19, 16,0.04);
-}
-
+/* icons */
 .icon {
   width: 2em;
   height: 2em;
 }
-
-.article-tags .icon {
-  float: left;
-  clear: left;
-  padding-right: 0.2em;
-}
-
-.card, a.card, a.card:hover {
-  border: 1px solid rgba(22, 19, 16, 0.2);
-  border-radius: 0.5em;
-  background-color: rgba(255, 251, 247, 1);
-  box-shadow: 0 1em 2em rgba(22, 19, 16, 0.2), 0 1em 1em rgba(22, 19, 16, 0.05), 0 1em 0.5em rgba(22, 19, 16, 0.05);
-  margin-bottom: 1em;
-  display: block;
-}
-
+/* banner */
 .banner-logo {
   display: block;
   min-height: 6em;
@@ -124,203 +105,31 @@ code {
   box-shadow: 0 1em 2em rgba(22, 19, 16, 0.2), 0 1em 1em rgba(22, 19, 16, 0.05), 0 1em 0.5em rgba(22, 19, 16, 0.05);
 }
 
+/* footer */
+.footer::before {
+  content: "";
+  display: block;
+  width: 100%;
+  border-top: 1px solid rgba(22, 19, 16, 0.2);
+  padding-bottom: 3ex;
+}
 .footer {
-  padding: 1em;
+  display:block;
   text-align: center;
+  padding-bottom: 7ex;
 }
-
-.card {
-  background-image: url("/Images/Canvas.jpg");
-}
-
-.main-page-article-title {
-  font-weight: 700;
+.footer-copyright {
   display: block;
-  padding: 1em;
-  color: rgba(255, 251, 247, 1);
-  background-color: rgba(22, 19, 16, 1);
-  font-size: 120%;
-  margin-bottom: 1em;
 }
-.main-page-article-synopsis {
+.footer-license {
   display: block;
-  padding-bottom: 1em;
 }
-.main-page-article-date {
-  float: left;
-  display: inline-block;
-  font-size: 90%;
-  font-style: italic;
-  font-family: Serif;
-}
-
-.main-page-article-link {
-  float: right;
-  display: inline-block;
-  text-align: right;
-  font-size: 90%;
-  font-style: italic;
-  font-family: Serif;
-}
-
-/* article pages */
-.article-text-section {
+.footer-last-updated {
   display: block;
-  padding: 1em;
-  min-height: 8em;
-  column-width: 28em;
-  -moz-column-width: 28em;
-  -ms-column-width: 28em;
-  column-count: auto;
-  -moz-column-count: auto;
-  -ms-column-count: auto;
-  column-gap: 2em;
-  -moz-column-gap: 2em;
-  -ms-column-gap: 2em;
 }
-.article-text-section + .article-text-section {
-  margin-top: 1em;
-  border-top: 1px solid #C0C0C0;
-  padding-top: 2em;
-}
-
-.article-separator-section > hr {
-  border-top: 1px solid #C0C0C0;
-  margin: 2em 0;
-}
-
-.article-source-code-section, .article-bugid-report-section {
-  margin: 1em 1em;
+.footer-donate {
   display: block;
-  border: 1px solid #C0C0C0;
 }
-.article-source-code-section-header, .article-bugid-report-section-header {
-  display: block;
-  font-size: 120%;
-  color: rgba(255, 251, 247, 1);
-  background-color: rgba(22, 19, 16, 1);
-  padding: 0.5em 1em 0.5em 1em;
-}
-
-.article-source-code-link-icon, .article-bugid-report-link-icon {
-  display: inline-block;
-  float: right;
-  padding-left: 1em;
-  width: 1.2em;
-  height: 1.2em;
-  background-image: url("/Images/Link.svg");
-  background-size: contain;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-}
-
-.article-source-code, .article-bugid-report-synopsis{
-  display: block;
-  white-space: pre;
-  padding: 1em;
-  overflow-x: auto;
-  background-color: rgba(22, 19, 16,0.05);
-}
-
-ul, ol {
-  break-inside: avoid-column;
-}
-
-/*.index-article-synopsis*/
-
-.article-text-section > p, .article-text-section > ul > li, .article-text-section > ol > li, .article-text-section > pre  {
-  margin-bottom: 0.5em;
-}
-
-h1 {
-  display: inline-block;
-  padding: 1em;
-  color: rgba(255, 251, 247, 1);
-  background-color: rgba(22, 19, 16, 1);
-  font-size: 120%;
-}
-
-h2 {
-  display: inline-block;
-  font-size: 120%;
-}
-
-h3 {
-  font-size: 120%;
-  border-bottom: 1px solid rgba(128, 19, 16, 1);
-}
-
-h1, h2 {
-  /* This makes sure there is always room for at least one line in the column below the header, thus preventing
-     breaking into the next column immediately after the header, before the start of the paragraph.
-     Ideally, the "break-after" property would be used here, but that is not supported yet in most browsers */
-  margin-bottom: 7em;
-}
-h1 + *, h2 + * {
-  margin-top: -8em;
-}
-
-/*******************************************************************************
-   Security warnings
-*******************************************************************************/
-.security-warnings {
-  display: none;
-  padding: 1em;
-  margin-bottom: 1em;
-  border: 3px solid rgba(128, 19, 16, 1);
-  border-radius: 0.5em;
-  background-color: rgba(255, 251, 247, 1);
-  box-shadow: 0 1em 2em rgba(22, 19, 16, 0.2), 0 1em 1em rgba(22, 19, 16, 0.05), 0 1em 0.5em rgba(22, 19, 16, 0.05);
-}
-.security-warnings-content {
-  display: none;
-}
-.security-warnings-content-close-button {
-  width: 1.2em;
-  height: 1.2em;
-  float: right;
-}
-
 .creative-commons-license-icon {
   vertical-align: middle;
-}
-
-/*******************************************************************************
-   Main page
-*******************************************************************************/
-
-.main-page {
-  display: block;
-}
-/* Main page Articles group */
-.main-page-articles-group {
-  display: block;
-  column-width: 28em;
-  -moz-column-width: 28em;
-  -ms-column-width: 28em;
-  column-count: auto;
-  -moz-column-count: auto;
-  -ms-column-count: auto;
-  column-gap: 1em;
-  -moz-column-gap: 1em;
-  -ms-column-gap: 1em;
-}
-
-.main-page-articles-group-title {
-  display: flex;
-  align-items: center;
-  margin: 1em 0px;
-  width: 100%;
-}
-.main-page-articles-group-title::before, .main-page-articles-group-title::after {
-  content: "";
-  flex-grow: 1;
-  margin: 0px .5em;
-  border-top: 1px solid #C0C0C0;
-}
-
-/* Main page Article */
-.main-page-article {
-  display: inline-block;
-  padding: 1em;
 }

@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/> 
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; disown-opener; referrer no-referrer;"/>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; disown-opener; referrer no-referrer;"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:site" content="@<<sAuthorTwitterHandle>>"/>
@@ -13,8 +13,10 @@
     <meta name="twitter:image" content="<<sBaseAbsoluteURL>><<sTwitterAvatarRelativeURL>>"/>
     <link rel="alternate" type="application/rss+xml" title="<<sSiteName>> RSS Feed" href="rss.xml"/>
     <link rel="stylesheet" type="text/css" href="Stylesheets/Page.css" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="Stylesheets/Markdown.css" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="Stylesheets/SkyLight.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="Stylesheets/Security warnings.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="Stylesheets/Main page.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="Stylesheets/Article page.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="Stylesheets/Code highlighting.css" media="screen"/>
     <title><<sPageTitle>></title>
     <script src="Javascripts/Test Browser Privacy and Security.js">
       This script will check to see if the user's browser has known privacy and security issues and warn about them.
@@ -58,18 +60,26 @@
       </span>
     </span>
     <<sPageContentHTML>>
-    <span class="footer card">
-      <span rel="license">
-        &#169; Copyright <<sSiteCopyrightYear>> by 
-        <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName"><<sAuthorName>></span>.<br/>
-        <a href="<<sLicenseDetailsAbsoluteURL>>">
-          <img class="creative-commons-license-icon" alt="Creative Commons License" src="<<sLicenseImageRelativeURL>>"/>
-          This work is licensed under a <<sLicenseDescription>>.
-        </a>
-      </span><br/>
-      <i>Last updated on <<sSitelastUpdatedDate>>.</i><br/>
-      If you find this web-site useful and would like to make a donation, you can send bitcoin to
-      <a href="bitcoin:<<sAuthorBitcoin>>"><<sAuthorBitcoin>></a>.<br/>
+    <span class="footer-wrapper">
+      <span class="footer">
+        <span class="footer-copyright">
+          &#169; Copyright <<sSiteCopyrightYear>> by 
+          <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName"><<sAuthorName>></span>.
+        </span>
+        <span class="footer-last-updated">
+          Last updated on <<sSitelastUpdatedDate>>.
+        </span>
+        <span class="footer-license">
+          <a href="<<sLicenseDetailsAbsoluteURL>>">
+            <img class="creative-commons-license-icon" alt="Creative Commons License" src="<<sLicenseImageRelativeURL>>"/>
+            This work is licensed under a <<sLicenseDescription>>.
+          </a>
+        </span>
+        <span class="footer-donate">
+          If you find this web-site useful and would like to make a donation, you can send bitcoin to
+          <a href="bitcoin:<<sAuthorBitcoin>>"><<sAuthorBitcoin>></a>.
+        </span>
+      </span>
     </span>
   </body>
 </html>

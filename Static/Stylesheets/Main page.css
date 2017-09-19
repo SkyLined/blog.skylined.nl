@@ -1,0 +1,81 @@
+/* center align everything */
+.main-page-articles-group-title-wrapper,
+.main-page-article-title-wrapper,
+.main-page-article-tags-wrapper,
+.main-page-article-synopsis-wrapper,
+.main-page-article-link-wrapper,
+.main-page-article-date-wrapper
+{
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.main-page-articles-group-title-wrapper::before,
+.main-page-articles-group-title-wrapper::after,
+.main-page-article-title-wrapper::before,
+.main-page-article-title-wrapper::after,
+.main-page-article-tags-wrapper::before,
+.main-page-article-tags-wrapper::after,
+.main-page-article-synopsis-wrapper::before,
+.main-page-article-synopsis-wrapper::after,
+.main-page-article-link-wrapper::before,
+.main-page-article-link-wrapper::after,
+.main-page-article-date-wrapper::before,
+.main-page-article-date-wrapper::after
+{
+  content: "";
+  flex-grow: 1;
+  margin: 0ex 1ex;
+}
+/* keep margins between articles and article groups */
+.main-page-articles-group-wrapper {
+  display: block;
+  margin-bottom: 10ex;
+}
+.main-page-article-wrapper {
+  display: block;
+  margin-top: 10ex;
+}
+.main-page-article-wrapper + .main-page-article-wrapper {
+  margin-top: 20ex;
+}
+
+/* Horizontal line on either side of groupd month/year */
+.main-page-articles-group-title {
+  padding: 1ex 0ex;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+}
+.main-page-articles-group-title-wrapper::before,
+.main-page-articles-group-title-wrapper::after
+{
+  border-top: 1px solid #C0C0C0; /* horizontal line */
+}
+/* article group articles */
+.main-page-articles-group-articles {
+}
+
+/* article title */
+.main-page-article-title {
+  border: 0px!important; /* no underline for links */
+  font-size: 200%;
+  font-family: 'Playfair Display', serif;
+  max-width: 30ex;
+  text-align: center;
+}
+
+.main-page-article-synopsis * {
+  max-width: 80ex;
+  text-align: center;
+}
+.main-page-article-date {
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+}
+
+.main-page-article-link {
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+}

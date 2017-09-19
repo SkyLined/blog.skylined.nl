@@ -1,0 +1,189 @@
+/* center align everything */
+.article-page-date-wrapper,
+.article-page-title-wrapper,
+.article-page-tags-wrapper,
+.article-source-code-wrapper,
+.article-page-section-bugid-report-synopsis-wrapper
+{
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.article-page-date-wrapper::before,
+.article-page-date-wrapper::after,
+.article-page-title-wrapper::before,
+.article-page-title-wrapper::after,
+.article-page-tags-wrapper::before,
+.article-page-tags-wrapper::after
+{
+  content: "";
+  flex-grow: 1;
+  margin: 0ex 1ex;
+}
+
+/* Horizontal line on either side of date */
+.article-page-date {
+  padding: 1ex 0ex;
+  font-style: italic;
+}
+.article-page-date-wrapper::before,
+.article-page-date-wrapper::after
+{
+  border-top: 1px solid #C0C0C0; /* horizontal line */
+}
+.article-page-title-wrapper {
+  margin-top: 10ex;
+}
+/* keep margins between sections */
+.article-page-section-wrapper {
+  display: block;
+  margin-bottom: 20ex;
+}
+
+/* article title */
+.article-page-title {
+  font-size: 200%;
+  font-family: 'Playfair Display', serif;
+  max-width: 30ex;
+  text-align: center;
+}
+/* article text section */
+.article-page-section-text > h2 {
+  font-size: 150%;
+  font-family: 'Playfair Display', serif;
+  max-width: 40ex;
+  text-align: center;
+  margin: 7ex auto 2ex auto;
+}
+.article-page-section-text > h2::after {
+  content: "";
+  display: block;
+  width: 5ex;
+  margin: 0.5ex auto 0ex auto;
+  border-bottom: 1px solid rgba(22, 19, 16, 1);
+}
+.article-page-section-text > p {
+  display: block;
+  max-width: 80ex;
+  margin: auto;
+  text-align: center;
+}
+.article-page-section-text > ul {
+  display: inline;
+}
+.article-page-section-text > ul > li {
+  max-width: 80ex;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 1ex;
+}
+/* A list item that starts with a paragraph would span the entire width and the bullet would be moved to the left of it
+we want the bullet immediately before the text, so make the paragraph inline and add a "line-break" using ::after */
+.article-page-section-text > ul > li > p {
+  display: inline;
+}
+.article-page-section-text > ul > li > p::after {
+  content: "";
+  display: block;
+}
+
+.article-page-section-text strong {
+  font-weight: 700;
+}
+.article-page-section-text em {
+  font-style: italic;
+}
+.article-page-section-text del {
+  text-decoration: line-through;
+}
+
+.article-page-section-text pre {
+  display: flex;
+  align-items: center;
+  margin: 5ex 0ex;
+  width: 100%;
+}
+.article-page-section-text pre code {
+  padding: 0.5em;
+  min-width: 80ex;
+  border: 1px solid #C0C0C0;
+}
+.article-page-section-text pre::before,
+.article-page-section-text pre::after
+{
+  content: "";
+  flex-grow: 1;
+  margin: 0ex 1ex;
+}
+.article-page-section-text pre code {
+  display: inline-block;
+  overflow: auto;
+  padding: 0.5em;
+}
+
+.article-page-section-source-code-header {
+  display: block;
+  max-width: 60ex;
+  margin: 3ex auto;
+  text-align: center;
+  font-size: 150%;
+  font-family: 'Playfair Display', serif;
+}
+.article-source-code {
+  display: inline-block;
+  max-width: 100%;
+  min-width: 80ex;
+  max-height: 200ex;
+  margin: auto;
+  overflow: auto;
+  white-space: pre;
+  padding: 0.5em;
+  border: 1px solid #C0C0C0;
+  background: rgba(22, 19, 16,0.04);
+}
+
+.article-page-section-bugid-report-header {
+  display: block;
+  max-width: 60ex;
+  margin: 3ex auto;
+  text-align: center;
+  font-size: 150%;
+  font-family: 'Playfair Display', serif;
+}
+.article-page-section-bugid-information {
+  display: block;
+  max-width: 80ex;
+  margin: auto;
+  text-align: center;
+  font-style: italic;
+}
+.article-page-section-bugid-report-synopsis {
+  display: inline-block;
+  max-width: 100%;
+  min-width: 80ex;
+  margin: auto;
+  overflow: auto;
+  white-space: pre;
+  padding: 0.5em;
+  border: 1px solid #C0C0C0;
+  background: rgba(22, 19, 16,0.04);
+  font-family: 'Source Code Pro', monospace;
+}
+
+.article-attachment-link::after {
+  content: "";
+  display: inline-block;
+  vertical-align: top;
+  margin: 0.5ex 0 0 0.5ex;
+  width: 1ex;
+  height: 1ex;
+  background-image: url("/Images/Link.svg");
+  background-size: contain;
+  background-position: right top;
+  background-repeat: no-repeat;
+  border: 0ex!important;
+}
+
+h1 {
+  display:none;
+}
