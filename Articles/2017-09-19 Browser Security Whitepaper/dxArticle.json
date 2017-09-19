@@ -1,0 +1,14 @@
+{
+  "sTitle": "Browser Security Whitepaper",
+  "sSummary": "I worked with x41 on a Browser Security white paper covering Chrome, Edge, MSIE.",
+  "sSynopsisFileName": "Synopsis.md",
+  "adxSections": [
+    {"sType": "Text", "sFileName": "#1 Article.md"}
+  ],
+  "asTags": [
+    "White Paper",
+    "Microsoft Edge",
+    "Microsoft Internet Explorer",
+    "Google Chrome"
+  ]
+}
