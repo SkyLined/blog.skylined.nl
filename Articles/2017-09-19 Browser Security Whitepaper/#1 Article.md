@@ -52,7 +52,9 @@ software products, you can [email me][] or [contact x41][].
 
 The white paper
 ---------------
-You can download a copy of our white paper [here][https://browser-security.x41-dsec.de/X41-Browser-Security-White-Paper.pdf].
+You can download a copy of our white paper from the x41 website at:
+
+https://browser-security.x41-dsec.de/X41-Browser-Security-White-Paper.pdf
 
 [working together]: http://blog.skylined.nl/20160616001.html
 [Browser Security white paper]: https://browser-security.x41-dsec.de/X41-Browser-Security-White-Paper.pdf
